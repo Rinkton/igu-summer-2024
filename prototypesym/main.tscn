@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2d6hsho2u8ui"]
+[gd_scene load_steps=11 format=3 uid="uid://c2d6hsho2u8ui"]
 
 [ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="1_1rblq"]
 [ext_resource type="Script" path="res://main.gd" id="1_jr1lh"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="2_xquvy"]
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="4_72qsx"]
+[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://node_2d.tscn" id="5_32rjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cuv0"]
 size = Vector2(1000, 4)
@@ -53,12 +54,12 @@ position = Vector2(500, 250)
 texture = SubResource("GradientTexture2D_i4b8n")
 
 [node name="character" parent="." instance=ExtResource("2_xquvy")]
-position = Vector2(469, 273)
+position = Vector2(133, 137)
 
 [node name="world_objects" type="Node2D" parent="."]
 
 [node name="obst1" parent="world_objects" instance=ExtResource("4_72qsx")]
-position = Vector2(662, 193)
+position = Vector2(894, 79)
 rotation = -0.392699
 
 [node name="obst2" parent="world_objects" instance=ExtResource("4_72qsx")]
@@ -66,14 +67,9 @@ position = Vector2(851, 178)
 rotation = -0.253073
 scale = Vector2(1.555, 1.555)
 
-[node name="obst3" parent="world_objects" instance=ExtResource("4_72qsx")]
-position = Vector2(577, 223)
-
-[node name="obst4" parent="world_objects" instance=ExtResource("4_72qsx")]
-position = Vector2(554, 111)
-
 [node name="obst5" parent="world_objects" instance=ExtResource("4_72qsx")]
-position = Vector2(467, 170)
+position = Vector2(167, 221)
+scale = Vector2(14.595, 1)
 
 [node name="obst6" parent="world_objects" instance=ExtResource("4_72qsx")]
 position = Vector2(755, 196)
@@ -82,7 +78,10 @@ position = Vector2(755, 196)
 position = Vector2(660, 102)
 
 [node name="obst8" parent="world_objects" instance=ExtResource("4_72qsx")]
-position = Vector2(769, 94)
+position = Vector2(581, 195)
+
+[node name="push" parent="world_objects" instance=ExtResource("5_32rjb")]
+position = Vector2(278, 179)
 
 [node name="mirror_world_objects" type="Node2D" parent="."]
 
