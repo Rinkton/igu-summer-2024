@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhrou6ujbten2"]
+[gd_scene load_steps=5 format=3 uid="uid://bhrou6ujbten2"]
 
 [ext_resource type="Texture2D" uid="uid://rk31q3u8ahij" path="res://icon.svg" id="1_f7sen"]
+[ext_resource type="Script" path="res://obst_1.gd" id="1_k7gyo"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5spjv"]
 light_mode = 2
@@ -9,6 +10,7 @@ light_mode = 2
 size = Vector2(50, 50)
 
 [node name="obst1" type="StaticBody2D"]
+script = ExtResource("1_k7gyo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)

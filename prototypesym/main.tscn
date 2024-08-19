@@ -53,7 +53,7 @@ position = Vector2(500, 250)
 texture = SubResource("GradientTexture2D_i4b8n")
 
 [node name="character" parent="." instance=ExtResource("2_xquvy")]
-position = Vector2(133, 137)
+position = Vector2(469, 273)
 
 [node name="world_objects" type="Node2D" parent="."]
 
