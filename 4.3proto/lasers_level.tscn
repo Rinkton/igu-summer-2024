@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://b70uuxxpgqmrt"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_cil7g"]
+[ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="2_drkcf"]
+[ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="3_j747x"]
+[ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="4_1tvex"]
+[ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="5_l4h0f"]
+
+[sub_resource type="Gradient" id="Gradient_4utyb"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lari6"]
+gradient = SubResource("Gradient_4utyb")
+width = 1000
+height = 250
+
+[node name="lasers_level" type="Node2D"]
+script = ExtResource("1_cil7g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(500, 125)
+scale = Vector2(5.21, 2.605)
+texture = ExtResource("2_drkcf")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(500, 374)
+scale = Vector2(5.21, 2.605)
+texture = ExtResource("2_drkcf")
+metadata/_edit_lock_ = true
+
+[node name="axis" parent="." instance=ExtResource("3_j747x")]
+position = Vector2(500, 250)
+metadata/_edit_lock_ = true
+
+[node name="character" parent="." instance=ExtResource("4_1tvex")]
+position = Vector2(133, 137)
+
+[node name="above" type="Node2D" parent="."]
+
+[node name="laser_receiver" parent="above" instance=ExtResource("5_l4h0f")]
+position = Vector2(2, 353)
+rotation = 1.5708
+
+[node name="Sprite2D" parent="above/laser_receiver" index="0"]
+texture = ExtResource("2_drkcf")
+
+[node name="obst5" parent="above" instance=ExtResource("5_l4h0f")]
+position = Vector2(130, 220)
+scale = Vector2(4.275, 1)
+
+[node name="obst6" parent="above" instance=ExtResource("5_l4h0f")]
+position = Vector2(297, 190)
+scale = Vector2(2, 2.18182)
+
+[node name="ray" parent="above" instance=ExtResource("5_l4h0f")]
+position = Vector2(169, 189)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" parent="above/ray" index="0"]
+scale = Vector2(0.103043, 3.70499)
+
+[node name="CollisionShape2D" parent="above/ray" index="1"]
+shape = null
+
+[node name="ray_source" parent="above" instance=ExtResource("5_l4h0f")]
+position = Vector2(334, 24)
+rotation = 0.785398
+
+[node name="below" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(577, 54)
+metadata/_edit_lock_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(500, 125)
+energy = 0.0
+range_z_min = 0
+range_z_max = 2
+texture = SubResource("GradientTexture2D_lari6")
+metadata/_edit_lock_ = true
+
+[editable path="above/laser_receiver"]
+[editable path="above/ray"]

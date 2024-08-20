@@ -42,6 +42,7 @@ metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("4_wrgqd")]
 position = Vector2(60, 175)
+floor_snap_length = 4.0
 
 [node name="above" type="Node2D" parent="."]
 

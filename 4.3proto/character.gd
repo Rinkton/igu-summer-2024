@@ -12,6 +12,8 @@ func _ready():
 
 func _process(_delta):
 	
+	
+	
 	# after calling move_and_slide()
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
@@ -29,7 +31,34 @@ func _process(_delta):
 	var horz = Input.get_axis('a','d')
 	velocity.x = 100 * horz
 	velocity.x = 300 * horz
+	
+	animate()
+	
 	move_and_slide()
 
 func check_is_above():
 	is_above = global_position.y < axis.global_position.y - 10
+
+func animate():
+	
+	if velocity == Vector2(0,0):
+		
+		
+		$idle.visible = true
+		$jump.visible = false
+		$idle.play()
+		$jump.stop()
+
+	else:
+		if velocity.y != 0:
+			if velocity.x < 0:
+				$jump.scale.x = -0.2
+			elif velocity.x  > 0:
+				$jump.scale.x = 0.2
+			$idle.visible = false
+			$jump.visible = true
+			$jump.play()
+			$idle.stop()
+		
+			
+	
