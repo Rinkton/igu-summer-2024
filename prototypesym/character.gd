@@ -22,7 +22,7 @@ func _process(_delta):
 		velocity.y += gravity
 		if velocity.y > 1000:
 			velocity.y = 1000
-	is_above = global_position.y < axis.global_position.y
+	check_is_above()
 	
 	if Input.is_action_just_pressed('w') and is_on_floor():
 		velocity.y = -500
@@ -30,3 +30,6 @@ func _process(_delta):
 	velocity.x = 100 * horz
 	velocity.x = 300 * horz
 	move_and_slide()
+
+func check_is_above():
+	is_above = global_position.y < axis.global_position.y

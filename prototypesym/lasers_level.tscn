@@ -40,38 +40,39 @@ metadata/_edit_lock_ = true
 [node name="character" parent="." instance=ExtResource("4_1tvex")]
 position = Vector2(133, 137)
 
-[node name="world_objects" type="Node2D" parent="."]
+[node name="above" type="Node2D" parent="."]
 
-[node name="laser_receiver" parent="world_objects" instance=ExtResource("5_l4h0f")]
+[node name="laser_receiver" parent="above" instance=ExtResource("5_l4h0f")]
 position = Vector2(2, 353)
 rotation = 1.5708
 
-[node name="Sprite2D" parent="world_objects/laser_receiver" index="0"]
+[node name="Sprite2D" parent="above/laser_receiver" index="0"]
 texture = ExtResource("2_drkcf")
 
-[node name="obst5" parent="world_objects" instance=ExtResource("5_l4h0f")]
+[node name="obst5" parent="above" instance=ExtResource("5_l4h0f")]
 position = Vector2(130, 220)
 scale = Vector2(4.275, 1)
 
-[node name="obst6" parent="world_objects" instance=ExtResource("5_l4h0f")]
+[node name="obst6" parent="above" instance=ExtResource("5_l4h0f")]
 position = Vector2(297, 190)
 scale = Vector2(2, 2.18182)
 
-[node name="ray" parent="world_objects" instance=ExtResource("5_l4h0f")]
+[node name="ray" parent="above" instance=ExtResource("5_l4h0f")]
 position = Vector2(169, 189)
 rotation = 0.785398
+scale = Vector2(1, 1)
 
-[node name="Sprite2D" parent="world_objects/ray" index="0"]
+[node name="Sprite2D" parent="above/ray" index="0"]
 scale = Vector2(0.103043, 3.70499)
 
-[node name="CollisionShape2D" parent="world_objects/ray" index="1"]
+[node name="CollisionShape2D" parent="above/ray" index="1"]
 shape = null
 
-[node name="ray_source" parent="world_objects" instance=ExtResource("5_l4h0f")]
+[node name="ray_source" parent="above" instance=ExtResource("5_l4h0f")]
 position = Vector2(334, 24)
 rotation = 0.785398
 
-[node name="mirror_world_objects" type="Node2D" parent="."]
+[node name="below" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(577, 54)
@@ -85,5 +86,5 @@ range_z_max = 2
 texture = SubResource("GradientTexture2D_lari6")
 metadata/_edit_lock_ = true
 
-[editable path="world_objects/laser_receiver"]
-[editable path="world_objects/ray"]
+[editable path="above/laser_receiver"]
+[editable path="above/ray"]

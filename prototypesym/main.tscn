@@ -24,6 +24,7 @@ texture_filter = 1
 position = Vector2(500, 125)
 scale = Vector2(5.21, 2.605)
 texture = ExtResource("1_1rblq")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = -2
@@ -31,44 +32,47 @@ texture_filter = 1
 position = Vector2(500, 374)
 scale = Vector2(5.21, 2.605)
 texture = ExtResource("1_1rblq")
+metadata/_edit_lock_ = true
 
 [node name="axis" parent="." instance=ExtResource("3_23kuv")]
 position = Vector2(500, 250)
+metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("2_xquvy")]
-position = Vector2(133, 137)
+position = Vector2(102, 165)
 
-[node name="world_objects" type="Node2D" parent="."]
+[node name="above" type="Node2D" parent="."]
 
-[node name="obst1" parent="world_objects" instance=ExtResource("4_72qsx")]
+[node name="obst1" parent="above" instance=ExtResource("4_72qsx")]
 position = Vector2(894, 79)
 rotation = -0.392699
 
-[node name="obst2" parent="world_objects" instance=ExtResource("4_72qsx")]
+[node name="obst2" parent="above" instance=ExtResource("4_72qsx")]
 position = Vector2(851, 178)
 rotation = -0.253073
 scale = Vector2(1.555, 1.555)
 
-[node name="obst5" parent="world_objects" instance=ExtResource("4_72qsx")]
+[node name="obst5" parent="above" instance=ExtResource("4_72qsx")]
 position = Vector2(167, 221)
 scale = Vector2(14.595, 1)
 
-[node name="obst6" parent="world_objects" instance=ExtResource("4_72qsx")]
+[node name="obst6" parent="above" instance=ExtResource("4_72qsx")]
 position = Vector2(755, 196)
 
-[node name="obst7" parent="world_objects" instance=ExtResource("4_72qsx")]
-position = Vector2(660, 102)
+[node name="obst7" parent="above" instance=ExtResource("4_72qsx")]
+position = Vector2(670, 136)
 
-[node name="obst8" parent="world_objects" instance=ExtResource("4_72qsx")]
+[node name="obst8" parent="above" instance=ExtResource("4_72qsx")]
 position = Vector2(581, 195)
 
-[node name="push" parent="world_objects" instance=ExtResource("5_32rjb")]
-position = Vector2(278, 179)
+[node name="push" parent="above" instance=ExtResource("5_32rjb")]
+position = Vector2(218, 109)
 
-[node name="mirror_world_objects" type="Node2D" parent="."]
+[node name="below" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(577, 54)
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(500, 125)
@@ -76,3 +80,4 @@ energy = 0.0
 range_z_min = 0
 range_z_max = 2
 texture = SubResource("GradientTexture2D_j2d1a")
+metadata/_edit_lock_ = true
