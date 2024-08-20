@@ -26,7 +26,7 @@ func _process(_delta):
 		#object.get_child(2).set_collision_layer_value(1,false)
 		object.get_child(2).get_child(0).material = null
 		object.get_child(2).z_index = -1
-		object.get_child(2).rotation = -object.rotation
+		object.get_child(2).rotation = -object.rotation * 2
 		object.get_child(2).scale = Vector2(-1,-1)
 		object.get_child(2).global_position.x = object.global_position.x
 		object.get_child(2).global_position.y = (250 - object.global_position.y) + 250 
