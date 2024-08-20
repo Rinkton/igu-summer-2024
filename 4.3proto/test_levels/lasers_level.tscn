@@ -60,7 +60,6 @@ scale = Vector2(2, 2.18182)
 [node name="ray" parent="above" instance=ExtResource("5_l4h0f")]
 position = Vector2(169, 189)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" parent="above/ray" index="0"]
 scale = Vector2(0.103043, 3.70499)

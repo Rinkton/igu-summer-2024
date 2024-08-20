@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2vi1imxbffvh"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_nwiom"]
+[ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="2_yx4jh"]
+[ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="3_u80a0"]
+[ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="4_0k1go"]
+[ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="5_a550s"]
+[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://node_2d.tscn" id="6_sv6sf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hukh0"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pj85g"]
+radius = 22.0
+
+[sub_resource type="Gradient" id="Gradient_glrde"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jgwol"]
+gradient = SubResource("Gradient_glrde")
+width = 1000
+height = 250
+
+[node name="round_push_level" type="Node2D"]
+script = ExtResource("1_nwiom")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(500, 125)
+scale = Vector2(5.21, 2.605)
+texture = ExtResource("2_yx4jh")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(500, 374)
+scale = Vector2(5.21, 2.605)
+texture = ExtResource("2_yx4jh")
+metadata/_edit_lock_ = true
+
+[node name="axis" parent="." instance=ExtResource("3_u80a0")]
+position = Vector2(500, 250)
+metadata/_edit_lock_ = true
+
+[node name="character" parent="." instance=ExtResource("4_0k1go")]
+position = Vector2(150, 160)
+
+[node name="above" type="Node2D" parent="."]
+
+[node name="obst3" parent="above" instance=ExtResource("5_a550s")]
+position = Vector2(210, 191)
+scale = Vector2(3.11887, 0.613476)
+
+[node name="obst9" parent="above" instance=ExtResource("5_a550s")]
+position = Vector2(359, 231)
+rotation = 0.432878
+scale = Vector2(3.51552, 0.79452)
+
+[node name="obst8" parent="above" instance=ExtResource("5_a550s")]
+position = Vector2(632, 188)
+scale = Vector2(2.64, 1)
+
+[node name="push" parent="above" instance=ExtResource("6_sv6sf")]
+position = Vector2(194, 146)
+
+[node name="CollisionShape2D" parent="above/push" index="0"]
+shape = SubResource("CircleShape2D_hukh0")
+
+[node name="Sprite2D" parent="above/push" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="above/push/Area2D" index="0"]
+shape = SubResource("CircleShape2D_pj85g")
+
+[node name="player_win" parent="above" instance=ExtResource("5_a550s")]
+position = Vector2(623, 144)
+
+[node name="Sprite2D" parent="above/player_win" index="0"]
+modulate = Color(3.41728e-06, 0.638643, 0.362743, 1)
+texture = ExtResource("2_yx4jh")
+
+[node name="CollisionShape2D" parent="above/player_win" index="1"]
+shape = null
+
+[node name="below" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(577, 54)
+metadata/_edit_lock_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(500, 125)
+energy = 0.0
+range_z_min = 0
+range_z_max = 2
+texture = SubResource("GradientTexture2D_jgwol")
+metadata/_edit_lock_ = true
+
+[editable path="above/push"]
+[editable path="above/player_win"]
