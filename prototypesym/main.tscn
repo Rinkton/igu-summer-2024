@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="4_72qsx"]
 [ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://node_2d.tscn" id="5_32rjb"]
 
-[sub_resource type="Gradient" id="Gradient_kcv1g"]
+[sub_resource type="Gradient" id="Gradient_glrde"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_j2d1a"]
-gradient = SubResource("Gradient_kcv1g")
+gradient = SubResource("Gradient_glrde")
 width = 1000
 height = 250
 
