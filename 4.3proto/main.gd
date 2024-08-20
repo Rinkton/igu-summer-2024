@@ -20,7 +20,7 @@ func _ready():
 		#new_object.set_collision_layer_value(1,false)
 		$below.add_child(new_object)
 		
-func _physics_process(_delta):
+func _process(_delta):
 	
 	if Input.is_action_just_pressed("scroll_up"):
 		for object in cur_side.get_children():
@@ -30,6 +30,8 @@ func _physics_process(_delta):
 			object.position.y += 3 * (1 if cur_side == $above else -1)
 	
 	character.check_is_above()
+	
+	
 	if character.is_above:
 		cur_side = $above
 	else:
