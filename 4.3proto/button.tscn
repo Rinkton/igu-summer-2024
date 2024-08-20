@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cswaure8ckm57"]
+
+[ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="1_7pwlf"]
+[ext_resource type="Script" path="res://button.gd" id="1_bf7oy"]
+[ext_resource type="Material" uid="uid://bpcfwhpje6c2c" path="res://above_material.tres" id="2_dhh5s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s7hy"]
+size = Vector2(76, 19)
+
+[node name="button" type="Area2D"]
+script = ExtResource("1_bf7oy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(3.41728e-06, 0.638643, 0.362743, 1)
+material = ExtResource("2_dhh5s")
+position = Vector2(0, -9.5)
+scale = Vector2(0.395, 0.198)
+texture = ExtResource("1_7pwlf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_5s7hy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
