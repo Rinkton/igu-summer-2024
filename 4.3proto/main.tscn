@@ -60,7 +60,7 @@ position = Vector2(167, 221)
 scale = Vector2(14.595, 1)
 
 [node name="obst9" parent="above" instance=ExtResource("4_72qsx")]
-position = Vector2(164, 106)
+position = Vector2(156, 54)
 scale = Vector2(14.595, 1)
 
 [node name="obst6" parent="above" instance=ExtResource("4_72qsx")]
@@ -70,7 +70,7 @@ position = Vector2(755, 196)
 position = Vector2(670, 136)
 
 [node name="obst8" parent="above" instance=ExtResource("4_72qsx")]
-position = Vector2(581, 195)
+position = Vector2(578, 150)
 
 [node name="push" parent="above" instance=ExtResource("5_32rjb")]
 position = Vector2(194, 146)

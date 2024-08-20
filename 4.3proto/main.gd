@@ -20,7 +20,7 @@ func _ready():
 		#new_object.set_collision_layer_value(1,false)
 		$below.add_child(new_object)
 		
-func _process(_delta):
+func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("scroll_up"):
 		for object in cur_side.get_children():
