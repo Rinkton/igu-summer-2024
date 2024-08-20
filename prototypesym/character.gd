@@ -3,12 +3,6 @@ extends CharacterBody2D
 var gravity = 30
 var direction := Vector2(0,0)
 var push_force = 20.0
-var axis
-var is_above = true
-
-
-func _ready():
-	axis = get_tree().current_scene.get_node("axis")
 
 func _process(_delta):
 	
@@ -22,14 +16,13 @@ func _process(_delta):
 		velocity.y += gravity
 		if velocity.y > 1000:
 			velocity.y = 1000
-	check_is_above()
+	print(is_on_floor())
 	
 	if Input.is_action_just_pressed('w') and is_on_floor():
 		velocity.y = -500
 	var horz = Input.get_axis('a','d')
 	velocity.x = 100 * horz
+	print(velocity)
 	velocity.x = 300 * horz
+	print(velocity)
 	move_and_slide()
-
-func check_is_above():
-	is_above = global_position.y < axis.global_position.y
