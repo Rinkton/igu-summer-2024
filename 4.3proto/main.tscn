@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2d6hsho2u8ui"]
+[gd_scene load_steps=10 format=3 uid="uid://c2d6hsho2u8ui"]
 
-[ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="1_1rblq"]
 [ext_resource type="Script" path="res://main.gd" id="1_jr1lh"]
+[ext_resource type="Texture2D" uid="uid://cp80p0tt02wch" path="res://bg_above.png" id="2_bnip3"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="2_xquvy"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="3_23kuv"]
+[ext_resource type="Texture2D" uid="uid://c6w3unwxitc3f" path="res://bg_below.png" id="3_fun30"]
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="4_72qsx"]
 [ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://node_2d.tscn" id="5_32rjb"]
 
@@ -21,20 +22,21 @@ script = ExtResource("1_jr1lh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(500, 125)
-scale = Vector2(5.21, 2.605)
-texture = ExtResource("1_1rblq")
+position = Vector2(500, 125.25)
+scale = Vector2(0.520833, 0.231019)
+texture = ExtResource("2_bnip3")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = -2
 texture_filter = 1
-position = Vector2(500, 374)
-scale = Vector2(5.21, 2.605)
-texture = ExtResource("1_1rblq")
+position = Vector2(500, 375.125)
+scale = Vector2(0.520833, 0.231713)
+texture = ExtResource("3_fun30")
 metadata/_edit_lock_ = true
 
 [node name="axis" parent="." instance=ExtResource("3_23kuv")]
+visible = false
 position = Vector2(500, 250)
 metadata/_edit_lock_ = true
 
