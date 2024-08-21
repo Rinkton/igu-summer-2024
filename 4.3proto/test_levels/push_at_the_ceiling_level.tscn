@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://cswaure8ckm57" path="res://button.tscn" id="7_l0xjb"]
 [ext_resource type="PackedScene" uid="uid://bj7uyjqpmm6ux" path="res://gate.tscn" id="8_40rpk"]
 
-[sub_resource type="Gradient" id="Gradient_kcv1g"]
+[sub_resource type="Gradient" id="Gradient_ykl2j"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_n1n7m"]
-gradient = SubResource("Gradient_kcv1g")
+gradient = SubResource("Gradient_ykl2j")
 width = 1000
 height = 250
 
@@ -71,7 +71,6 @@ position = Vector2(555, 112)
 
 [node name="button" parent="above" instance=ExtResource("7_l0xjb")]
 position = Vector2(823, 208)
-gate_path = NodePath("../gate")
 
 [node name="gate" parent="above" instance=ExtResource("8_40rpk")]
 position = Vector2(937, 204)
