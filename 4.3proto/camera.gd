@@ -9,7 +9,7 @@ var target
 func _ready():
 	target = get_tree().current_scene.get_node("character")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_instance_valid(target):
 		var target_pos_x
 		target_pos_x = int(lerp(self.global_position.x, target.position.x, LERP_SPEED))

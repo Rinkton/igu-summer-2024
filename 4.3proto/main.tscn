@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="4_72qsx"]
 [ext_resource type="Texture2D" uid="uid://gbbkkhys7fr3" path="res://mountainparallax.png" id="4_76x11"]
 [ext_resource type="Script" path="res://point_light_2d.gd" id="4_fcd8y"]
-[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://node_2d.tscn" id="5_32rjb"]
+[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="5_32rjb"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="8_0s4gn"]
 [ext_resource type="Texture2D" uid="uid://dv5coctnd4cku" path="res://parallaxtree.png" id="10_slfmi"]
 

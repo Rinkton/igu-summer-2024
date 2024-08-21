@@ -1,6 +1,7 @@
 extends Node2D
 
 
+@onready var above_material = preload("res://above_material.tres")
 @onready var symmetric_link_res = preload("res://symmetry_link.tscn")
 @onready var cur_side = $above
 
@@ -10,6 +11,10 @@ var character
 func _ready():
 	character = $character
 	for object in $above.get_children():
+		if not(object is RigidBody2D): # Idk, but the push is feeling bad when I lay material on its sprite
+			for child in object.get_children():
+				if child is Sprite2D:
+					child.material = above_material
 		var new_object = object.duplicate()
 		var object_symmetric_link = symmetric_link_res.instantiate()
 		object_symmetric_link.obj = new_object
@@ -19,15 +24,21 @@ func _ready():
 		new_object.add_child(new_object_symmetric_link)
 		#new_object.set_collision_layer_value(1,false)
 		$below.add_child(new_object)
-		
+	if Global.lst_checkpoint_pos:
+		$character.global_position = Global.lst_checkpoint_pos
+	$camera.global_position.x = $character.global_position.x
+	set_symmetric()
+
 func _process(_delta):
-	
+	# NOT FORGET TO SET NULL IN GLOBAL.LST_CHECKPOINT_POS WHEN YOU EXIT LEVEL OR FINISHING IT UP
 	if Input.is_action_just_pressed("scroll_up"):
 		for object in cur_side.get_children():
 			object.position.y -= 3 * (1 if cur_side == $above else -1)
 	elif Input.is_action_just_pressed("scroll_down"):
 		for object in cur_side.get_children():
 			object.position.y += 3 * (1 if cur_side == $above else -1)
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 
 	character.check_is_above()
 
@@ -35,11 +46,16 @@ func _process(_delta):
 		cur_side = $above
 	else:
 		cur_side = $below
-	
+	set_symmetric()
+
+
+func set_symmetric():
 	for object in cur_side.get_children():
 		var symmetric_object = object.get_node("symmetry_link").obj
 		if cur_side == $above:
-			symmetric_object.get_child(0).material = null
+			for child in symmetric_object.get_children():
+				if child is Sprite2D:
+					child.material = null
 			symmetric_object.z_index = -1
 			#if object.get("gravity_scale") and object.gravity_scale != 1:
 				#object.gravity_scale = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck32lpueobux"]
+[gd_scene load_steps=16 format=3 uid="uid://ck32lpueobux"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_cx2gr"]
 [ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="2_geqlk"]
@@ -6,10 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="4_3iv8s"]
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="5_upep6"]
 [ext_resource type="PackedScene" uid="uid://c5efq5dnwbc0y" path="res://solidifier.tscn" id="6_ekoiu"]
-[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://node_2d.tscn" id="6_ws0ma"]
+[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="6_ws0ma"]
 [ext_resource type="PackedScene" uid="uid://cswaure8ckm57" path="res://button.tscn" id="7_yy7rb"]
 [ext_resource type="PackedScene" uid="uid://bj7uyjqpmm6ux" path="res://gate.tscn" id="8_4og2i"]
 [ext_resource type="PackedScene" uid="uid://hw2ef7yirqhk" path="res://lever.tscn" id="10_hh5n2"]
+[ext_resource type="PackedScene" uid="uid://dto02t2vsmfq0" path="res://checkpoint.tscn" id="11_akctc"]
+[ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="12_0fm0e"]
+[ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="13_kcmng"]
 
 [sub_resource type="Gradient" id="Gradient_kcv1g"]
 offsets = PackedFloat32Array(1)
@@ -43,8 +46,7 @@ position = Vector2(500, 250)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("4_3iv8s")]
-position = Vector2(120, 159)
-floor_snap_length = 4.0
+position = Vector2(455, 292)
 
 [node name="above" type="Node2D" parent="."]
 
@@ -86,6 +88,12 @@ position = Vector2(937, 204)
 position = Vector2(74, 33)
 node_path = NodePath("../gate")
 
+[node name="checkpoint" parent="above" instance=ExtResource("11_akctc")]
+position = Vector2(383, 177)
+
+[node name="checkpoint2" parent="above" instance=ExtResource("11_akctc")]
+position = Vector2(749, 164)
+
 [node name="below" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -99,3 +107,8 @@ range_z_min = 0
 range_z_max = 2
 texture = SubResource("GradientTexture2D_kdi5q")
 metadata/_edit_lock_ = true
+
+[node name="camera" parent="." instance=ExtResource("12_0fm0e")]
+
+[node name="death_zone" parent="." instance=ExtResource("13_kcmng")]
+position = Vector2(500, 550)

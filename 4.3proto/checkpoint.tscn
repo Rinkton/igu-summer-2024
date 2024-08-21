@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dto02t2vsmfq0"]
+
+[ext_resource type="Texture2D" uid="uid://rk31q3u8ahij" path="res://icon.svg" id="1_lpduh"]
+[ext_resource type="Script" path="res://checkpoint.gd" id="1_pjg7n"]
+[ext_resource type="Material" uid="uid://bpcfwhpje6c2c" path="res://above_material.tres" id="2_awjen"]
+[ext_resource type="Texture2D" uid="uid://dv5coctnd4cku" path="res://parallaxtree.png" id="2_ka7b5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wjx8"]
+size = Vector2(64, 64)
+
+[node name="checkpoint" type="Area2D"]
+modulate = Color(1, 1, 0.572549, 1)
+script = ExtResource("1_pjg7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_awjen")
+scale = Vector2(0.5, 0.13)
+texture = ExtResource("2_ka7b5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.13)
+texture = ExtResource("1_lpduh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5wjx8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

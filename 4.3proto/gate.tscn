@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj7uyjqpmm6ux"]
+[gd_scene load_steps=9 format=3 uid="uid://bj7uyjqpmm6ux"]
 
 [ext_resource type="Script" path="res://gate.gd" id="1_u3nt2"]
 [ext_resource type="Texture2D" uid="uid://rk31q3u8ahij" path="res://icon.svg" id="2_rynay"]
+[ext_resource type="Material" uid="uid://bpcfwhpje6c2c" path="res://above_material.tres" id="2_vetit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofhxp"]
 size = Vector2(30, 128)
@@ -207,6 +208,7 @@ _data = {
 script = ExtResource("1_u3nt2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_vetit")
 position = Vector2(0, -64)
 scale = Vector2(0.239999, 1)
 texture = ExtResource("2_rynay")
