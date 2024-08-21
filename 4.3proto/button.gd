@@ -5,6 +5,11 @@ extends Area2D
 
 
 func _on_body_entered(body):
-	if body is RigidBody2D:
+	if not(body is StaticBody2D) and not get_node(gate_path).activated:
 		get_node(gate_path).activate()
-		queue_free()
+
+func _on_body_exited(_body):
+	for overlapping_body in get_overlapping_bodies():
+		if not(overlapping_body is StaticBody2D):
+			return
+	get_node(gate_path).deactivate()

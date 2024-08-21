@@ -63,11 +63,11 @@ position = Vector2(778, 5)
 scale = Vector2(8.475, 1)
 
 [node name="obst10" parent="above" instance=ExtResource("5_s5b7r")]
-position = Vector2(532, 123)
+position = Vector2(532, 156)
 scale = Vector2(1.995, 1)
 
 [node name="push" parent="above" instance=ExtResource("6_hu26i")]
-position = Vector2(542, 81)
+position = Vector2(555, 112)
 
 [node name="button" parent="above" instance=ExtResource("7_l0xjb")]
 position = Vector2(823, 208)
