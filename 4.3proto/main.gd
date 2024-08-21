@@ -28,10 +28,9 @@ func _process(_delta):
 	elif Input.is_action_just_pressed("scroll_down"):
 		for object in cur_side.get_children():
 			object.position.y += 3 * (1 if cur_side == $above else -1)
-	
+
 	character.check_is_above()
-	
-	
+
 	if character.is_above:
 		cur_side = $above
 	else:

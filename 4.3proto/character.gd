@@ -6,7 +6,6 @@ var push_force = 20.0
 var axis
 var is_above = true
 
-
 func _ready():
 	axis = get_tree().current_scene.get_node("axis")
 
