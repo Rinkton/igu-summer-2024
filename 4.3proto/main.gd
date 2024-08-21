@@ -55,3 +55,6 @@ func _process(_delta):
 		symmetric_object.global_position.x = object.global_position.x
 		symmetric_object.get_node("CollisionShape2D").disabled = true
 		object.get_node("CollisionShape2D").disabled = false
+		# for some specific parameters of specific objects
+		if object.has_method("set_up_symmetric_object"):
+			object.set_up_symmetric_object()

@@ -43,7 +43,7 @@ position = Vector2(500, 250)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("4_3iv8s")]
-position = Vector2(133, 28)
+position = Vector2(120, 159)
 floor_snap_length = 4.0
 
 [node name="above" type="Node2D" parent="."]
@@ -73,7 +73,7 @@ position = Vector2(508, 145)
 scale = Vector2(1.075, 0.52)
 
 [node name="push" parent="above" instance=ExtResource("6_ws0ma")]
-position = Vector2(281, 174)
+position = Vector2(667, 176)
 
 [node name="button" parent="above" instance=ExtResource("7_yy7rb")]
 position = Vector2(284, 202)
