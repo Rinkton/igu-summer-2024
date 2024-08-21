@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2d6hsho2u8ui"]
+[gd_scene load_steps=11 format=3 uid="uid://c2d6hsho2u8ui"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jr1lh"]
 [ext_resource type="Texture2D" uid="uid://cp80p0tt02wch" path="res://bg_above.png" id="2_bnip3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c6w3unwxitc3f" path="res://bg_below.png" id="3_fun30"]
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="4_72qsx"]
 [ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://node_2d.tscn" id="5_32rjb"]
+[ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="8_0s4gn"]
 
 [sub_resource type="Gradient" id="Gradient_glrde"]
 offsets = PackedFloat32Array(1)
@@ -92,3 +93,5 @@ range_z_min = 0
 range_z_max = 2
 texture = SubResource("GradientTexture2D_j2d1a")
 metadata/_edit_lock_ = true
+
+[node name="camera" parent="." instance=ExtResource("8_0s4gn")]
