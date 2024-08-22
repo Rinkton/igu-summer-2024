@@ -78,7 +78,7 @@ scale = Vector2(1.075, 0.52)
 position = Vector2(667, 176)
 
 [node name="button" parent="above" instance=ExtResource("7_yy7rb")]
-position = Vector2(284, 202)
+position = Vector2(284, 199)
 node_path = NodePath("../solidifier")
 
 [node name="gate" parent="above" instance=ExtResource("8_4og2i")]

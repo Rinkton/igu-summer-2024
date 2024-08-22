@@ -29,14 +29,14 @@ func _ready():
 	$camera.global_position.x = $character.global_position.x
 	set_symmetric()
 
-func _process(_delta):
+func _physics_process(delta):
 	# NOT FORGET TO SET NULL IN GLOBAL.LST_CHECKPOINT_POS WHEN YOU EXIT LEVEL OR FINISHING IT UP
 	if Input.is_action_just_pressed("scroll_up"):
 		for object in cur_side.get_children():
-			object.position.y -= 3 * (1 if cur_side == $above else -1)
+			object.position.y -= 180 * delta * (1 if cur_side == $above else -1)
 	elif Input.is_action_just_pressed("scroll_down"):
 		for object in cur_side.get_children():
-			object.position.y += 3 * (1 if cur_side == $above else -1)
+			object.position.y += 180 * delta * (1 if cur_side == $above else -1)
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 
