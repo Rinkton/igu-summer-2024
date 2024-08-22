@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmdfg5gmse18x"]
+
+[ext_resource type="Texture2D" uid="uid://d1bqm47sg8n1w" path="res://menuegtest.png" id="1_dwdt2"]
+[ext_resource type="Script" path="res://menu.gd" id="1_x4m6n"]
+[ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="3_e7a3e"]
+[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="4_ibm0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_748be"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgw8n"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ly4g"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqrb7"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcwlu"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y62dv"]
+size = Vector2(40, 40)
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_x4m6n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(500, 250)
+texture = ExtResource("1_dwdt2")
+
+[node name="level1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level1"]
+position = Vector2(156, 94)
+shape = SubResource("RectangleShape2D_748be")
+
+[node name="level2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level2"]
+position = Vector2(266, 238)
+shape = SubResource("RectangleShape2D_cgw8n")
+
+[node name="level3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level3"]
+position = Vector2(417, 149)
+shape = SubResource("RectangleShape2D_8ly4g")
+
+[node name="level4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level4"]
+position = Vector2(561, 213)
+shape = SubResource("RectangleShape2D_fqrb7")
+
+[node name="level5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level5"]
+position = Vector2(726, 155)
+shape = SubResource("RectangleShape2D_vcwlu")
+
+[node name="level6" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level6"]
+position = Vector2(845, 303)
+shape = SubResource("RectangleShape2D_y62dv")
+
+[node name="level_objects" type="Node2D" parent="."]
+
+[node name="level_1" type="Node2D" parent="level_objects"]
+
+[node name="obst1" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
+position = Vector2(894, 79)
+rotation = -0.392699
+
+[node name="obst3" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
+position = Vector2(216, 49)
+
+[node name="obst2" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
+position = Vector2(851, 178)
+rotation = -0.253073
+scale = Vector2(1.555, 1.555)
+
+[node name="obst5" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
+position = Vector2(167, 221)
+scale = Vector2(14.595, 1)
+
+[node name="obst9" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
+position = Vector2(177, 43)
+scale = Vector2(14.595, 1)
+
+[node name="obst6" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
+position = Vector2(755, 196)
+
+[node name="obst7" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
+position = Vector2(670, 136)
+
+[node name="obst8" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
+position = Vector2(581, 195)
+
+[node name="push" parent="level_objects/level_1" instance=ExtResource("4_ibm0y")]
+position = Vector2(45, 148)
+
+[node name="level_2" type="Node2D" parent="level_objects"]
+
+[node name="level_3" type="Node2D" parent="level_objects"]
+
+[node name="level_4" type="Node2D" parent="level_objects"]
+
+[node name="level_5" type="Node2D" parent="level_objects"]
+
+[node name="level_6" type="Node2D" parent="level_objects"]
+
+[connection signal="input_event" from="level1" to="." method="_on_level_1_input_event"]
+[connection signal="input_event" from="level2" to="." method="_on_level_2_input_event"]
+[connection signal="input_event" from="level3" to="." method="_on_level_3_input_event"]
+[connection signal="input_event" from="level4" to="." method="_on_level_4_input_event"]
+[connection signal="input_event" from="level5" to="." method="_on_level_5_input_event"]
+[connection signal="input_event" from="level6" to="." method="_on_level_6_input_event"]
