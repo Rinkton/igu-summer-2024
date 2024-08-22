@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bevrr1eqls3go" path="res://spritesheet_Idle.png" id="4_mao3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgmhx"]
-size = Vector2(35, 46.5)
+size = Vector2(23, 46.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02s5j"]
 atlas = ExtResource("3_p0pca")
@@ -347,12 +347,12 @@ _data = {
 }
 
 [node name="character" type="CharacterBody2D"]
-floor_snap_length = 4.0
+floor_snap_length = 6.0
 script = ExtResource("1_6tw1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, 1.75)
+position = Vector2(-0.5, 1.75)
 shape = SubResource("RectangleShape2D_hgmhx")
 
 [node name="jump" type="AnimatedSprite2D" parent="."]
@@ -366,7 +366,6 @@ frame_progress = 0.3497
 speed_scale = 0.155
 
 [node name="idle" type="AnimatedSprite2D" parent="."]
-visible = false
 z_index = 1
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
