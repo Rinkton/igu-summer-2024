@@ -31,6 +31,12 @@ func _ready():
 
 func _physics_process(delta):
 	# NOT FORGET TO SET NULL IN GLOBAL.LST_CHECKPOINT_POS WHEN YOU EXIT LEVEL OR FINISHING IT UP
+	"""
+	if the problem with the wiggling push while scrolling will cause too bad, then try smthn like that
+	for object in cur_side.get_children():
+		if object is RigidBody2D:
+			object.freeze = false
+	"""
 	if Input.is_action_just_pressed("scroll_up"):
 		for object in cur_side.get_children():
 			object.position.y -= 180 * delta * (1 if cur_side == $above else -1)
