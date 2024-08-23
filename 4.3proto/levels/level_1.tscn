@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ddvpgfde0ncl1"]
+[gd_scene load_steps=25 format=3 uid="uid://ddvpgfde0ncl1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qhodj"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_7o2p0"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dto02t2vsmfq0" path="res://checkpoint.tscn" id="7_3ea7n"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_b4ll1"]
 [ext_resource type="PackedScene" uid="uid://ywp74r4cfkyr" path="res://Platforms/diagonal_6x_6_summer_platform.tscn" id="7_c27de"]
-[ext_resource type="Texture2D" uid="uid://dpu2sxsajpwm4" path="res://attract_attention.png" id="7_pmpp7"]
 [ext_resource type="PackedScene" uid="uid://caofxgcnqlkrd" path="res://click_button.tscn" id="8_f3q5g"]
 [ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_p8igi"]
 [ext_resource type="PackedScene" uid="uid://dg8inp7ihsp1w" path="res://Platforms/2x2_summer_platform.tscn" id="9_55gb4"]
@@ -32,9 +31,6 @@ gradient = SubResource("Gradient_glrde")
 width = 2000
 height = 250
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvhs6"]
-size = Vector2(23, 541)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kq7x"]
 size = Vector2(27, 518)
 
@@ -49,7 +45,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_iupp7")]
-position = Vector2(3123, 133)
+position = Vector2(36, 152)
 
 [node name="PointLight2D" type="PointLight2D" parent="character"]
 position = Vector2(0, -23)
@@ -64,11 +60,11 @@ metadata/_edit_lock_ = true
 z_index = 1
 
 [node name="2x2_summer_platform2" parent="above" instance=ExtResource("9_55gb4")]
-position = Vector2(2226, 111)
+position = Vector2(9685, 111)
 scale = Vector2(0.4, 1)
 
 [node name="2x2_summer_platform3" parent="above" instance=ExtResource("9_55gb4")]
-position = Vector2(2340, 111)
+position = Vector2(9799, 111)
 
 [node name="6x2 Summer Platform" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(66, 203)
@@ -89,95 +85,167 @@ position = Vector2(1448, 241)
 position = Vector2(1448, 203)
 
 [node name="6x2 Summer Platform12" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(1701, 242)
+position = Vector2(9160, 242)
 
 [node name="6x2 Summer Platform15" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(2375, 242)
+position = Vector2(9834, 242)
 
 [node name="6x2 Summer Platform18" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(2597, 240)
+position = Vector2(10056, 240)
 
 [node name="6x2 Summer Platform20" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(2821, 246)
+position = Vector2(1596, 240)
 
 [node name="6x2 Summer Platform21" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(2948, 246)
+position = Vector2(1723, 240)
 
 [node name="6x2 Summer Platform22" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(3074, 246)
+position = Vector2(1849, 240)
 
 [node name="6x2 Summer Platform23" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(3200, 246)
+position = Vector2(1975, 240)
+
+[node name="2x2_summer_platform8" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(4038, 230)
+
+[node name="2x2_summer_platform12" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(4036, 288)
+
+[node name="2x2_summer_platform13" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(4037, 297)
+
+[node name="2x2_summer_platform9" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(4037, 255)
+
+[node name="2x2_summer_platform10" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(4037, 255)
+
+[node name="2x2_summer_platform7" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(4038, 214)
 
 [node name="6x2 Summer Platform17" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(2559, 56)
+position = Vector2(10018, 56)
 
 [node name="6x2 Summer Platform19" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(2698, 56)
+position = Vector2(10157, 56)
 
 [node name="6x2 Summer Platform16" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(2291, 72)
+position = Vector2(9750, 72)
 
 [node name="6x2 Summer Platform13" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(1702, 204)
+position = Vector2(9161, 204)
 
 [node name="6x2 Summer Platform14" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(1703, 167)
+position = Vector2(9162, 167)
 
 [node name="2x2_summer_platform" parent="above" instance=ExtResource("9_55gb4")]
 position = Vector2(557, 170)
 
 [node name="6x2 Summer Platform24" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(3326, 246)
+position = Vector2(2101, 240)
 
 [node name="6x2 Summer Platform25" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(3453, 246)
+position = Vector2(2228, 240)
 
 [node name="6x2 Summer Platform26" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(3579, 246)
+position = Vector2(2354, 240)
 
 [node name="6x2 Summer Platform27" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(3792, 79)
+position = Vector2(2567, 73)
 
 [node name="6x2 Summer Platform29" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(3980, 186)
+position = Vector2(2755, 180)
 
 [node name="6x2 Summer Platform30" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(4396, 181)
+position = Vector2(3171, 175)
 
 [node name="6x2 Summer Platform31" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(4596, 94)
+position = Vector2(3372, 113)
+
+[node name="6x2 Summer Platform65" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3988, 175)
+
+[node name="6x2 Summer Platform82" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4770, 146)
+
+[node name="6x2 Summer Platform83" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5094, 221)
+
+[node name="6x2 Summer Platform66" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4389, 20.9998)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="6x2 Summer Platform80" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4477, 108)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="6x2 Summer Platform81" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4572, 202)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="6x2 Summer Platform67" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4298, -68)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="6x2 Summer Platform68" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4209, -156)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="6x2 Summer Platform69" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4115, -249)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="6x2 Summer Platform70" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4028, -335)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="6x2 Summer Platform77" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3955, -408)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="6x2 Summer Platform90" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3864, -502)
+rotation = 0.785398
+scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform32" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(4837, 41)
+position = Vector2(10461, 19)
 
 [node name="6x2 Summer Platform33" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(4964, 41)
+position = Vector2(10588, 19)
 
 [node name="6x2 Summer Platform34" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(5087, 41)
+position = Vector2(10711, 19)
 
 [node name="6x2 Summer Platform35" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(4964, 231)
+position = Vector2(10588, 209)
 
 [node name="above_tilemap" parent="above/6x2 Summer Platform35" index="1"]
 layer_0/tile_data = PackedInt32Array(-65539, 0, 7, -65538, 196608, 7, -65537, 589824, 7)
 
 [node name="6x2 Summer Platform36" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(5087, 231)
+position = Vector2(10711, 209)
 
 [node name="above_tilemap" parent="above/6x2 Summer Platform36" index="1"]
 layer_0/tile_data = PackedInt32Array(-65537, 0, 7, -131072, 196608, 7, -131071, 327680, 7, -131070, 589824, 7)
 
 [node name="diagonal_6x6_summer_platform" parent="above" instance=ExtResource("7_c27de")]
-position = Vector2(1845, 207)
+position = Vector2(9304, 207)
 scale = Vector2(1, 0.82)
 
 [node name="6x2 Summer Platform2" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(506, 134)
 
 [node name="click_button" parent="above" instance=ExtResource("8_f3q5g")]
-position = Vector2(1769, 93)
+position = Vector2(9228, 93)
 node_path = NodePath("../spawner")
 
 [node name="6x2 Summer Platform3" parent="above" instance=ExtResource("6_xvj4o")]
@@ -192,63 +260,54 @@ position = Vector2(364, 66)
 [node name="checkpoint" parent="above" instance=ExtResource("7_3ea7n")]
 position = Vector2(922, 188)
 
-[node name="attract_attention" type="Sprite2D" parent="above"]
-position = Vector2(395, 119)
-texture = ExtResource("7_pmpp7")
-
 [node name="gate" parent="above" instance=ExtResource("15_awywt")]
-position = Vector2(2553, 85)
+position = Vector2(10012, 85)
 rotation = 3.14159
 
 [node name="spawner" parent="above" instance=ExtResource("11_b8bok")]
-position = Vector2(1818, 21)
+position = Vector2(9277, 21)
 what = ExtResource("12_kwlqp")
 
 [node name="pressure_button" parent="above" instance=ExtResource("14_j1hub")]
-position = Vector2(2276, 95)
+position = Vector2(9735, 95)
 rotation = 3.14159
 node_path = NodePath("../gate")
 
 [node name="ladder" parent="above" instance=ExtResource("17_jxa5f")]
-position = Vector2(2707, 121)
+position = Vector2(10166, 121)
 
 [node name="ladder2" parent="above" instance=ExtResource("17_jxa5f")]
-position = Vector2(2707, 207)
+position = Vector2(10166, 207)
 
 [node name="checkpoint2" parent="above" instance=ExtResource("7_3ea7n")]
-position = Vector2(3124, 188)
+position = Vector2(1899, 182)
 
 [node name="checkpoint3" parent="above" instance=ExtResource("7_3ea7n")]
-position = Vector2(4595, 221)
+position = Vector2(3370, 215)
 
-[node name="scroll_trigger" type="Area2D" parent="above"]
-position = Vector2(3395, 85)
+[node name="scroll_trigger" type="Marker2D" parent="above"]
+position = Vector2(2172, -49)
 script = ExtResource("16_nklig")
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="above/scroll_trigger"]
-position = Vector2(1.5, 119.5)
-shape = SubResource("RectangleShape2D_hvhs6")
 
 [node name="obst1" parent="above" instance=ExtResource("17_3wliu")]
-position = Vector2(4855, 130)
+position = Vector2(10479, 108)
 scale = Vector2(1.08002, 0.6)
 
 [node name="push" parent="above" instance=ExtResource("18_eo5de")]
-position = Vector2(4859, 99)
+position = Vector2(10483, 77)
 
 [node name="pressure_button2" parent="above" instance=ExtResource("14_j1hub")]
-position = Vector2(5008, 210)
+position = Vector2(10632, 188)
 node_path = NodePath("../gate2")
 
 [node name="2x2_summer_platform4" parent="above" instance=ExtResource("9_55gb4")]
-position = Vector2(5137, 191)
+position = Vector2(10761, 169)
 
 [node name="2x2_summer_platform5" parent="above" instance=ExtResource("9_55gb4")]
-position = Vector2(5138, 160)
+position = Vector2(10762, 138)
 
 [node name="gate2" parent="above" instance=ExtResource("15_awywt")]
-position = Vector2(5140, 135)
+position = Vector2(10764, 113)
 scale = Vector2(0.55, 0.55)
 
 [node name="tip" parent="above" instance=ExtResource("19_o6swc")]
@@ -271,7 +330,7 @@ shape = SubResource("RectangleShape2D_1kq7x")
 metadata/_edit_lock_ = true
 
 [node name="tip2" parent="above" instance=ExtResource("19_o6swc")]
-position = Vector2(3310, 0)
+position = Vector2(2085, -6)
 
 [node name="Content" parent="above/tip2" index="0"]
 metadata/_edit_lock_ = true
@@ -289,6 +348,186 @@ metadata/_edit_lock_ = true
 position = Vector2(85, 256)
 shape = SubResource("RectangleShape2D_1kq7x")
 metadata/_edit_lock_ = true
+
+[node name="6x2 Summer Platform102" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5365, 243)
+
+[node name="6x2 Summer Platform101" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5365, 219)
+
+[node name="6x2 Summer Platform7" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3613, 228)
+
+[node name="6x2 Summer Platform28" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3741, 229)
+
+[node name="6x2 Summer Platform100" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5366, 185)
+
+[node name="6x2 Summer Platform37" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3612, 209)
+
+[node name="6x2 Summer Platform38" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3740, 210)
+
+[node name="6x2 Summer Platform39" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3611, 171)
+
+[node name="6x2 Summer Platform40" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3739, 172)
+
+[node name="6x2 Summer Platform41" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3610, 133)
+
+[node name="6x2 Summer Platform42" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3738, 134)
+
+[node name="6x2 Summer Platform43" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3609, 96)
+
+[node name="6x2 Summer Platform44" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3737, 97)
+
+[node name="6x2 Summer Platform45" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3609, 60)
+
+[node name="6x2 Summer Platform46" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3737, 61)
+
+[node name="6x2 Summer Platform47" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3608, 25)
+
+[node name="6x2 Summer Platform48" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3736, 26)
+
+[node name="6x2 Summer Platform49" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3607, -13)
+
+[node name="6x2 Summer Platform50" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3735, -12)
+
+[node name="6x2 Summer Platform51" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3606, -51)
+
+[node name="6x2 Summer Platform52" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3734, -50)
+
+[node name="6x2 Summer Platform53" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3605, -88)
+
+[node name="6x2 Summer Platform54" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3733, -87)
+
+[node name="6x2 Summer Platform55" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3605, -101)
+
+[node name="6x2 Summer Platform56" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3733, -100)
+
+[node name="6x2 Summer Platform57" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3604, -136)
+
+[node name="6x2 Summer Platform58" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3732, -135)
+
+[node name="6x2 Summer Platform59" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3603, -174)
+
+[node name="6x2 Summer Platform60" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3731, -173)
+
+[node name="6x2 Summer Platform61" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3602, -212)
+
+[node name="6x2 Summer Platform62" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3730, -211)
+
+[node name="6x2 Summer Platform63" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3601, -249)
+
+[node name="6x2 Summer Platform64" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3729, -248)
+
+[node name="6x2 Summer Platform71" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3602, -285)
+
+[node name="6x2 Summer Platform72" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3730, -284)
+
+[node name="6x2 Summer Platform73" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3601, -323)
+
+[node name="6x2 Summer Platform74" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3729, -322)
+
+[node name="6x2 Summer Platform75" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3600, -360)
+
+[node name="6x2 Summer Platform76" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3728, -359)
+
+[node name="6x2 Summer Platform78" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3601, -394)
+
+[node name="6x2 Summer Platform79" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3729, -393)
+
+[node name="6x2 Summer Platform84" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3601, -434)
+
+[node name="6x2 Summer Platform85" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3729, -433)
+
+[node name="6x2 Summer Platform86" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3600, -471)
+
+[node name="6x2 Summer Platform87" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3728, -470)
+
+[node name="6x2 Summer Platform88" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3601, -505)
+
+[node name="6x2 Summer Platform89" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3729, -504)
+
+[node name="2x2_summer_platform6" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(3838, 228)
+
+[node name="checkpoint4" parent="above" instance=ExtResource("7_3ea7n")]
+position = Vector2(3978, 120)
+
+[node name="checkpoint5" parent="above" instance=ExtResource("7_3ea7n")]
+position = Vector2(3978, 120)
+
+[node name="6x2 Summer Platform91" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5366, 146)
+
+[node name="6x2 Summer Platform92" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(6037, 128)
+
+[node name="6x2 Summer Platform93" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(6464, 32)
+
+[node name="6x2 Summer Platform94" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5355, 15)
+
+[node name="6x2 Summer Platform95" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5497, 16)
+
+[node name="6x2 Summer Platform96" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5631, 18)
+
+[node name="6x2 Summer Platform97" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5764, 18)
+
+[node name="6x2 Summer Platform98" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5897, 20)
+
+[node name="6x2 Summer Platform99" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(6039, 21)
+
+[node name="checkpoint6" parent="above" instance=ExtResource("7_3ea7n")]
+position = Vector2(5363, 92)
 
 [node name="below" type="Node2D" parent="."]
 

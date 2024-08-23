@@ -1,4 +1,4 @@
-extends Area2D
+extends Marker2D
 
 
 func _process(delta):
