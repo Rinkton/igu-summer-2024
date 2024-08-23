@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://0lv2gr7wge4g"]
+
+[ext_resource type="FontFile" uid="uid://bymdcx2jpconx" path="res://Alef-Bold.ttf" id="1_dbxi3"]
+[ext_resource type="Script" path="res://tip.gd" id="1_e81gp"]
+
+[sub_resource type="FontVariation" id="FontVariation_stbhi"]
+base_font = ExtResource("1_dbxi3")
+
+[sub_resource type="Animation" id="Animation_wgurb"]
+resource_name = "fade"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Content:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.96667, 5, 6.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iwcc8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Content:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6pbrc"]
+_data = {
+"RESET": SubResource("Animation_iwcc8"),
+"fade": SubResource("Animation_wgurb")
+}
+
+[node name="tip" type="Node2D"]
+z_index = 10
+script = ExtResource("1_e81gp")
+
+[node name="Content" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Content"]
+offset_left = 90.0
+offset_top = 11.0
+offset_right = 1796.0
+offset_bottom = 187.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = SubResource("FontVariation_stbhi")
+theme_override_font_sizes/font_size = 128
+text = "Welcome to the symmetry"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6pbrc")
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_right = 1000.0
+offset_bottom = 498.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
