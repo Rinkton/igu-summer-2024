@@ -3,6 +3,7 @@ extends CharacterBody2D
 var gravity = 30
 var direction := Vector2(0,0)
 var push_force = 20.0
+var ladder_spd = 250
 var axis
 var is_above = true
 var is_on_ladder = false
@@ -17,7 +18,7 @@ func _physics_process(delta):
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 	
-	if !is_on_floor():
+	if !is_on_floor() and not is_on_ladder:
 		velocity.y += gravity
 		if velocity.y > 1000:
 			velocity.y = 1000
@@ -30,9 +31,11 @@ func _physics_process(delta):
 	
 	if is_on_ladder:
 		if Input.is_action_pressed('w'):
-			velocity.y -= 10000 * delta
-		if Input.is_action_pressed('s'):
-			velocity.y += 10000 * delta
+			velocity.y = -ladder_spd
+		elif Input.is_action_pressed('s'):
+			velocity.y = ladder_spd
+		else:
+			velocity.y = 0
 	
 	if not $jump_buffer_timer.is_stopped() and not $coyote_timer.is_stopped():
 		velocity.y = -500
@@ -79,10 +82,16 @@ func play_anim(what):
 			anim.stop()
 
 
-func _on_area_2d_body_entered(body):
-	if body.name.contains("ladder"):
+func _on_actable_area_area_entered(area):
+	if area.name.contains("ladder"):
 		is_on_ladder = true
+	z_index = 1
 
-func _on_area_2d_body_exited(body):
-	if body.name.contains("ladder"):
-		is_on_ladder = false
+
+func _on_actable_area_area_exited(area):
+	is_on_ladder = false
+	for overlapping_area in $actable_area.get_overlapping_areas():
+		if overlapping_area.name.contains("ladder"):
+			is_on_ladder = true
+	if len($actable_area.get_overlapping_areas()) == 0:
+		z_index = 0

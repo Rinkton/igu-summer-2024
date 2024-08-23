@@ -46,7 +46,7 @@ position = Vector2(500, 250)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("4_3iv8s")]
-position = Vector2(455, 292)
+position = Vector2(227, 147)
 
 [node name="above" type="Node2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ddvpgfde0ncl1"]
+[gd_scene load_steps=23 format=3 uid="uid://ddvpgfde0ncl1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qhodj"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_7o2p0"]
@@ -9,14 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_b4ll1"]
 [ext_resource type="PackedScene" uid="uid://ywp74r4cfkyr" path="res://Platforms/diagonal_6x_6_summer_platform.tscn" id="7_c27de"]
 [ext_resource type="Texture2D" uid="uid://dpu2sxsajpwm4" path="res://attract_attention.png" id="7_pmpp7"]
-[ext_resource type="PackedScene" uid="uid://caofxgcnqlkrd" path="res://Platforms/click_button.tscn" id="8_f3q5g"]
+[ext_resource type="PackedScene" uid="uid://caofxgcnqlkrd" path="res://click_button.tscn" id="8_f3q5g"]
 [ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_p8igi"]
 [ext_resource type="PackedScene" uid="uid://dg8inp7ihsp1w" path="res://Platforms/2x2_summer_platform.tscn" id="9_55gb4"]
 [ext_resource type="PackedScene" uid="uid://dc8adxoou1gms" path="res://spawner.tscn" id="11_b8bok"]
 [ext_resource type="PackedScene" uid="uid://c0y4jr5rnknc4" path="res://round_push_for_puzzle.tscn" id="12_kwlqp"]
 [ext_resource type="PackedScene" uid="uid://cswaure8ckm57" path="res://pressure_button.tscn" id="14_j1hub"]
 [ext_resource type="PackedScene" uid="uid://bj7uyjqpmm6ux" path="res://gate.tscn" id="15_awywt"]
+[ext_resource type="Script" path="res://levels/scroll_trigger.gd" id="16_nklig"]
 [ext_resource type="PackedScene" uid="uid://v2x33ict60vu" path="res://ladder.tscn" id="17_jxa5f"]
+[ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="19_n8qxa"]
 
 [sub_resource type="Gradient" id="Gradient_glrde"]
 offsets = PackedFloat32Array(1)
@@ -27,8 +29,12 @@ gradient = SubResource("Gradient_glrde")
 width = 2000
 height = 250
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvhs6"]
+size = Vector2(23, 541)
+
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_qhodj")
+can_scroll = false
 
 [node name="axis" parent="." instance=ExtResource("2_7o2p0")]
 visible = true
@@ -37,7 +43,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_iupp7")]
-position = Vector2(1701, 117)
+position = Vector2(33, 143)
 
 [node name="PointLight2D" type="PointLight2D" parent="character"]
 position = Vector2(0, -23)
@@ -83,7 +89,19 @@ position = Vector2(1701, 242)
 position = Vector2(2375, 242)
 
 [node name="6x2 Summer Platform18" parent="above" instance=ExtResource("6_xvj4o")]
-position = Vector2(2622, 240)
+position = Vector2(2597, 240)
+
+[node name="6x2 Summer Platform20" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(2821, 246)
+
+[node name="6x2 Summer Platform21" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(2948, 246)
+
+[node name="6x2 Summer Platform22" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3074, 246)
+
+[node name="6x2 Summer Platform23" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3200, 246)
 
 [node name="6x2 Summer Platform17" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(2559, 56)
@@ -102,6 +120,24 @@ position = Vector2(1703, 167)
 
 [node name="2x2_summer_platform" parent="above" instance=ExtResource("9_55gb4")]
 position = Vector2(557, 170)
+
+[node name="6x2 Summer Platform24" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3326, 246)
+
+[node name="6x2 Summer Platform25" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3453, 246)
+
+[node name="6x2 Summer Platform26" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3579, 246)
+
+[node name="6x2 Summer Platform27" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3792, 79)
+
+[node name="6x2 Summer Platform29" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(3980, 186)
+
+[node name="6x2 Summer Platform30" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4396, 181)
 
 [node name="diagonal_6x6_summer_platform" parent="above" instance=ExtResource("7_c27de")]
 position = Vector2(1845, 207)
@@ -131,7 +167,7 @@ position = Vector2(395, 119)
 texture = ExtResource("7_pmpp7")
 
 [node name="gate" parent="above" instance=ExtResource("15_awywt")]
-position = Vector2(2580, 79)
+position = Vector2(2553, 85)
 rotation = 3.14159
 
 [node name="spawner" parent="above" instance=ExtResource("11_b8bok")]
@@ -139,15 +175,27 @@ position = Vector2(1818, 21)
 what = ExtResource("12_kwlqp")
 
 [node name="pressure_button" parent="above" instance=ExtResource("14_j1hub")]
-position = Vector2(2276, 92)
+position = Vector2(2276, 95)
 rotation = 3.14159
 node_path = NodePath("../gate")
 
 [node name="ladder" parent="above" instance=ExtResource("17_jxa5f")]
-position = Vector2(2741, 121)
+position = Vector2(2707, 121)
 
 [node name="ladder2" parent="above" instance=ExtResource("17_jxa5f")]
-position = Vector2(2740, 207)
+position = Vector2(2707, 207)
+
+[node name="checkpoint2" parent="above" instance=ExtResource("7_3ea7n")]
+position = Vector2(3124, 188)
+
+[node name="scroll_trigger" type="Area2D" parent="above"]
+position = Vector2(3395, 85)
+script = ExtResource("16_nklig")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="above/scroll_trigger"]
+position = Vector2(1.5, 119.5)
+shape = SubResource("RectangleShape2D_hvhs6")
 
 [node name="below" type="Node2D" parent="."]
 
@@ -159,4 +207,9 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="parallax" parent="." instance=ExtResource("8_p8igi")]
+metadata/_edit_lock_ = true
+
+[node name="death_zone" parent="." instance=ExtResource("19_n8qxa")]
+position = Vector2(32, 628)
+scale = Vector2(50, 1)
 metadata/_edit_lock_ = true

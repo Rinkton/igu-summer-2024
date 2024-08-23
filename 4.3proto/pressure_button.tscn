@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cswaure8ckm57"]
 
-[ext_resource type="Script" path="res://button.gd" id="1_802hh"]
+[ext_resource type="Script" path="res://pressure_button.gd" id="1_802hh"]
 [ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="2_hgjua"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s7hy"]

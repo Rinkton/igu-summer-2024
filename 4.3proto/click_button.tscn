@@ -1,11 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://caofxgcnqlkrd"]
 
 [ext_resource type="Texture2D" uid="uid://rk31q3u8ahij" path="res://icon.svg" id="1_ml3aj"]
-[ext_resource type="Script" path="res://Platforms/click_button.gd" id="1_mnwvy"]
+[ext_resource type="Script" path="res://click_button.gd" id="1_mnwvy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncon2"]
 
 [node name="click_button" type="Area2D"]
+collision_layer = 5
 script = ExtResource("1_mnwvy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

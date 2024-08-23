@@ -1,9 +1,13 @@
 extends Node2D
 
+@export var can_scroll = true
+
 @onready var above_material = preload("res://above_material.tres")
 @onready var symmetric_link_res = preload("res://symmetry_link.tscn")
 @onready var cur_side 
 @onready var character = $character
+
+var level_needs_setup = true
 
 #replace _ready with create_level(), so can be called for each level creation
 
@@ -27,11 +31,13 @@ func create_level():
 	if Global.lst_checkpoint_pos:
 		character.global_position = Global.lst_checkpoint_pos
 	$camera.global_position.x = character.global_position.x if character.global_position.x > 500 else 500
-
-var level_needs_setup = true
+	if character.is_above:
+		cur_side = $above
+	else:
+		cur_side = $below
+	set_symmetric()
 
 func _physics_process(delta):
-	
 	#if len($menu/level_objects/level_1.get_children()) == 0 and level_needs_setup: ################################
 	#	$".".create_level()
 	#	level_needs_setup = false
@@ -42,12 +48,13 @@ func _physics_process(delta):
 		if object is RigidBody2D:
 			object.freeze = false
 	"""
-	if Input.is_action_just_pressed("scroll_up"):
-		for object in cur_side.get_children():
-			object.position.y -= 180 * delta * (1 if cur_side == $above else -1)
-	elif Input.is_action_just_pressed("scroll_down"):
-		for object in cur_side.get_children():
-			object.position.y += 180 * delta * (1 if cur_side == $above else -1)
+	if can_scroll:
+		if Input.is_action_just_pressed("scroll_up"):
+			for object in cur_side.get_children():
+				object.position.y -= 180 * delta * (1 if cur_side == $above else -1)
+		elif Input.is_action_just_pressed("scroll_down"):
+			for object in cur_side.get_children():
+				object.position.y += 180 * delta * (1 if cur_side == $above else -1)
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 

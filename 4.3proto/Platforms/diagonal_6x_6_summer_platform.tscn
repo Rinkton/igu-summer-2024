@@ -728,20 +728,17 @@ tile_set = SubResource("TileSet_700d7")
 layer_0/tile_data = PackedInt32Array(-131074, 589824, 0, -65537, 589824, 0, -65536, 589824, 0, 1, 589824, 0)
 
 [node name="above_tilemap" parent="." instance=ExtResource("2_8swwe")]
-z_index = 0
 position = Vector2(-70.5207, -54.7961)
 rotation = 0.785398
 tile_set = SubResource("TileSet_gkpcd")
 layer_0/tile_data = PackedInt32Array(-131072, 131072, 7, -131071, 131072, 7, -131070, 524288, 7, -131069, 65536, 7, -131068, 393216, 7, -131067, 196608, 7, -131066, 589824, 7)
 
 [node name="above_tilemap2" parent="." instance=ExtResource("2_8swwe")]
-z_index = 0
 position = Vector2(-79.5207, -47.7961)
 tile_set = SubResource("TileSet_gkpcd")
 layer_0/tile_data = PackedInt32Array(-131072, 0, 7)
 
 [node name="above_tilemap3" parent="." instance=ExtResource("2_8swwe")]
-z_index = 0
 position = Vector2(-97.5207, -59.7961)
 rotation = 0.392699
 tile_set = SubResource("TileSet_gkpcd")

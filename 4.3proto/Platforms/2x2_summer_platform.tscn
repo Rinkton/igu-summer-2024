@@ -720,7 +720,6 @@ tile_set = SubResource("TileSet_ud742")
 layer_0/tile_data = PackedInt32Array(-1, 0, 0, 65535, 0, 6, 0, 393216, 6, -65536, 393216, 0)
 
 [node name="above_tilemap" parent="." instance=ExtResource("1_aq73f")]
-z_index = 0
 position = Vector2(0, 5)
 tile_set = SubResource("TileSet_qneaq")
 layer_0/tile_data = PackedInt32Array(-131072, 589824, 7, -65537, 0, 7)
