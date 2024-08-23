@@ -9,7 +9,11 @@ var push_force = 20.0
 var ladder_spd = 250
 var is_above = true
 var is_on_ladder = false
+var axis_DEBUG
 
+
+func _ready():
+	axis_DEBUG = get_tree().current_scene.get_node("axis")
 
 func _physics_process(delta):
 	# after calling move_and_slide()
@@ -57,7 +61,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func check_is_above():
-	is_above = global_position.y < axis.global_position.y - 10
+	is_above = global_position.y < axis_DEBUG.global_position.y - 10
 
 func animate():
 	if velocity == Vector2(0,0):
