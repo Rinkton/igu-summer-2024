@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://biiv6nh0k0pum"]
+[gd_scene load_steps=5 format=3 uid="uid://biiv6nh0k0pum"]
+
+[ext_resource type="Script" path="res://axis.gd" id="1_3j4q2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cuv0"]
 size = Vector2(1000, 4)
@@ -13,8 +15,10 @@ width = 1000
 height = 4
 
 [node name="axis" type="StaticBody2D"]
+visible = false
 collision_layer = 2
 collision_mask = 0
+script = ExtResource("1_3j4q2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3cuv0")

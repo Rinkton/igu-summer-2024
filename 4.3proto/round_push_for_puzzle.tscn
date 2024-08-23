@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0y4jr5rnknc4"]
+
+[ext_resource type="Script" path="res://round_push_for_puzzle.gd" id="1_o37aj"]
+[ext_resource type="Texture2D" uid="uid://dpu2sxsajpwm4" path="res://attract_attention.png" id="1_xmex5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_626no"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3v5x"]
+radius = 17.0
+
+[node name="round_push_for_puzzle" type="RigidBody2D"]
+collision_mask = 3
+mass = 20.0
+sleeping = true
+script = ExtResource("1_o37aj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("1_xmex5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_626no")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_n3v5x")

@@ -65,11 +65,11 @@ scale = Vector2(2.64, 1)
 [node name="push" parent="above" instance=ExtResource("6_sv6sf")]
 position = Vector2(194, 146)
 
-[node name="CollisionShape2D" parent="above/push" index="0"]
-shape = SubResource("CircleShape2D_hukh0")
-
-[node name="Sprite2D" parent="above/push" index="1"]
+[node name="Sprite2D" parent="above/push" index="0"]
 visible = false
+
+[node name="CollisionShape2D" parent="above/push" index="1"]
+shape = SubResource("CircleShape2D_hukh0")
 
 [node name="CollisionShape2D" parent="above/push/Area2D" index="0"]
 shape = SubResource("CircleShape2D_pj85g")

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="4_wrgqd"]
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="5_s5b7r"]
 [ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="6_hu26i"]
-[ext_resource type="PackedScene" uid="uid://cswaure8ckm57" path="res://button.tscn" id="7_l0xjb"]
+[ext_resource type="PackedScene" uid="uid://cswaure8ckm57" path="res://pressure_button.tscn" id="7_l0xjb"]
 [ext_resource type="PackedScene" uid="uid://bj7uyjqpmm6ux" path="res://gate.tscn" id="8_40rpk"]
 
 [sub_resource type="Gradient" id="Gradient_ykl2j"]

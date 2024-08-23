@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://v2x33ict60vu"]
+
+[ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="1_xwfm8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04m0v"]
+size = Vector2(38, 86)
+
+[node name="ladder" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.9)
+texture = ExtResource("1_xwfm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_04m0v")

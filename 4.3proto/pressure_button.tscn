@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://cswaure8ckm57"]
 
-[ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="1_7pwlf"]
-[ext_resource type="Script" path="res://button.gd" id="1_bf7oy"]
+[ext_resource type="Script" path="res://button.gd" id="1_802hh"]
+[ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="2_hgjua"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s7hy"]
 size = Vector2(76, 6)
 
-[sub_resource type="Animation" id="Animation_or8uk"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_ts3s7"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -33,8 +33,8 @@ tracks/1/keys = {
 "values": [Vector2(0.395, 0.0625417)]
 }
 
-[sub_resource type="Animation" id="Animation_ts3s7"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_or8uk"]
+resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -96,14 +96,14 @@ _data = {
 "press": SubResource("Animation_8vo1k")
 }
 
-[node name="button" type="Area2D"]
-script = ExtResource("1_bf7oy")
+[node name="pressure_button" type="Area2D"]
+script = ExtResource("1_802hh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(3.41728e-06, 0.638643, 0.362743, 1)
 position = Vector2(0, -2.998)
 scale = Vector2(0.395, 0.0625417)
-texture = ExtResource("1_7pwlf")
+texture = ExtResource("2_hgjua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)

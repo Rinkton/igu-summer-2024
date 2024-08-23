@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bkh81hj3sha0h" path="res://Spritesheet_Character_Jump.png" id="3_p0pca"]
 [ext_resource type="Texture2D" uid="uid://bevrr1eqls3go" path="res://spritesheet_Idle.png" id="4_mao3s"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgmhx"]
-size = Vector2(23, 46.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4qrb8"]
+radius = 12.5
+height = 48.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02s5j"]
 atlas = ExtResource("3_p0pca")
@@ -353,7 +354,7 @@ script = ExtResource("1_6tw1u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 position = Vector2(-0.5, 1.75)
-shape = SubResource("RectangleShape2D_hgmhx")
+shape = SubResource("CapsuleShape2D_4qrb8")
 
 [node name="jump" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -396,3 +397,14 @@ one_shot = true
 [node name="jump_buffer_timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(-0.5, 1.75)
+shape = SubResource("CapsuleShape2D_4qrb8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

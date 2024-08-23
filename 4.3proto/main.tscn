@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="5_32rjb"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="8_0s4gn"]
 [ext_resource type="Texture2D" uid="uid://dv5coctnd4cku" path="res://parallaxtree.png" id="10_slfmi"]
-[ext_resource type="Texture2D" uid="uid://bab0ag367avsp" path="res://Summer Background - Sky.png" id="13_t07ra"]
+[ext_resource type="Texture2D" uid="uid://bni1s0npw1yhs" path="res://Summer Background - Sky.png" id="13_t07ra"]
 [ext_resource type="Texture2D" uid="uid://dne8n34rhynj5" path="res://Summer Background - Distant mountains smallres.png" id="14_jwy0a"]
-[ext_resource type="Texture2D" uid="uid://dfgblx8wxp22q" path="res://Summer Background - Distant mountains.png" id="14_qbpnc"]
+[ext_resource type="Texture2D" uid="uid://dhkgnqeh6x7kk" path="res://Summer Background - Distant mountains.png" id="14_qbpnc"]
 [ext_resource type="Texture2D" uid="uid://df7eyh1drbuvd" path="res://Summer Background - Close mountains(1).png" id="15_laxsy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_748be"]
