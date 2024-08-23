@@ -36,7 +36,6 @@ size = Vector2(23, 541)
 
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_qhodj")
-can_scroll = false
 
 [node name="axis" parent="." instance=ExtResource("2_7o2p0")]
 visible = true

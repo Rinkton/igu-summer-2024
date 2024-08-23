@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
+
+@export var axis = Node
+
 var gravity = 30
 var direction := Vector2(0,0)
 var push_force = 20.0
 var ladder_spd = 250
-var axis
 var is_above = true
 var is_on_ladder = false
 
-func _ready():
-	axis = get_tree().current_scene.get_node("axis")
 
 func _physics_process(delta):
 	# after calling move_and_slide()
