@@ -3,11 +3,9 @@ extends CharacterBody2D
 var gravity = 30
 var direction := Vector2(0,0)
 var push_force = 20.0
-var axis
+@export var axis = Node
 var is_above = true
 
-func _ready():
-	axis = get_tree().current_scene.get_node("axis")
 
 func _process(_delta):
 	# after calling move_and_slide()

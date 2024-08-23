@@ -7,7 +7,8 @@ var target
 
 
 func _ready():
-	target = get_tree().current_scene.get_node("character")
+	#target = get_tree().current_scene.get_node("character")
+	target = $"../character"
 
 func _physics_process(_delta):
 	if is_instance_valid(target):
