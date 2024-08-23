@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ddvpgfde0ncl1"]
+[gd_scene load_steps=25 format=3 uid="uid://ddvpgfde0ncl1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qhodj"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_7o2p0"]
@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://cswaure8ckm57" path="res://pressure_button.tscn" id="14_j1hub"]
 [ext_resource type="PackedScene" uid="uid://bj7uyjqpmm6ux" path="res://gate.tscn" id="15_awywt"]
 [ext_resource type="Script" path="res://levels/scroll_trigger.gd" id="16_nklig"]
+[ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="17_3wliu"]
 [ext_resource type="PackedScene" uid="uid://v2x33ict60vu" path="res://ladder.tscn" id="17_jxa5f"]
+[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="18_eo5de"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="19_n8qxa"]
 
 [sub_resource type="Gradient" id="Gradient_glrde"]
@@ -43,7 +45,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_iupp7")]
-position = Vector2(33, 143)
+position = Vector2(4826, 88)
 
 [node name="PointLight2D" type="PointLight2D" parent="character"]
 position = Vector2(0, -23)
@@ -139,6 +141,30 @@ position = Vector2(3980, 186)
 [node name="6x2 Summer Platform30" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(4396, 181)
 
+[node name="6x2 Summer Platform31" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4596, 94)
+
+[node name="6x2 Summer Platform32" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4837, 41)
+
+[node name="6x2 Summer Platform33" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4964, 41)
+
+[node name="6x2 Summer Platform34" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5087, 41)
+
+[node name="6x2 Summer Platform35" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(4964, 231)
+
+[node name="above_tilemap" parent="above/6x2 Summer Platform35" index="1"]
+layer_0/tile_data = PackedInt32Array(-65539, 0, 7, -65538, 196608, 7, -65537, 589824, 7)
+
+[node name="6x2 Summer Platform36" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(5087, 231)
+
+[node name="above_tilemap" parent="above/6x2 Summer Platform36" index="1"]
+layer_0/tile_data = PackedInt32Array(-65537, 0, 7, -131072, 196608, 7, -131071, 327680, 7, -131070, 589824, 7)
+
 [node name="diagonal_6x6_summer_platform" parent="above" instance=ExtResource("7_c27de")]
 position = Vector2(1845, 207)
 scale = Vector2(1, 0.82)
@@ -172,6 +198,7 @@ rotation = 3.14159
 
 [node name="spawner" parent="above" instance=ExtResource("11_b8bok")]
 position = Vector2(1818, 21)
+cooldown = 0.1
 what = ExtResource("12_kwlqp")
 
 [node name="pressure_button" parent="above" instance=ExtResource("14_j1hub")]
@@ -188,6 +215,9 @@ position = Vector2(2707, 207)
 [node name="checkpoint2" parent="above" instance=ExtResource("7_3ea7n")]
 position = Vector2(3124, 188)
 
+[node name="checkpoint3" parent="above" instance=ExtResource("7_3ea7n")]
+position = Vector2(4595, 221)
+
 [node name="scroll_trigger" type="Area2D" parent="above"]
 position = Vector2(3395, 85)
 script = ExtResource("16_nklig")
@@ -196,6 +226,27 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="above/scroll_trigger"]
 position = Vector2(1.5, 119.5)
 shape = SubResource("RectangleShape2D_hvhs6")
+
+[node name="obst1" parent="above" instance=ExtResource("17_3wliu")]
+position = Vector2(4855, 130)
+scale = Vector2(1.08002, 0.6)
+
+[node name="push" parent="above" instance=ExtResource("18_eo5de")]
+position = Vector2(4859, 99)
+
+[node name="pressure_button2" parent="above" instance=ExtResource("14_j1hub")]
+position = Vector2(5008, 210)
+node_path = NodePath("../gate2")
+
+[node name="2x2_summer_platform4" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(5137, 191)
+
+[node name="2x2_summer_platform5" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(5138, 160)
+
+[node name="gate2" parent="above" instance=ExtResource("15_awywt")]
+position = Vector2(5140, 135)
+scale = Vector2(0.55, 0.55)
 
 [node name="below" type="Node2D" parent="."]
 
@@ -213,3 +264,6 @@ metadata/_edit_lock_ = true
 position = Vector2(32, 628)
 scale = Vector2(50, 1)
 metadata/_edit_lock_ = true
+
+[editable path="above/6x2 Summer Platform35"]
+[editable path="above/6x2 Summer Platform36"]
