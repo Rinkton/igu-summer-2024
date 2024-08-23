@@ -45,7 +45,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_iupp7")]
-position = Vector2(2321, 156)
+position = Vector2(25, 144)
 
 [node name="PointLight2D" type="PointLight2D" parent="character"]
 position = Vector2(0, -23)
@@ -336,6 +336,7 @@ position = Vector2(2085, -6)
 metadata/_edit_lock_ = true
 
 [node name="Label" parent="above/tip2/Content" index="0"]
+scale = Vector2(0.35, 0.35)
 text = "Scroll the mouse or up or
 down arrows"
 metadata/_edit_use_anchors_ = true
@@ -347,6 +348,35 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" parent="above/tip2/Area2D" index="0"]
 position = Vector2(85, 256)
 shape = SubResource("RectangleShape2D_1kq7x")
+metadata/_edit_lock_ = true
+
+[node name="tip3" parent="above" instance=ExtResource("19_o6swc")]
+position = Vector2(783, 0)
+
+[node name="Content" parent="above/tip3" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Label" parent="above/tip3/Content" index="0"]
+offset_left = 476.0
+offset_top = 18.0
+offset_right = 2357.0
+offset_bottom = 731.0
+scale = Vector2(0.2, 0.2)
+text = "You may reset the level
+from the last checkpoint
+by pressing R"
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Area2D" parent="above/tip3" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="above/tip3/Area2D" index="0"]
+position = Vector2(85, 256)
+shape = SubResource("RectangleShape2D_1kq7x")
+metadata/_edit_lock_ = true
+
+[node name="Panel" parent="above/tip3" index="3"]
 metadata/_edit_lock_ = true
 
 [node name="6x2 Summer Platform102" parent="above" instance=ExtResource("6_xvj4o")]
@@ -550,3 +580,4 @@ metadata/_edit_lock_ = true
 [editable path="above/6x2 Summer Platform36"]
 [editable path="above/tip"]
 [editable path="above/tip2"]
+[editable path="above/tip3"]
