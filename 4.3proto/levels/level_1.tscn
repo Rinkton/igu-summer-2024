@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddvpgfde0ncl1"]
+[gd_scene load_steps=15 format=3 uid="uid://ddvpgfde0ncl1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qhodj"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_7o2p0"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_b4ll1"]
 [ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_p8igi"]
 [ext_resource type="PackedScene" uid="uid://dg8inp7ihsp1w" path="res://Platforms/2x2_summer_platform.tscn" id="9_55gb4"]
+[ext_resource type="PackedScene" uid="uid://c8ean2gmirm0x" path="res://Platforms/2x30_autumn_platform.tscn" id="10_7ws8e"]
 [ext_resource type="Script" path="res://levels/scroll_trigger.gd" id="16_nklig"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="19_n8qxa"]
 [ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="19_o6swc"]
@@ -18,7 +19,6 @@ size = Vector2(27, 518)
 
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_qhodj")
-can_scroll = false
 
 [node name="axis" parent="." instance=ExtResource("2_7o2p0")]
 position = Vector2(500, 250)
@@ -420,6 +420,9 @@ position = Vector2(5897, 20)
 
 [node name="6x2 Summer Platform99" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(6039, 21)
+
+[node name="2x2 Autumn Platform" parent="above" instance=ExtResource("10_7ws8e")]
+position = Vector2(-34, -118)
 
 [node name="checkpoint6" parent="above" instance=ExtResource("7_3ea7n")]
 position = Vector2(5363, 92)

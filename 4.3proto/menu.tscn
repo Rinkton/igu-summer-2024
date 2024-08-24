@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://023esoaqemb2"]
 
 [ext_resource type="Script" path="res://level_choose.gd" id="2_bmq5f"]
-[ext_resource type="Texture2D" uid="uid://j837in4qs554" path="res://menu.png" id="2_tqwih"]
+[ext_resource type="Texture2D" uid="uid://bhqipp7kx77yt" path="res://menu.png" id="2_tqwih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oecy"]
 size = Vector2(148, 71)
@@ -69,7 +69,6 @@ texture = SubResource("GradientTexture2D_r8idw")
 
 [node name="level3" type="Area2D" parent="."]
 script = ExtResource("2_bmq5f")
-level_path = "res://levels/level_3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level3"]
 position = Vector2(788, 107)
@@ -86,7 +85,6 @@ texture = SubResource("GradientTexture2D_r8idw")
 
 [node name="level4" type="Area2D" parent="."]
 script = ExtResource("2_bmq5f")
-level_path = "res://levels/level_4.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level4"]
 position = Vector2(767, 344.5)

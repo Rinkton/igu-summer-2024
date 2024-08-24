@@ -513,6 +513,9 @@ position = Vector2(8500, 54)
 [node name="2x2 Autumn Platform29" parent="above" instance=ExtResource("16_mhdd8")]
 position = Vector2(8596, 119)
 
+[node name="2x2 Autumn Platform30" parent="above" instance=ExtResource("19_w4yu4")]
+position = Vector2(-34, -118)
+
 [node name="below" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dp4oivh0h0ek3" path="res://Tilemap V1.png" id="3_ohxu0"]
 [ext_resource type="PackedScene" uid="uid://d3gwxey50bk4i" path="res://above_tilemap.tscn" id="4_blo5o"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q85jj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewqbl"]
 texture = ExtResource("3_ohxu0")
 texture_region_size = Vector2i(256, 256)
 2:0/0 = 0
@@ -514,9 +514,9 @@ tile_size = Vector2i(256, 256)
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "winter"
 terrain_set_0/terrain_0/color = Color(0.941995, 0.748375, 0.811503, 1)
-sources/0 = SubResource("TileSetAtlasSource_q85jj")
+sources/0 = SubResource("TileSetAtlasSource_ewqbl")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xxrd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxai8"]
 texture = ExtResource("3_ohxu0")
 texture_region_size = Vector2i(256, 256)
 3:0/0 = 0
@@ -707,12 +707,12 @@ terrain_set_0/terrain_0/name = "snow"
 terrain_set_0/terrain_0/color = Color(0.956941, 0.900328, 0.868285, 1)
 terrain_set_0/terrain_1/name = "grass 1"
 terrain_set_0/terrain_1/color = Color(0.254713, 0.506035, 0.314156, 1)
-sources/0 = SubResource("TileSetAtlasSource_4xxrd")
+sources/0 = SubResource("TileSetAtlasSource_xxai8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7otuv"]
 size = Vector2(48, 753)
 
-[node name="2x2 Autumn Platform" type="StaticBody2D"]
+[node name="2x30 Autumn Platform" type="StaticBody2D"]
 script = ExtResource("1_enlqq")
 
 [node name="tilemap" parent="." instance=ExtResource("2_06jqw")]

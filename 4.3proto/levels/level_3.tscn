@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bv8g44vkluwgv"]
+[gd_scene load_steps=13 format=3 uid="uid://bv8g44vkluwgv"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rsmav"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_y6af0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="6_fwtan"]
 [ext_resource type="PackedScene" uid="uid://dto02t2vsmfq0" path="res://checkpoint.tscn" id="7_60dj8"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_s7vtf"]
+[ext_resource type="PackedScene" uid="uid://c8ean2gmirm0x" path="res://Platforms/2x30_autumn_platform.tscn" id="8_fl5ti"]
 [ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_wtvmu"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="9_1nro7"]
 
@@ -88,6 +89,9 @@ metadata/_edit_lock_ = true
 
 [node name="checkpoint" parent="above" instance=ExtResource("7_60dj8")]
 position = Vector2(1900, 117)
+
+[node name="2x2 Autumn Platform" parent="above" instance=ExtResource("8_fl5ti")]
+position = Vector2(-34, -118)
 
 [node name="below" type="Node2D" parent="."]
 
