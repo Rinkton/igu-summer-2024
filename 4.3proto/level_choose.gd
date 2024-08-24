@@ -9,7 +9,6 @@ func _ready():
 	connect("mouse_exited", _on_mouse_exited)
 	connect("input_event", _on_input_event)
 
-
 func _on_mouse_entered():
 	$PointLight2D.visible = true
 

@@ -13,13 +13,18 @@ var scroll_acc
 var scroll_dec
 var scroll_vel = 0
 
+var in_menu = true
 #replace _ready with create_level(), so can be called for each level creation
 
 func _ready(): ################################
 	create_level()
-
+	
+	$CanvasLayer.process_mode = Node.PROCESS_MODE_DISABLED
+	$CanvasLayer.visible = false
+	
 func create_level():
 	
+	print('run')
 	for object in $above.get_children():
 		
 		if not(object is RigidBody2D): # Idk, but the push is feeling bad when I lay material on its sprite
@@ -41,6 +46,11 @@ func create_level():
 	set_symmetric()
 
 func _physics_process(delta):
+	
+	if Input.is_action_just_pressed("esc_to_menu"):
+		$CanvasLayer.process_mode = Node.PROCESS_MODE_ALWAYS
+		$CanvasLayer.visible = true
+		
 	#if len($menu/level_objects/level_1.get_children()) == 0 and level_needs_setup: ################################
 	#	$".".create_level()
 	#	level_needs_setup = false
@@ -51,23 +61,6 @@ func _physics_process(delta):
 		if object is RigidBody2D:
 			object.freeze = false
 	"""
-	if can_scroll:
-		if Input.is_action_pressed("scroll_down") or Input.is_action_pressed("scroll_up"): # arrows
-			scroll_max_spd = 115
-			scroll_acc = 4000
-			scroll_dec = 6000
-		else:
-			scroll_max_spd = 180
-			scroll_acc = 4000
-			scroll_dec = 2000
-		if Input.is_action_just_pressed("scroll_up") or Input.is_action_pressed("scroll_down"):
-			scroll_vel = move_toward(scroll_vel, scroll_max_spd, scroll_acc*delta)
-		elif Input.is_action_just_pressed("scroll_down") or Input.is_action_pressed("scroll_up"):
-			scroll_vel = move_toward(scroll_vel, -scroll_max_spd, scroll_acc*delta)
-		else:
-			scroll_vel = move_toward(scroll_vel, 0, scroll_dec * delta)
-		for object in cur_side.get_children():
-			object.position.y += scroll_vel * delta * (1 if cur_side == $above else -1)
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 
@@ -78,6 +71,30 @@ func _physics_process(delta):
 	else:
 		cur_side = $below
 	set_symmetric()
+	
+	if can_scroll:
+		if Input.is_action_pressed("scroll_down") or Input.is_action_pressed("scroll_up"): # arrows
+			scroll_max_spd = 135
+			scroll_acc = 6000
+			scroll_dec = 2000
+		else:
+			scroll_max_spd = 180
+			scroll_acc = 4000
+			scroll_dec = 2000
+		if Input.is_action_just_pressed("scroll_up") or Input.is_action_pressed("scroll_down"):
+			scroll_vel = move_toward(scroll_vel, scroll_max_spd, scroll_acc*delta)
+			
+		elif Input.is_action_just_pressed("scroll_down") or Input.is_action_pressed("scroll_up"):
+			scroll_vel = move_toward(scroll_vel, -scroll_max_spd, scroll_acc*delta)
+		else:
+			scroll_vel = move_toward(scroll_vel, 0, scroll_dec * delta)
+		
+		if scroll_vel < 0 and character.global_position.y < 0:
+			return
+		else:
+			for object in cur_side.get_children():
+				object.position.y += scroll_vel * delta * (1 if cur_side == $above else -1)
+	
 
 func set_symmetric():
 	##################################################################33
@@ -116,3 +133,14 @@ func create_symmetric_object(object):
 	new_object_symmetric_link.obj = object
 	new_object.add_child(new_object_symmetric_link)
 	return new_object
+
+
+func _on_yes_input_event(_viewport, event, shape_idx):
+	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
+		Global.lst_checkpoint_pos = null
+		get_tree().change_scene_to_file('menu.tscn')
+
+func _on_no_input_event(_viewport, event, shape_idx):
+	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
+		$CanvasLayer.process_mode = Node.PROCESS_MODE_DISABLED
+		$CanvasLayer.visible = false
