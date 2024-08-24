@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dx4yawa5swken" path="res://Platforms/6x2_summer_platform.tscn" id="6_xvj4o"]
 [ext_resource type="PackedScene" uid="uid://dto02t2vsmfq0" path="res://checkpoint.tscn" id="7_3ea7n"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_b4ll1"]
-[ext_resource type="PackedScene" uid="uid://ywp74r4cfkyr" path="res://Platforms/diagonal_6x_6_summer_platform.tscn" id="7_c27de"]
+[ext_resource type="PackedScene" uid="uid://ywp74r4cfkyr" path="res://Platforms/6x6_diagonal_autumn_platform.tscn" id="7_c27de"]
 [ext_resource type="PackedScene" uid="uid://caofxgcnqlkrd" path="res://click_button.tscn" id="8_f3q5g"]
 [ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_p8igi"]
 [ext_resource type="PackedScene" uid="uid://dg8inp7ihsp1w" path="res://Platforms/2x2_summer_platform.tscn" id="9_55gb4"]

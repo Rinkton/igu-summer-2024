@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://ywp74r4cfkyr"]
+[gd_scene load_steps=10 format=3 uid="uid://yg6ksall2ew1"]
 
-[ext_resource type="Script" path="res://Platforms/platform.gd" id="1_josmr"]
-[ext_resource type="PackedScene" uid="uid://d3gwxey50bk4i" path="res://above_tilemap.tscn" id="2_8swwe"]
-[ext_resource type="Texture2D" uid="uid://dp4oivh0h0ek3" path="res://Tilemap V1.png" id="3_50vjs"]
-[ext_resource type="PackedScene" uid="uid://ubpnfnq1aiji" path="res://tilemap.tscn" id="4_1yfb2"]
+[ext_resource type="Script" path="res://Platforms/platform.gd" id="1_siujh"]
+[ext_resource type="PackedScene" uid="uid://ubpnfnq1aiji" path="res://tilemap.tscn" id="2_bto4g"]
+[ext_resource type="Texture2D" uid="uid://dp4oivh0h0ek3" path="res://Tilemap V1.png" id="3_i1i5k"]
+[ext_resource type="PackedScene" uid="uid://d3gwxey50bk4i" path="res://above_tilemap.tscn" id="4_klhte"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yeg6k"]
-texture = ExtResource("3_50vjs")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q85jj"]
+texture = ExtResource("3_i1i5k")
 texture_region_size = Vector2i(256, 256)
 2:0/0 = 0
 2:0/0/terrain_set = 0
@@ -509,15 +509,15 @@ texture_region_size = Vector2i(256, 256)
 1:0/0/terrains_peering_bit/bottom_left_corner = 0
 1:0/0/terrains_peering_bit/left_side = 0
 
-[sub_resource type="TileSet" id="TileSet_700d7"]
+[sub_resource type="TileSet" id="TileSet_ud742"]
 tile_size = Vector2i(256, 256)
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "winter"
 terrain_set_0/terrain_0/color = Color(0.941995, 0.748375, 0.811503, 1)
-sources/0 = SubResource("TileSetAtlasSource_yeg6k")
+sources/0 = SubResource("TileSetAtlasSource_q85jj")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ouc6b"]
-texture = ExtResource("3_50vjs")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xxrd"]
+texture = ExtResource("3_i1i5k")
 texture_region_size = Vector2i(256, 256)
 3:0/0 = 0
 4:0/0 = 0
@@ -700,50 +700,31 @@ texture_region_size = Vector2i(256, 256)
 8:10/0 = 0
 9:10/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_gkpcd"]
+[sub_resource type="TileSet" id="TileSet_qneaq"]
 tile_size = Vector2i(256, 256)
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "snow"
 terrain_set_0/terrain_0/color = Color(0.956941, 0.900328, 0.868285, 1)
 terrain_set_0/terrain_1/name = "grass 1"
 terrain_set_0/terrain_1/color = Color(0.254713, 0.506035, 0.314156, 1)
-sources/0 = SubResource("TileSetAtlasSource_ouc6b")
+sources/0 = SubResource("TileSetAtlasSource_4xxrd")
 
-[node name="diagonal_6x6_summer_platform" type="StaticBody2D"]
-script = ExtResource("1_josmr")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47xt5"]
+size = Vector2(47, 39)
 
-[node name="tilemap" parent="." instance=ExtResource("4_1yfb2")]
-position = Vector2(-0.520701, 0.203876)
-tile_set = SubResource("TileSet_700d7")
-layer_0/tile_data = PackedInt32Array(131069, 0, 2, 131070, 65536, 3, 131071, 327680, 3, 65536, 131072, 4, 65537, 131072, 4, 196605, 0, 6, 196606, 327680, 6, 196607, 262144, 6, 131072, 196608, 6, 131073, 327680, 6, 0, 131072, 4, 65535, 65536, 1, 65534, 262144, 1, 65533, 0, 4, -2, 196608, 2, -3, 0, 3, -65539, 262144, 2, -131075, 65536, 0, -65538, 327680, 3, -1, 327680, 2, 131074, 393216, 6)
+[node name="2x2 Autumn Platform" type="StaticBody2D"]
+script = ExtResource("1_siujh")
 
-[node name="diagonal" parent="." instance=ExtResource("4_1yfb2")]
-position = Vector2(-0.520701, 1.20388)
-tile_set = SubResource("TileSet_700d7")
-layer_0/tile_data = PackedInt32Array(-131074, 589824, 0, -65537, 589824, 0, -65536, 589824, 0, 1, 589824, 0, 65538, 589824, 0)
+[node name="tilemap" parent="." instance=ExtResource("2_bto4g")]
+tile_set = SubResource("TileSet_ud742")
+layer_0/tile_data = PackedInt32Array(-1, 0, 0, 65535, 0, 6, 0, 393216, 6, -65536, 393216, 0)
 
-[node name="diagonal2" parent="." instance=ExtResource("4_1yfb2")]
-position = Vector2(13.4793, 15.2039)
-tile_set = SubResource("TileSet_700d7")
-layer_0/tile_data = PackedInt32Array(-131074, 589824, 0, -65537, 589824, 0, -65536, 589824, 0, 1, 589824, 0)
+[node name="above_tilemap" parent="." instance=ExtResource("4_klhte")]
+position = Vector2(0, 5)
+tile_set = SubResource("TileSet_qneaq")
+layer_0/tile_data = PackedInt32Array(-65537, 0, 9)
 
-[node name="above_tilemap" parent="." instance=ExtResource("2_8swwe")]
-position = Vector2(-70.5207, -54.7961)
-rotation = 0.785398
-tile_set = SubResource("TileSet_gkpcd")
-layer_0/tile_data = PackedInt32Array(-131072, 131072, 7, -131071, 131072, 7, -131070, 524288, 7, -131069, 65536, 7, -131068, 393216, 7, -131067, 196608, 7, -131066, 589824, 7)
-
-[node name="above_tilemap2" parent="." instance=ExtResource("2_8swwe")]
-position = Vector2(-79.5207, -47.7961)
-tile_set = SubResource("TileSet_gkpcd")
-layer_0/tile_data = PackedInt32Array(-131072, 0, 7)
-
-[node name="above_tilemap3" parent="." instance=ExtResource("2_8swwe")]
-position = Vector2(-97.5207, -59.7961)
-rotation = 0.392699
-tile_set = SubResource("TileSet_gkpcd")
-layer_0/tile_data = PackedInt32Array(-131071, 589824, 7)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-polygon = PackedVector2Array(-75, -74, -61, -73, -46, -67, 74, 52, 74, 72, -74.4793, 71.7961)
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_47xt5")
