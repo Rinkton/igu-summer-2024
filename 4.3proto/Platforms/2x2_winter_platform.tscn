@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://buuc3gjakjtvv"]
+
+[ext_resource type="Script" path="res://Platforms/platform.gd" id="1_h50pr"]
+[ext_resource type="PackedScene" uid="uid://ubpnfnq1aiji" path="res://tilemap.tscn" id="2_3oexl"]
+[ext_resource type="PackedScene" uid="uid://d3gwxey50bk4i" path="res://above_tilemap.tscn" id="3_3dq2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgddb"]
+size = Vector2(47, 43)
+
+[node name="2x2 Winter Platform" type="StaticBody2D"]
+script = ExtResource("1_h50pr")
+
+[node name="tilemap" parent="." instance=ExtResource("2_3oexl")]
+layer_0/tile_data = PackedInt32Array(-1, 0, 0, 65535, 0, 6, 0, 393216, 6, -65536, 393216, 0)
+
+[node name="above_tilemap" parent="." instance=ExtResource("3_3dq2h")]
+position = Vector2(30, 23)
+scale = Vector2(0.11, 0.11)
+layer_0/tile_data = PackedInt32Array(-65537, 0, 131081, -65538, 0, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_wgddb")
