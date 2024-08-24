@@ -61,6 +61,17 @@ func _physics_process(delta):
 		if object is RigidBody2D:
 			object.freeze = false
 	"""
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
+
+	character.check_is_above()
+
+	if character.is_above:
+		cur_side = $above
+	else:
+		cur_side = $below
+	set_symmetric()
+	
 	if can_scroll:
 		if Input.is_action_pressed("scroll_down") or Input.is_action_pressed("scroll_up"): # arrows
 			scroll_max_spd = 135
@@ -72,22 +83,18 @@ func _physics_process(delta):
 			scroll_dec = 2000
 		if Input.is_action_just_pressed("scroll_up") or Input.is_action_pressed("scroll_down"):
 			scroll_vel = move_toward(scroll_vel, scroll_max_spd, scroll_acc*delta)
+			
 		elif Input.is_action_just_pressed("scroll_down") or Input.is_action_pressed("scroll_up"):
 			scroll_vel = move_toward(scroll_vel, -scroll_max_spd, scroll_acc*delta)
 		else:
 			scroll_vel = move_toward(scroll_vel, 0, scroll_dec * delta)
-		for object in cur_side.get_children():
-			object.position.y += scroll_vel * delta * (1 if cur_side == $above else -1)
-	if Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene()
-
-	character.check_is_above()
-
-	if character.is_above:
-		cur_side = $above
-	else:
-		cur_side = $below
-	set_symmetric()
+		
+		if scroll_vel < 0 and character.global_position.y < 0:
+			return
+		else:
+			for object in cur_side.get_children():
+				object.position.y += scroll_vel * delta * (1 if cur_side == $above else -1)
+	
 
 func set_symmetric():
 	##################################################################33
