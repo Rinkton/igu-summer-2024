@@ -39,7 +39,6 @@ script = ExtResource("1_qhodj")
 can_scroll = false
 
 [node name="axis" parent="." instance=ExtResource("2_7o2p0")]
-visible = true
 position = Vector2(500, 250)
 scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
@@ -174,47 +173,38 @@ position = Vector2(5094, 221)
 [node name="6x2 Summer Platform66" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(4389, 20.9998)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform80" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(4477, 108)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform81" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(4572, 202)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform67" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(4298, -68)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform68" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(4209, -156)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform69" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(4115, -249)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform70" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(4028, -335)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform77" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(3955, -408)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform90" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(3864, -502)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="6x2 Summer Platform32" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(10461, 19)
