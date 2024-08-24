@@ -1,0 +1,109 @@
+[gd_scene load_steps=12 format=3 uid="uid://bv8g44vkluwgv"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rsmav"]
+[ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_y6af0"]
+[ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_v2aw0"]
+[ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_46wyi"]
+[ext_resource type="PackedScene" uid="uid://b0elgcokgrmet" path="res://Platforms/6x2_winter_platform.tscn" id="5_4w0rf"]
+[ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="6_fwtan"]
+[ext_resource type="PackedScene" uid="uid://dto02t2vsmfq0" path="res://checkpoint.tscn" id="7_60dj8"]
+[ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_s7vtf"]
+[ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_wtvmu"]
+[ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="9_1nro7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sersg"]
+size = Vector2(31, 507)
+
+[node name="level_3" type="Node2D"]
+script = ExtResource("1_rsmav")
+
+[node name="axis" parent="." instance=ExtResource("2_y6af0")]
+position = Vector2(500, 250)
+scale = Vector2(25, 1)
+metadata/_edit_lock_ = true
+
+[node name="character" parent="." instance=ExtResource("3_v2aw0")]
+position = Vector2(1159, 167)
+
+[node name="PointLight2D" parent="character" instance=ExtResource("4_46wyi")]
+
+[node name="above" type="Node2D" parent="."]
+z_index = 1
+
+[node name="6x2 Winter Platform" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(62, 232)
+
+[node name="6x2 Winter Platform2" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(178, 232)
+
+[node name="6x2 Winter Platform3" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(311, 232)
+
+[node name="6x2 Winter Platform4" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(961, 237)
+
+[node name="6x2 Winter Platform7" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(635, 389)
+
+[node name="6x2 Winter Platform5" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(1077, 237)
+
+[node name="6x2 Winter Platform8" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(1515, 79)
+
+[node name="6x2 Winter Platform9" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(1700, 169)
+
+[node name="6x2 Winter Platform10" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(1842, 170)
+
+[node name="6x2 Winter Platform11" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(1903, 171)
+
+[node name="6x2 Winter Platform12" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(1992, 171)
+
+[node name="6x2 Winter Platform13" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(2065, 171)
+
+[node name="6x2 Winter Platform6" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(1210, 237)
+
+[node name="tip" parent="above" instance=ExtResource("6_fwtan")]
+
+[node name="Label" parent="above/tip/Content" index="0"]
+offset_left = 491.0
+offset_top = 39.0
+offset_right = 2197.0
+offset_bottom = 215.0
+scale = Vector2(0.3, 0.3)
+text = "Hidden..."
+
+[node name="CollisionShape2D" parent="above/tip/Area2D" index="0"]
+position = Vector2(277, 251.5)
+shape = SubResource("RectangleShape2D_sersg")
+
+[node name="Panel" parent="above/tip" index="3"]
+metadata/_edit_lock_ = true
+
+[node name="checkpoint" parent="above" instance=ExtResource("7_60dj8")]
+position = Vector2(1900, 117)
+
+[node name="below" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(577, 54)
+metadata/_edit_lock_ = true
+
+[node name="camera" parent="." instance=ExtResource("7_s7vtf")]
+metadata/_edit_lock_ = true
+
+[node name="parallax" parent="." instance=ExtResource("8_wtvmu")]
+metadata/_edit_lock_ = true
+
+[node name="death_zone" parent="." instance=ExtResource("9_1nro7")]
+position = Vector2(32, 628)
+scale = Vector2(50, 1)
+metadata/_edit_lock_ = true
+
+[editable path="above/tip"]

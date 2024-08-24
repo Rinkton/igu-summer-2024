@@ -34,7 +34,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_rinh3")]
-position = Vector2(40, 153)
+position = Vector2(94, 128)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_l3eor")]
 
@@ -359,14 +359,38 @@ position = Vector2(8735, 191)
 [node name="6x2 Autumn Platform33" parent="above" instance=ExtResource("8_8a67j")]
 position = Vector2(8010, 20)
 
+[node name="6x2 Autumn Platform57" parent="above" instance=ExtResource("8_8a67j")]
+position = Vector2(8010, -11)
+
+[node name="6x2 Autumn Platform58" parent="above" instance=ExtResource("8_8a67j")]
+position = Vector2(8010, -42)
+
+[node name="6x2 Autumn Platform59" parent="above" instance=ExtResource("8_8a67j")]
+position = Vector2(8010, -71)
+
 [node name="6x2 Autumn Platform34" parent="above" instance=ExtResource("8_8a67j")]
 position = Vector2(8149, 20)
+
+[node name="6x2 Autumn Platform60" parent="above" instance=ExtResource("8_8a67j")]
+position = Vector2(8149, 20)
+
+[node name="6x2 Autumn Platform61" parent="above" instance=ExtResource("8_8a67j")]
+position = Vector2(8149, -13)
+
+[node name="6x2 Autumn Platform62" parent="above" instance=ExtResource("8_8a67j")]
+position = Vector2(8149, -39)
+
+[node name="6x2 Autumn Platform63" parent="above" instance=ExtResource("8_8a67j")]
+position = Vector2(8148, -70)
 
 [node name="6x2 Autumn Platform26" parent="above" instance=ExtResource("8_8a67j")]
 position = Vector2(6929, 130)
 
 [node name="6x2 Autumn Platform27" parent="above" instance=ExtResource("8_8a67j")]
 position = Vector2(6929, 109)
+
+[node name="6x2 Autumn Platform56" parent="above" instance=ExtResource("8_8a67j")]
+position = Vector2(6658, -267)
 
 [node name="push12" parent="above" instance=ExtResource("11_6fvm4")]
 position = Vector2(6660, 24)
