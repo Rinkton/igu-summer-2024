@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dp4oivh0h0ek3" path="res://Tilemap V1.png" id="1_tq7if"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0b7qf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deo2f"]
 texture = ExtResource("1_tq7if")
 margins = Vector2i(0, 25)
 texture_region_size = Vector2i(256, 256)
@@ -197,7 +197,7 @@ terrain_set_0/terrain_0/name = "snow"
 terrain_set_0/terrain_0/color = Color(0.956941, 0.900328, 0.868285, 1)
 terrain_set_0/terrain_1/name = "grass 1"
 terrain_set_0/terrain_1/color = Color(0.254713, 0.506035, 0.314156, 1)
-sources/0 = SubResource("TileSetAtlasSource_0b7qf")
+sources/0 = SubResource("TileSetAtlasSource_deo2f")
 
 [node name="above_tilemap" type="TileMap"]
 scale = Vector2(0.1, 0.1)

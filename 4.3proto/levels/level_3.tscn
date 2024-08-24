@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bv8g44vkluwgv"]
+[gd_scene load_steps=17 format=3 uid="uid://dk6dtc33xwbdk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rsmav"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_y6af0"]
@@ -8,12 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="6_fwtan"]
 [ext_resource type="PackedScene" uid="uid://dto02t2vsmfq0" path="res://checkpoint.tscn" id="7_60dj8"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_s7vtf"]
-[ext_resource type="PackedScene" uid="uid://c8ean2gmirm0x" path="res://Platforms/2x30_autumn_platform.tscn" id="8_fl5ti"]
+[ext_resource type="FontFile" uid="uid://d1ib73wksvagv" path="res://Alef-Regular.ttf" id="8_pntx4"]
 [ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_wtvmu"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="9_1nro7"]
+[ext_resource type="Texture2D" uid="uid://dneraibmw1xcw" path="res://menuconfirm.png" id="9_t70k3"]
+[ext_resource type="Texture2D" uid="uid://dqpb4najivq3e" path="res://1000x250white.png" id="10_qrloi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sersg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8m6x"]
 size = Vector2(31, 507)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr0iq"]
+size = Vector2(95, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7csv5"]
+size = Vector2(99, 101)
 
 [node name="level_3" type="Node2D"]
 script = ExtResource("1_rsmav")
@@ -24,7 +32,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_v2aw0")]
-position = Vector2(1159, 167)
+position = Vector2(30, 159)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_46wyi")]
 
@@ -79,10 +87,11 @@ offset_right = 2197.0
 offset_bottom = 215.0
 scale = Vector2(0.3, 0.3)
 text = "Hidden..."
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" parent="above/tip/Area2D" index="0"]
 position = Vector2(277, 251.5)
-shape = SubResource("RectangleShape2D_sersg")
+shape = SubResource("RectangleShape2D_w8m6x")
 
 [node name="Panel" parent="above/tip" index="3"]
 metadata/_edit_lock_ = true
@@ -90,14 +99,7 @@ metadata/_edit_lock_ = true
 [node name="checkpoint" parent="above" instance=ExtResource("7_60dj8")]
 position = Vector2(1900, 117)
 
-[node name="2x2 Autumn Platform" parent="above" instance=ExtResource("8_fl5ti")]
-position = Vector2(-34, -118)
-
 [node name="below" type="Node2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(577, 54)
-metadata/_edit_lock_ = true
 
 [node name="camera" parent="." instance=ExtResource("7_s7vtf")]
 metadata/_edit_lock_ = true
@@ -109,5 +111,72 @@ metadata/_edit_lock_ = true
 position = Vector2(32, 628)
 scale = Vector2(50, 1)
 metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+process_mode = 4
+modulate = Color(1, 0, 0, 1)
+z_index = 7
+texture_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 255.0
+offset_top = 124.0
+offset_right = 255.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("8_pntx4")
+theme_override_font_sizes/normal_font_size = 32
+text = "Any saved checkpoints will be lost"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+process_mode = 4
+modulate = Color(0.643137, 0.541176, 0.352941, 1)
+z_index = 7
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = 180.0
+offset_right = 263.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("8_pntx4")
+theme_override_font_sizes/normal_font_size = 25
+text = "Are you sure you want to return to menu?"
+
+[node name="menupopup" type="Sprite2D" parent="CanvasLayer"]
+z_index = 5
+position = Vector2(500, 250)
+texture = ExtResource("9_t70k3")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+position = Vector2(500, 250)
+scale = Vector2(0.53, 1.135)
+texture = ExtResource("10_qrloi")
+
+[node name="yes" type="Area2D" parent="CanvasLayer"]
+position = Vector2(500, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/yes"]
+position = Vector2(67.5, 52)
+shape = SubResource("RectangleShape2D_dr0iq")
+
+[node name="no" type="Area2D" parent="CanvasLayer"]
+position = Vector2(500, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/no"]
+position = Vector2(178.5, 52.5)
+shape = SubResource("RectangleShape2D_7csv5")
+
+[connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
+[connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]
 
 [editable path="above/tip"]

@@ -17,14 +17,9 @@ var in_menu = true
 #replace _ready with create_level(), so can be called for each level creation
 
 func _ready(): ################################
-	create_level()
-	
 	$CanvasLayer.process_mode = Node.PROCESS_MODE_DISABLED
 	$CanvasLayer.visible = false
 	
-func create_level():
-	
-	print('run')
 	for object in $above.get_children():
 		
 		if not(object is RigidBody2D): # Idk, but the push is feeling bad when I lay material on its sprite

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddvpgfde0ncl1"]
+[gd_scene load_steps=28 format=3 uid="uid://bjgdf5evs7jkc"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qhodj"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_7o2p0"]
@@ -7,18 +7,36 @@
 [ext_resource type="PackedScene" uid="uid://dx4yawa5swken" path="res://Platforms/6x2_summer_platform.tscn" id="6_xvj4o"]
 [ext_resource type="PackedScene" uid="uid://dto02t2vsmfq0" path="res://checkpoint.tscn" id="7_3ea7n"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_b4ll1"]
+[ext_resource type="PackedScene" uid="uid://ywp74r4cfkyr" path="res://Platforms/6x6_diagonal_autumn_platform.tscn" id="7_ycyul"]
+[ext_resource type="PackedScene" uid="uid://caofxgcnqlkrd" path="res://click_button.tscn" id="8_2wh5b"]
 [ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_p8igi"]
 [ext_resource type="PackedScene" uid="uid://dg8inp7ihsp1w" path="res://Platforms/2x2_summer_platform.tscn" id="9_55gb4"]
-[ext_resource type="PackedScene" uid="uid://c8ean2gmirm0x" path="res://Platforms/2x30_autumn_platform.tscn" id="10_7ws8e"]
+[ext_resource type="PackedScene" uid="uid://bj7uyjqpmm6ux" path="res://gate.tscn" id="10_2p1lk"]
+[ext_resource type="PackedScene" uid="uid://dc8adxoou1gms" path="res://spawner.tscn" id="11_qm8p8"]
+[ext_resource type="PackedScene" uid="uid://c0y4jr5rnknc4" path="res://round_push_for_puzzle.tscn" id="12_m2t7r"]
+[ext_resource type="PackedScene" uid="uid://cswaure8ckm57" path="res://pressure_button.tscn" id="13_uyxsl"]
+[ext_resource type="PackedScene" uid="uid://v2x33ict60vu" path="res://ladder.tscn" id="14_t0lbm"]
+[ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="16_a7kfe"]
 [ext_resource type="Script" path="res://levels/scroll_trigger.gd" id="16_nklig"]
+[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="17_oeqo0"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="19_n8qxa"]
 [ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="19_o6swc"]
+[ext_resource type="FontFile" uid="uid://d1ib73wksvagv" path="res://Alef-Regular.ttf" id="22_pgqs8"]
+[ext_resource type="Texture2D" uid="uid://dneraibmw1xcw" path="res://menuconfirm.png" id="23_hnue5"]
+[ext_resource type="Texture2D" uid="uid://dqpb4najivq3e" path="res://1000x250white.png" id="24_e72kk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kq7x"]
 size = Vector2(27, 518)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be7tt"]
+size = Vector2(95, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdke8"]
+size = Vector2(99, 101)
+
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_qhodj")
+can_scroll = false
 
 [node name="axis" parent="." instance=ExtResource("2_7o2p0")]
 position = Vector2(500, 250)
@@ -26,12 +44,19 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_iupp7")]
-position = Vector2(41, 140)
+position = Vector2(10082, 145)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_v0oom")]
 
 [node name="above" type="Node2D" parent="."]
 z_index = 1
+
+[node name="2x2_summer_platform2" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(9685, 111)
+scale = Vector2(0.4, 1)
+
+[node name="2x2_summer_platform3" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(9799, 111)
 
 [node name="6x2 Summer Platform" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(66, 203)
@@ -50,6 +75,15 @@ position = Vector2(1448, 241)
 
 [node name="6x2 Summer Platform11" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(1448, 203)
+
+[node name="6x2 Summer Platform12" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(9160, 242)
+
+[node name="6x2 Summer Platform15" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(9834, 242)
+
+[node name="6x2 Summer Platform18" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(10056, 240)
 
 [node name="6x2 Summer Platform20" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(1596, 240)
@@ -80,6 +114,21 @@ position = Vector2(4037, 255)
 
 [node name="2x2_summer_platform7" parent="above" instance=ExtResource("9_55gb4")]
 position = Vector2(4038, 214)
+
+[node name="6x2 Summer Platform17" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(10018, 56)
+
+[node name="6x2 Summer Platform19" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(10157, 56)
+
+[node name="6x2 Summer Platform16" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(9750, 72)
+
+[node name="6x2 Summer Platform13" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(9161, 204)
+
+[node name="6x2 Summer Platform14" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(9162, 167)
 
 [node name="2x2_summer_platform" parent="above" instance=ExtResource("9_55gb4")]
 position = Vector2(557, 170)
@@ -150,8 +199,37 @@ rotation = 0.785398
 position = Vector2(3864, -502)
 rotation = 0.785398
 
+[node name="6x2 Summer Platform32" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(10461, 19)
+
+[node name="6x2 Summer Platform33" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(10588, 19)
+
+[node name="6x2 Summer Platform34" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(10711, 19)
+
+[node name="6x2 Summer Platform35" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(10588, 209)
+
+[node name="above_tilemap" parent="above/6x2 Summer Platform35" index="1"]
+layer_0/tile_data = PackedInt32Array(-65539, 0, 7, -65538, 196608, 7, -65537, 589824, 7)
+
+[node name="6x2 Summer Platform36" parent="above" instance=ExtResource("6_xvj4o")]
+position = Vector2(10711, 209)
+
+[node name="above_tilemap" parent="above/6x2 Summer Platform36" index="1"]
+layer_0/tile_data = PackedInt32Array(-65537, 0, 7, -131072, 196608, 7, -131071, 327680, 7, -131070, 589824, 7)
+
+[node name="diagonal_6x6_summer_platform" parent="above" instance=ExtResource("7_ycyul")]
+position = Vector2(9304, 207)
+scale = Vector2(1, 0.82)
+
 [node name="6x2 Summer Platform2" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(506, 134)
+
+[node name="click_button" parent="above" instance=ExtResource("8_2wh5b")]
+position = Vector2(9228, 93)
+node_path = NodePath("../spawner")
 
 [node name="6x2 Summer Platform3" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(506, 94)
@@ -165,6 +243,25 @@ position = Vector2(364, 66)
 [node name="checkpoint" parent="above" instance=ExtResource("7_3ea7n")]
 position = Vector2(922, 188)
 
+[node name="gate" parent="above" instance=ExtResource("10_2p1lk")]
+position = Vector2(10012, 85)
+rotation = 3.14159
+
+[node name="spawner" parent="above" instance=ExtResource("11_qm8p8")]
+position = Vector2(9277, 21)
+what = ExtResource("12_m2t7r")
+
+[node name="pressure_button" parent="above" instance=ExtResource("13_uyxsl")]
+position = Vector2(9735, 95)
+rotation = 3.14159
+node_path = NodePath("../gate")
+
+[node name="ladder" parent="above" instance=ExtResource("14_t0lbm")]
+position = Vector2(10166, 121)
+
+[node name="ladder2" parent="above" instance=ExtResource("14_t0lbm")]
+position = Vector2(10166, 207)
+
 [node name="checkpoint2" parent="above" instance=ExtResource("7_3ea7n")]
 position = Vector2(1899, 182)
 
@@ -174,6 +271,27 @@ position = Vector2(3370, 215)
 [node name="scroll_trigger" type="Marker2D" parent="above"]
 position = Vector2(2172, -49)
 script = ExtResource("16_nklig")
+
+[node name="obst1" parent="above" instance=ExtResource("16_a7kfe")]
+position = Vector2(10479, 108)
+scale = Vector2(1.08002, 0.6)
+
+[node name="push" parent="above" instance=ExtResource("17_oeqo0")]
+position = Vector2(10483, 77)
+
+[node name="pressure_button2" parent="above" instance=ExtResource("13_uyxsl")]
+position = Vector2(10632, 188)
+node_path = NodePath("../gate2")
+
+[node name="2x2_summer_platform4" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(10761, 169)
+
+[node name="2x2_summer_platform5" parent="above" instance=ExtResource("9_55gb4")]
+position = Vector2(10762, 138)
+
+[node name="gate2" parent="above" instance=ExtResource("10_2p1lk")]
+position = Vector2(10764, 113)
+scale = Vector2(0.55, 0.55)
 
 [node name="tip" parent="above" instance=ExtResource("19_o6swc")]
 position = Vector2(3, 5)
@@ -421,9 +539,6 @@ position = Vector2(5897, 20)
 [node name="6x2 Summer Platform99" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(6039, 21)
 
-[node name="2x2 Autumn Platform" parent="above" instance=ExtResource("10_7ws8e")]
-position = Vector2(-34, -118)
-
 [node name="checkpoint6" parent="above" instance=ExtResource("7_3ea7n")]
 position = Vector2(5363, 92)
 
@@ -444,6 +559,75 @@ position = Vector2(32, 628)
 scale = Vector2(50, 1)
 metadata/_edit_lock_ = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+process_mode = 4
+modulate = Color(1, 0, 0, 1)
+z_index = 7
+texture_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 255.0
+offset_top = 124.0
+offset_right = 255.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("22_pgqs8")
+theme_override_font_sizes/normal_font_size = 32
+text = "Any saved checkpoints will be lost"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+process_mode = 4
+modulate = Color(0.643137, 0.541176, 0.352941, 1)
+z_index = 7
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = 180.0
+offset_right = 263.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("22_pgqs8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Are you sure you want to return to menu?"
+
+[node name="menupopup" type="Sprite2D" parent="CanvasLayer"]
+z_index = 5
+position = Vector2(500, 250)
+texture = ExtResource("23_hnue5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+position = Vector2(500, 250)
+scale = Vector2(0.53, 1.135)
+texture = ExtResource("24_e72kk")
+
+[node name="yes" type="Area2D" parent="CanvasLayer"]
+position = Vector2(500, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/yes"]
+position = Vector2(67.5, 52)
+shape = SubResource("RectangleShape2D_be7tt")
+
+[node name="no" type="Area2D" parent="CanvasLayer"]
+position = Vector2(500, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/no"]
+position = Vector2(178.5, 52.5)
+shape = SubResource("RectangleShape2D_vdke8")
+
+[connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
+[connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]
+
+[editable path="above/6x2 Summer Platform35"]
+[editable path="above/6x2 Summer Platform36"]
 [editable path="above/tip"]
 [editable path="above/tip2"]
 [editable path="above/tip3"]
