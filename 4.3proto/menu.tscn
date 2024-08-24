@@ -1,121 +1,100 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmdfg5gmse18x"]
+[gd_scene load_steps=9 format=3 uid="uid://023esoaqemb2"]
 
-[ext_resource type="Texture2D" uid="uid://d1bqm47sg8n1w" path="res://menuegtest.png" id="1_dwdt2"]
-[ext_resource type="Script" path="res://menu.gd" id="1_x4m6n"]
-[ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="3_e7a3e"]
-[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="4_ibm0y"]
+[ext_resource type="Script" path="res://level_choose.gd" id="2_bmq5f"]
+[ext_resource type="Texture2D" uid="uid://bhqipp7kx77yt" path="res://menu.png" id="2_tqwih"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_748be"]
-size = Vector2(40, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oecy"]
+size = Vector2(148, 71)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgw8n"]
-size = Vector2(40, 40)
+[sub_resource type="Gradient" id="Gradient_qvyy7"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ly4g"]
-size = Vector2(40, 40)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r8idw"]
+gradient = SubResource("Gradient_qvyy7")
+fill = 1
+fill_from = Vector2(0.491453, 0.495726)
+fill_to = Vector2(0.92735, 0.145299)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqrb7"]
-size = Vector2(40, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q8pj"]
+size = Vector2(129, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcwlu"]
-size = Vector2(40, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txois"]
+size = Vector2(126, 72)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y62dv"]
-size = Vector2(40, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fldy0"]
+size = Vector2(94, 75)
 
 [node name="menu" type="Node2D"]
-script = ExtResource("1_x4m6n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 6
 texture_filter = 1
 position = Vector2(500, 250)
-texture = ExtResource("1_dwdt2")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_tqwih")
 
 [node name="level1" type="Area2D" parent="."]
+script = ExtResource("2_bmq5f")
+level_path = "res://levels/level_1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level1"]
-position = Vector2(156, 94)
-shape = SubResource("RectangleShape2D_748be")
+position = Vector2(227, 86.5)
+shape = SubResource("RectangleShape2D_0oecy")
+
+[node name="PointLight2D" type="PointLight2D" parent="level1"]
+visible = false
+z_index = 2
+position = Vector2(230.5, 88)
+scale = Vector2(2.10938, 1)
+energy = 1.5
+range_layer_max = 4
+texture = SubResource("GradientTexture2D_r8idw")
 
 [node name="level2" type="Area2D" parent="."]
+script = ExtResource("2_bmq5f")
+level_path = "res://levels/level_2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level2"]
-position = Vector2(266, 238)
-shape = SubResource("RectangleShape2D_cgw8n")
+position = Vector2(492.5, 166)
+shape = SubResource("RectangleShape2D_5q8pj")
+
+[node name="PointLight2D" type="PointLight2D" parent="level2"]
+visible = false
+z_index = 2
+position = Vector2(490, 165.5)
+scale = Vector2(1.9375, 1.45312)
+energy = 1.5
+range_layer_max = 4
+texture = SubResource("GradientTexture2D_r8idw")
 
 [node name="level3" type="Area2D" parent="."]
+script = ExtResource("2_bmq5f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level3"]
-position = Vector2(417, 149)
-shape = SubResource("RectangleShape2D_8ly4g")
+position = Vector2(788, 107)
+shape = SubResource("RectangleShape2D_txois")
+
+[node name="PointLight2D" type="PointLight2D" parent="level3"]
+visible = false
+z_index = 2
+position = Vector2(789.5, 106)
+scale = Vector2(1.95313, 1)
+energy = 1.5
+range_layer_max = 4
+texture = SubResource("GradientTexture2D_r8idw")
 
 [node name="level4" type="Area2D" parent="."]
+script = ExtResource("2_bmq5f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level4"]
-position = Vector2(561, 213)
-shape = SubResource("RectangleShape2D_fqrb7")
+position = Vector2(767, 344.5)
+shape = SubResource("RectangleShape2D_fldy0")
 
-[node name="level5" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="level5"]
-position = Vector2(726, 155)
-shape = SubResource("RectangleShape2D_vcwlu")
-
-[node name="level6" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="level6"]
-position = Vector2(845, 303)
-shape = SubResource("RectangleShape2D_y62dv")
-
-[node name="level_objects" type="Node2D" parent="."]
-
-[node name="level_1" type="Node2D" parent="level_objects"]
-
-[node name="obst1" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
-position = Vector2(894, 79)
-rotation = -0.392699
-
-[node name="obst3" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
-position = Vector2(216, 49)
-
-[node name="obst2" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
-position = Vector2(851, 178)
-rotation = -0.253073
-scale = Vector2(1.555, 1.555)
-
-[node name="obst5" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
-position = Vector2(167, 221)
-scale = Vector2(14.595, 1)
-
-[node name="obst9" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
-position = Vector2(177, 43)
-scale = Vector2(14.595, 1)
-
-[node name="obst6" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
-position = Vector2(755, 196)
-
-[node name="obst7" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
-position = Vector2(670, 136)
-
-[node name="obst8" parent="level_objects/level_1" instance=ExtResource("3_e7a3e")]
-position = Vector2(581, 195)
-
-[node name="push" parent="level_objects/level_1" instance=ExtResource("4_ibm0y")]
-position = Vector2(45, 148)
-
-[node name="level_2" type="Node2D" parent="level_objects"]
-
-[node name="level_3" type="Node2D" parent="level_objects"]
-
-[node name="level_4" type="Node2D" parent="level_objects"]
-
-[node name="level_5" type="Node2D" parent="level_objects"]
-
-[node name="level_6" type="Node2D" parent="level_objects"]
-
-[connection signal="input_event" from="level1" to="." method="_on_level_1_input_event"]
-[connection signal="input_event" from="level2" to="." method="_on_level_2_input_event"]
-[connection signal="input_event" from="level3" to="." method="_on_level_3_input_event"]
-[connection signal="input_event" from="level4" to="." method="_on_level_4_input_event"]
-[connection signal="input_event" from="level5" to="." method="_on_level_5_input_event"]
-[connection signal="input_event" from="level6" to="." method="_on_level_6_input_event"]
+[node name="PointLight2D" type="PointLight2D" parent="level4"]
+visible = false
+z_index = 2
+position = Vector2(766, 345)
+scale = Vector2(1.75, 1.25)
+energy = 1.5
+range_layer_max = 4
+texture = SubResource("GradientTexture2D_r8idw")

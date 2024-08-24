@@ -1,7 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://c2d6hsho2u8ui"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jr1lh"]
-[ext_resource type="Script" path="res://menu.gd" id="2_qwtwq"]
 [ext_resource type="Shader" path="res://water.gdshader" id="2_xooj1"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="2_xquvy"]
 [ext_resource type="Texture2D" uid="uid://dqpb4najivq3e" path="res://1000x250white.png" id="3_3wecm"]
@@ -19,14 +18,66 @@
 [ext_resource type="Script" path="res://obst_1.gd" id="14_xc0cc"]
 [ext_resource type="Texture2D" uid="uid://botrbifc1ersy" path="res://treescene/closetrees.png" id="15_r8sji"]
 
+[sub_resource type="GDScript" id="GDScript_h4x3n"]
+script/source = "extends CanvasLayer
+
+#when a level is beaten, add it to 'unlocked_levels'
+
+var levels = [1,2,3,4,5,6]
+var unlocked_levels = [1]
+var in_level = false
+
+func _on_level_1_input_event(_viewport, event, _shape_idx):
+	if in_level == false:
+		$level1/PointLight2D.visible = true
+		$level2/PointLight2D2.visible = false
+		$level3/PointLight2D3.visible = false
+		$level4/PointLight2D4.visible = false
+		
+		if event is InputEventMouseButton and Input.is_action_just_pressed(\"left_click\"):
+			$\"../..\".create_level(1)
+			in_level = true
+			
+func _on_level_2_input_event(_viewport, event, _shape_idx):
+	if in_level == false:
+		$level1/PointLight2D.visible = false
+		$level2/PointLight2D2.visible = true
+		$level3/PointLight2D3.visible = false
+		$level4/PointLight2D4.visible = false
+		if event is InputEventMouseButton and Input.is_action_just_pressed(\"left_click\"):
+			$\"../..\".create_level(2)
+			in_level = true
+			
+func _on_level_3_input_event(_viewport, event, _shape_idx):
+	if in_level == false:
+		$level1/PointLight2D.visible = false
+		$level2/PointLight2D2.visible = false
+		$level3/PointLight2D3.visible = true
+		$level4/PointLight2D4.visible = false
+		if event is InputEventMouseButton and Input.is_action_just_pressed(\"left_click\"):
+			$\"../..\".create_level(3)
+			in_level = true
+			
+func _on_level_4_input_event(_viewport, event, _shape_idx):
+	
+	if in_level == false:
+		$level1/PointLight2D.visible = false
+		$level2/PointLight2D2.visible = false
+		$level3/PointLight2D3.visible = false
+		$level4/PointLight2D4.visible = true
+		if event is InputEventMouseButton and Input.is_action_just_pressed(\"left_click\"):
+			$\"../..\".create_level(4)
+			in_level = true
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_748be"]
 size = Vector2(148, 71)
 
-[sub_resource type="Gradient" id="Gradient_qvyy7"]
+[sub_resource type="Gradient" id="Gradient_cauns"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_44hks"]
-gradient = SubResource("Gradient_qvyy7")
+gradient = SubResource("Gradient_cauns")
 fill = 1
 fill_from = Vector2(0.491453, 0.495726)
 fill_to = Vector2(0.92735, 0.145299)
@@ -81,7 +132,7 @@ script = ExtResource("1_jr1lh")
 
 [node name="menu" type="CanvasLayer" parent="default_node"]
 process_priority = 1
-script = ExtResource("2_qwtwq")
+script = SubResource("GDScript_h4x3n")
 
 [node name="Sprite2D" type="Sprite2D" parent="default_node/menu"]
 z_index = 6
