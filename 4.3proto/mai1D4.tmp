@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c2d6hsho2u8ui"]
+[gd_scene load_steps=29 format=3 uid="uid://c2d6hsho2u8ui"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jr1lh"]
 [ext_resource type="Script" path="res://menu.gd" id="2_qwtwq"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="2_xquvy"]
 [ext_resource type="Texture2D" uid="uid://dqpb4najivq3e" path="res://1000x250white.png" id="3_3wecm"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="3_23kuv"]
-[ext_resource type="Texture2D" uid="uid://bhqipp7kx77yt" path="res://menu.png" id="3_jturw"]
+[ext_resource type="Texture2D" uid="uid://d1bqm47sg8n1w" path="res://menuegtest.png" id="3_441x3"]
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="4_72qsx"]
 [ext_resource type="Script" path="res://point_light_2d.gd" id="4_fcd8y"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="8_0s4gn"]
@@ -16,29 +16,19 @@
 [ext_resource type="Texture2D" uid="uid://df7eyh1drbuvd" path="res://Summer Background - Close mountains(1).png" id="11_8f74o"]
 [ext_resource type="Texture2D" uid="uid://dd6e8ylc85u7a" path="res://treescene/bgtree.png" id="13_dfch6"]
 [ext_resource type="Texture2D" uid="uid://dvynjev5bhw4p" path="res://treescene/distanttrees.png" id="14_jxdyp"]
-[ext_resource type="Script" path="res://obst_1.gd" id="14_xc0cc"]
 [ext_resource type="Texture2D" uid="uid://botrbifc1ersy" path="res://treescene/closetrees.png" id="15_r8sji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_748be"]
-size = Vector2(148, 71)
-
-[sub_resource type="Gradient" id="Gradient_qvyy7"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_44hks"]
-gradient = SubResource("Gradient_qvyy7")
-fill = 1
-fill_from = Vector2(0.491453, 0.495726)
-fill_to = Vector2(0.92735, 0.145299)
+size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgw8n"]
-size = Vector2(129, 92)
+size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ly4g"]
-size = Vector2(126, 72)
+size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqrb7"]
-size = Vector2(94, 75)
+size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcwlu"]
 size = Vector2(40, 40)
@@ -80,75 +70,37 @@ script = ExtResource("1_jr1lh")
 [node name="default_node" type="Node2D" parent="."]
 
 [node name="menu" type="CanvasLayer" parent="default_node"]
-process_priority = 1
 script = ExtResource("2_qwtwq")
 
 [node name="Sprite2D" type="Sprite2D" parent="default_node/menu"]
 z_index = 6
 texture_filter = 1
 position = Vector2(500, 250)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_jturw")
+texture = ExtResource("3_441x3")
 
 [node name="level1" type="Area2D" parent="default_node/menu"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="default_node/menu/level1"]
-position = Vector2(227, 86.5)
+position = Vector2(156, 94)
 shape = SubResource("RectangleShape2D_748be")
-
-[node name="PointLight2D" type="PointLight2D" parent="default_node/menu/level1"]
-visible = false
-z_index = 2
-position = Vector2(230.5, 88)
-scale = Vector2(2.10938, 1)
-energy = 1.5
-range_layer_max = 4
-texture = SubResource("GradientTexture2D_44hks")
 
 [node name="level2" type="Area2D" parent="default_node/menu"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="default_node/menu/level2"]
-position = Vector2(492.5, 166)
+position = Vector2(266, 238)
 shape = SubResource("RectangleShape2D_cgw8n")
-
-[node name="PointLight2D2" type="PointLight2D" parent="default_node/menu/level2"]
-visible = false
-z_index = 2
-position = Vector2(490, 165.5)
-scale = Vector2(1.9375, 1.45312)
-energy = 1.5
-range_layer_max = 4
-texture = SubResource("GradientTexture2D_44hks")
 
 [node name="level3" type="Area2D" parent="default_node/menu"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="default_node/menu/level3"]
-position = Vector2(788, 107)
+position = Vector2(417, 149)
 shape = SubResource("RectangleShape2D_8ly4g")
-
-[node name="PointLight2D3" type="PointLight2D" parent="default_node/menu/level3"]
-visible = false
-z_index = 2
-position = Vector2(789.5, 106)
-scale = Vector2(1.95313, 1)
-energy = 1.5
-range_layer_max = 4
-texture = SubResource("GradientTexture2D_44hks")
 
 [node name="level4" type="Area2D" parent="default_node/menu"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="default_node/menu/level4"]
-position = Vector2(767, 344.5)
+position = Vector2(561, 213)
 shape = SubResource("RectangleShape2D_fqrb7")
-
-[node name="PointLight2D4" type="PointLight2D" parent="default_node/menu/level4"]
-visible = false
-z_index = 2
-position = Vector2(766, 345)
-scale = Vector2(1.75, 1.25)
-energy = 1.5
-range_layer_max = 4
-texture = SubResource("GradientTexture2D_44hks")
 
 [node name="level5" type="Area2D" parent="default_node/menu"]
 
@@ -174,11 +126,10 @@ position = Vector2(500, 250)
 
 [node name="character" parent="default_node" node_paths=PackedStringArray("axis") instance=ExtResource("2_xquvy")]
 z_index = 3
-position = Vector2(134, -1)
+position = Vector2(500, 148)
 axis = NodePath("../axis")
 
 [node name="PointLight2D" type="PointLight2D" parent="default_node/character"]
-z_index = 4
 position = Vector2(0, -23)
 energy = 0.0
 range_z_min = 1
@@ -292,14 +243,17 @@ texture = ExtResource("11_8f74o")
 [node name="above" type="Node2D" parent="levels/level_2"]
 z_index = 1
 
+[node name="obst1" parent="levels/level_2/above" instance=ExtResource("4_72qsx")]
+position = Vector2(239, 185)
+
 [node name="obst2" parent="levels/level_2/above" instance=ExtResource("4_72qsx")]
-position = Vector2(418, 154)
-scale = Vector2(34.87, 1)
-script = ExtResource("14_xc0cc")
+position = Vector2(358, 212)
 
 [node name="obst3" parent="levels/level_2/above" instance=ExtResource("4_72qsx")]
-position = Vector2(527, 158)
-scale = Vector2(45.79, 1)
+position = Vector2(501, 211)
+
+[node name="obst4" parent="levels/level_2/above" instance=ExtResource("4_72qsx")]
+position = Vector2(632, 194)
 
 [node name="below" type="Node2D" parent="levels/level_2"]
 z_index = -1
