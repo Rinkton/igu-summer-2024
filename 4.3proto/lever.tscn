@@ -7,7 +7,6 @@
 
 [node name="lever" type="Area2D"]
 modulate = Color(100, 1, 1, 1)
-collision_layer = 5
 script = ExtResource("1_pyg23")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

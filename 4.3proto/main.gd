@@ -11,6 +11,11 @@ var current_level
 
 func create_level(level_selected):
 	
+	$default_node/menu/level1/PointLight2D.visible = false
+	$default_node/menu/level2/PointLight2D2.visible = false
+	$default_node/menu/level3/PointLight2D3.visible = false
+	$default_node/menu/level4/PointLight2D4.visible = false
+	
 	for level in $levels.get_children():
 		level.process_mode = Node.PROCESS_MODE_DISABLED
 		level.visible = false
@@ -30,6 +35,7 @@ func create_level(level_selected):
 	current_level.process_mode = Node.PROCESS_MODE_INHERIT
 	current_level.visible = true
 	
+	$default_node/menu/shader.visible = true
 	$default_node/menu/Sprite2D.visible = false
 	$default_node/menu/Sprite2D.process_mode = Node.PROCESS_MODE_DISABLED
 	
@@ -59,6 +65,8 @@ var level_needs_setup = true
 
 func _process(delta):
 	
+	
+	
 	if level_needs_setup:
 		return
 		
@@ -77,13 +85,7 @@ func _process(delta):
 	for object in cur_side.get_children():
 		if object is RigidBody2D:
 			object.freeze = false
-
-	if Input.is_action_just_pressed("scroll_up"):
-		for object in cur_side.get_children():
-			object.position.y -= 180 * delta * (1 if cur_side == current_level.get_node('above') else -1)
-	elif Input.is_action_just_pressed("scroll_down"):
-		for object in cur_side.get_children():
-			object.position.y += 180 * delta * (1 if cur_side == current_level.get_node('above') else -1)
+			
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 
@@ -91,6 +93,20 @@ func _process(delta):
 
 	
 	set_symmetric()
+	if Input.is_action_just_pressed("scroll_down"):
+		for object in cur_side.get_children():
+			object.position.y += 180 * delta * (1 if cur_side == current_level.get_node('above') else -1)
+			
+	
+	if character.global_position.y < 0:
+		return
+		
+	if Input.is_action_just_pressed("scroll_up"):
+		
+		for object in cur_side.get_children():
+			object.position.y -= 180 * delta * (1 if cur_side == current_level.get_node('above') else -1)
+	
+	
 
 func set_symmetric():
 	

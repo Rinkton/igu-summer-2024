@@ -196,6 +196,7 @@ terrain_set_0/terrain_1/color = Color(0.254713, 0.506035, 0.314156, 1)
 sources/0 = SubResource("TileSetAtlasSource_0b7qf")
 
 [node name="above_tilemap" type="TileMap"]
+z_index = 1
 scale = Vector2(0.1, 0.1)
 tile_set = SubResource("TileSet_3qlsr")
 format = 2
