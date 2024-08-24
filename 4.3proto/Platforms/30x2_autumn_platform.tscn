@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl0n1rwwlujg6"]
+
+[ext_resource type="Script" path="res://Platforms/platform.gd" id="1_bt0rd"]
+[ext_resource type="PackedScene" uid="uid://ubpnfnq1aiji" path="res://tilemap.tscn" id="2_3q1jh"]
+[ext_resource type="PackedScene" uid="uid://d3gwxey50bk4i" path="res://above_tilemap.tscn" id="3_mtjj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iymqt"]
+size = Vector2(763, 34)
+
+[node name="30x2 Autumn Platform" type="StaticBody2D"]
+script = ExtResource("1_bt0rd")
+
+[node name="tilemap" parent="." instance=ExtResource("2_3q1jh")]
+layer_0/tile_data = PackedInt32Array(-1, 65536, 0, 65535, 65536, 6, 0, 262144, 6, -65536, 65536, 0, -3, 65536, 0, 65533, 196608, 6, 65534, 327680, 6, -2, 131072, 0, -65535, 327680, 0, 1, 131072, 6, 2, 262144, 6, -65534, 196608, 0, 65532, 196608, 6, 65531, 131072, 6, -5, 327680, 0, -4, 65536, 0, -65533, 327680, 0, -65532, 327680, 0, 4, 327680, 6, 3, 131072, 6, -6, 262144, 0, -7, 131072, 0, 65529, 327680, 6, 65530, 327680, 6, -65531, 65536, 0, -65530, 196608, 0, 6, 196608, 6, 5, 131072, 6, -8, 262144, 0, -9, 65536, 0, 65527, 65536, 6, 65528, 65536, 6, -65529, 131072, 0, -65528, 196608, 0, 8, 262144, 6, 7, 196608, 6, -10, 131072, 0, -11, 65536, 0, 65525, 327680, 6, 65526, 262144, 6, -65527, 65536, 0, -65526, 196608, 0, 10, 262144, 6, 9, 196608, 6, -12, 131072, 0, -13, 327680, 0, 65523, 65536, 6, 65524, 262144, 6, -65525, 327680, 0, -65524, 262144, 0, 12, 327680, 6, 11, 327680, 6, -14, 131072, 0, -15, 0, 0, 65521, 0, 6, 65522, 65536, 6, -65523, 196608, 0, -65522, 393216, 0, 14, 393216, 6, 13, 196608, 6)
+
+[node name="above_tilemap" parent="." instance=ExtResource("3_mtjj7")]
+position = Vector2(-2, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_iymqt")

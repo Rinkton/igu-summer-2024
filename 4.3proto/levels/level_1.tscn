@@ -1,9 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://ddvpgfde0ncl1"]
+[gd_scene load_steps=23 format=3 uid="uid://ddvpgfde0ncl1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qhodj"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_7o2p0"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_iupp7"]
-[ext_resource type="Script" path="res://point_light_2d.gd" id="4_4rsty"]
+[ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_v0oom"]
 [ext_resource type="PackedScene" uid="uid://dx4yawa5swken" path="res://Platforms/6x2_summer_platform.tscn" id="6_xvj4o"]
 [ext_resource type="PackedScene" uid="uid://dto02t2vsmfq0" path="res://checkpoint.tscn" id="7_3ea7n"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_b4ll1"]
@@ -22,15 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="19_n8qxa"]
 [ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="19_o6swc"]
 
-[sub_resource type="Gradient" id="Gradient_glrde"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_m3nwt"]
-gradient = SubResource("Gradient_glrde")
-width = 2000
-height = 250
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kq7x"]
 size = Vector2(27, 518)
 
@@ -44,16 +35,9 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_iupp7")]
-position = Vector2(25, 144)
+position = Vector2(10082, 145)
 
-[node name="PointLight2D" type="PointLight2D" parent="character"]
-position = Vector2(0, -23)
-energy = 0.0
-range_z_min = 1
-range_z_max = 1
-texture = SubResource("GradientTexture2D_m3nwt")
-script = ExtResource("4_4rsty")
-metadata/_edit_lock_ = true
+[node name="PointLight2D" parent="character" instance=ExtResource("4_v0oom")]
 
 [node name="above" type="Node2D" parent="."]
 z_index = 1
