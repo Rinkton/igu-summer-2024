@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://023esoaqemb2"]
+
+[ext_resource type="Script" path="res://level_choose.gd" id="2_bmq5f"]
+[ext_resource type="Texture2D" uid="uid://bhqipp7kx77yt" path="res://menu.png" id="2_tqwih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oecy"]
+size = Vector2(148, 71)
+
+[sub_resource type="Gradient" id="Gradient_qvyy7"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r8idw"]
+gradient = SubResource("Gradient_qvyy7")
+fill = 1
+fill_from = Vector2(0.491453, 0.495726)
+fill_to = Vector2(0.92735, 0.145299)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q8pj"]
+size = Vector2(129, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txois"]
+size = Vector2(126, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fldy0"]
+size = Vector2(94, 75)
+
+[node name="menu" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 6
+texture_filter = 1
+position = Vector2(500, 250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_tqwih")
+
+[node name="level1" type="Area2D" parent="."]
+script = ExtResource("2_bmq5f")
+level_path = "res://levels/level_1.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level1"]
+position = Vector2(227, 86.5)
+shape = SubResource("RectangleShape2D_0oecy")
+
+[node name="PointLight2D" type="PointLight2D" parent="level1"]
+visible = false
+z_index = 2
+position = Vector2(230.5, 88)
+scale = Vector2(2.10938, 1)
+energy = 1.5
+range_layer_max = 4
+texture = SubResource("GradientTexture2D_r8idw")
+
+[node name="level2" type="Area2D" parent="."]
+script = ExtResource("2_bmq5f")
+level_path = "res://levels/level_2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level2"]
+position = Vector2(492.5, 166)
+shape = SubResource("RectangleShape2D_5q8pj")
+
+[node name="PointLight2D" type="PointLight2D" parent="level2"]
+visible = false
+z_index = 2
+position = Vector2(490, 165.5)
+scale = Vector2(1.9375, 1.45312)
+energy = 1.5
+range_layer_max = 4
+texture = SubResource("GradientTexture2D_r8idw")
+
+[node name="level3" type="Area2D" parent="."]
+script = ExtResource("2_bmq5f")
+level_path = "res://levels/level_3.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level3"]
+position = Vector2(788, 107)
+shape = SubResource("RectangleShape2D_txois")
+
+[node name="PointLight2D" type="PointLight2D" parent="level3"]
+visible = false
+z_index = 2
+position = Vector2(789.5, 106)
+scale = Vector2(1.95313, 1)
+energy = 1.5
+range_layer_max = 4
+texture = SubResource("GradientTexture2D_r8idw")
+
+[node name="level4" type="Area2D" parent="."]
+script = ExtResource("2_bmq5f")
+level_path = "res://levels/level_4.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level4"]
+position = Vector2(767, 344.5)
+shape = SubResource("RectangleShape2D_fldy0")
+
+[node name="PointLight2D" type="PointLight2D" parent="level4"]
+visible = false
+z_index = 2
+position = Vector2(766, 345)
+scale = Vector2(1.75, 1.25)
+energy = 1.5
+range_layer_max = 4
+texture = SubResource("GradientTexture2D_r8idw")
