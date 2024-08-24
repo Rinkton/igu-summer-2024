@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://s5c8talhieq"]
+
+[ext_resource type="Texture2D" uid="uid://dpu2sxsajpwm4" path="res://attract_attention.png" id="1_alwdx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8p6c"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_467yq"]
+radius = 17.0
+
+[node name="just_round_push" type="RigidBody2D"]
+collision_mask = 3
+sleeping = true
+linear_damp = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("1_alwdx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i8p6c")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_467yq")

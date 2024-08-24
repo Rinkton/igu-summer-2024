@@ -20,7 +20,6 @@ func _ready(): ################################
 
 func create_level():
 	
-	print('run')
 	for object in $above.get_children():
 		
 		if not(object is RigidBody2D): # Idk, but the push is feeling bad when I lay material on its sprite
@@ -54,9 +53,9 @@ func _physics_process(delta):
 	"""
 	if can_scroll:
 		if Input.is_action_pressed("scroll_down") or Input.is_action_pressed("scroll_up"): # arrows
-			scroll_max_spd = 135
-			scroll_acc = 6000
-			scroll_dec = 2000
+			scroll_max_spd = 115
+			scroll_acc = 4000
+			scroll_dec = 6000
 		else:
 			scroll_max_spd = 180
 			scroll_acc = 4000
