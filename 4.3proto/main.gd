@@ -73,7 +73,7 @@ func _physics_process(delta):
 	if can_scroll:
 		if Input.is_action_pressed("scroll_down") or Input.is_action_pressed("scroll_up"): # arrows
 			scroll_max_spd = 115
-			scroll_acc = 3000
+			scroll_acc = 1000
 			scroll_dec = 2000
 		else:
 			scroll_max_spd = 180

@@ -1,7 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://cv5tdfv31jov7"]
+[gd_scene load_steps=40 format=3 uid="uid://cv5tdfv31jov7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_4452g"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_kijc5"]
+[ext_resource type="AudioStream" uid="uid://dhtewd5scjim2" path="res://Soundtrack/Autumn - V1.mp3" id="2_wtmjr"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_rinh3"]
 [ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_l3eor"]
 [ext_resource type="PackedScene" uid="uid://bl0n1rwwlujg6" path="res://Platforms/30x2_autumn_platform.tscn" id="5_ck3wk"]
@@ -62,6 +63,7 @@ shader_parameter/fast_noise = SubResource("NoiseTexture2D_6805q")
 script = ExtResource("1_4452g")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wtmjr")
 autoplay = true
 
 [node name="axis" parent="." instance=ExtResource("2_kijc5")]

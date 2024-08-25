@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://dk6dtc33xwbdk"]
+[gd_scene load_steps=38 format=3 uid="uid://dk6dtc33xwbdk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rsmav"]
+[ext_resource type="AudioStream" uid="uid://kbq03vwiimge" path="res://Soundtrack/WINTER V9.mp3" id="2_udmfp"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_y6af0"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_v2aw0"]
 [ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_46wyi"]
@@ -21,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bjqjuo3q1p6rd" path="res://Platforms/2x30_winter_platform.tscn" id="16_arthw"]
 [ext_resource type="PackedScene" uid="uid://hw2ef7yirqhk" path="res://lever.tscn" id="17_53ck2"]
 [ext_resource type="PackedScene" uid="uid://d2pfavut6cjl2" path="res://Platforms/30x2_winter_platform.tscn" id="17_v075i"]
+[ext_resource type="PackedScene" uid="uid://c5efq5dnwbc0y" path="res://solidifier.tscn" id="18_4oimr"]
 [ext_resource type="PackedScene" uid="uid://v2x33ict60vu" path="res://ladder.tscn" id="18_beay8"]
 [ext_resource type="Texture2D" uid="uid://cp80p0tt02wch" path="res://bg_above.png" id="20_2mtdw"]
 [ext_resource type="Texture2D" uid="uid://cycg36dpw0pli" path="res://Aurora.png" id="21_i414k"]
@@ -61,6 +63,7 @@ shader_parameter/fast_noise = SubResource("NoiseTexture2D_naywi")
 script = ExtResource("1_rsmav")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_udmfp")
 autoplay = true
 
 [node name="axis" parent="." instance=ExtResource("2_y6af0")]
@@ -69,7 +72,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_v2aw0")]
-position = Vector2(5875, 146)
+position = Vector2(29, 163)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_46wyi")]
 
@@ -161,6 +164,45 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" parent="above/6x2 Winter Platform40" index="2"]
 metadata/_edit_lock_ = true
 
+[node name="6x2 Winter Platform48" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(9367, 154)
+
+[node name="tilemap" parent="above/6x2 Winter Platform48" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="above_tilemap" parent="above/6x2 Winter Platform48" index="1"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="above/6x2 Winter Platform48" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="6x2 Winter Platform49" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(9530, 169)
+
+[node name="tilemap" parent="above/6x2 Winter Platform49" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="above_tilemap" parent="above/6x2 Winter Platform49" index="1"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="above/6x2 Winter Platform49" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="6x2 Winter Platform50" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(9695, 189)
+
+[node name="tilemap" parent="above/6x2 Winter Platform50" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="above_tilemap" parent="above/6x2 Winter Platform50" index="1"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="above/6x2 Winter Platform50" index="2"]
+metadata/_edit_lock_ = true
+
 [node name="6x2 Winter Platform41" parent="above" instance=ExtResource("5_4w0rf")]
 position = Vector2(8801, 201)
 
@@ -188,7 +230,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="6x2 Winter Platform42" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(8801, 164)
+position = Vector2(8801, 179)
 
 [node name="tilemap" parent="above/6x2 Winter Platform42" index="0"]
 metadata/_edit_lock_ = true
@@ -617,6 +659,24 @@ position = Vector2(8088, 98)
 position = Vector2(7948, 57)
 node_path = NodePath("../gate4")
 
+[node name="pressure_button2" parent="above" instance=ExtResource("14_hqehr")]
+position = Vector2(9045, 130)
+rotation = 3.14159
+node_path = NodePath("../gate5")
+
+[node name="gate5" parent="above" instance=ExtResource("10_kpr1e")]
+position = Vector2(9185, 174)
+rotation = 3.14159
+scale = Vector2(0.6, 0.6)
+
+[node name="pressure_button3" parent="above" instance=ExtResource("14_hqehr")]
+position = Vector2(8006, 95)
+node_path = NodePath("../solidifier")
+
+[node name="solidifier" parent="above" instance=ExtResource("18_4oimr")]
+position = Vector2(8307, 69)
+scale = Vector2(0.4, 0.4)
+
 [node name="below" type="Node2D" parent="."]
 
 [node name="camera" parent="." instance=ExtResource("7_s7vtf")]
@@ -855,6 +915,9 @@ texture = ExtResource("10_qrloi")
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]
 
 [editable path="above/6x2 Winter Platform40"]
+[editable path="above/6x2 Winter Platform48"]
+[editable path="above/6x2 Winter Platform49"]
+[editable path="above/6x2 Winter Platform50"]
 [editable path="above/6x2 Winter Platform41"]
 [editable path="above/6x2 Winter Platform52"]
 [editable path="above/6x2 Winter Platform42"]
