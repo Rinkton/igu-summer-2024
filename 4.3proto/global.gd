@@ -7,3 +7,7 @@ var lst_checkpoint_pos
 var transfer_objects = []
 
 var current_level
+
+#soundtracks
+var timestamp = 0
+var play_music
