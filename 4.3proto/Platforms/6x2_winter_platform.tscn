@@ -11,12 +11,12 @@ size = Vector2(148, 40)
 script = ExtResource("1_ucq3k")
 
 [node name="tilemap" parent="." instance=ExtResource("2_6uxew")]
-layer_0/tile_data = PackedInt32Array(-1, 65536, 0, 65535, 327680, 6, 0, 131072, 6, -65536, 65536, 0, -3, 0, 0, 65533, 0, 6, 65534, 262144, 6, -2, 131072, 0, -65535, 262144, 0, 1, 327680, 6, 2, 393216, 6, -65534, 393216, 0)
+layer_0/tile_data = PackedInt32Array(2, 393217, 6, -65534, 393217, 0, 1, 131073, 6, -65535, 65537, 0, 0, 131073, 6, -65536, 327681, 0, 65535, 131073, 6, -1, 262145, 0, 65534, 65537, 6, -2, 65537, 0, 65533, 1, 6, -3, 1, 0)
 
 [node name="above_tilemap" parent="." instance=ExtResource("3_garlm")]
-position = Vector2(30, 23)
-scale = Vector2(0.11, 0.11)
-layer_0/tile_data = PackedInt32Array(-65537, 393216, 9, -65539, 65536, 9, -65538, 131072, 9, -131072, 327680, 9, -131071, 0, 131081, -65540, 0, 9)
+position = Vector2(0, 14)
+scale = Vector2(0.11, 0.1)
+layer_0/tile_data = PackedInt32Array(-65539, 1, 9, -65538, 131073, 9, -65537, 524289, 9, -131072, 131073, 9, -131071, 131073, 9, -131070, 1, 65545)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

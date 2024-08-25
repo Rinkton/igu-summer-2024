@@ -41,7 +41,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_v2aw0")]
-position = Vector2(5035, 156)
+position = Vector2(5865, 153)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_46wyi")]
 
@@ -88,25 +88,43 @@ position = Vector2(2065, 171)
 position = Vector2(2375, 168)
 
 [node name="6x2 Winter Platform20" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4388, 191)
+position = Vector2(6094, 191)
 
 [node name="6x2 Winter Platform28" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4541, 542)
+position = Vector2(6247, 542)
 
 [node name="6x2 Winter Platform29" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4679, 542)
+position = Vector2(6385, 542)
 
 [node name="6x2 Winter Platform30" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4440, 544)
+position = Vector2(6146, 544)
+
+[node name="6x2 Winter Platform32" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(5116, 236)
+
+[node name="6x2 Winter Platform33" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(5237, 234)
+
+[node name="6x2 Winter Platform34" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(5368, 230)
+
+[node name="6x2 Winter Platform36" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(5627, 229)
+
+[node name="6x2 Winter Platform37" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(5755, 228)
+
+[node name="6x2 Winter Platform38" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(5888, 226)
 
 [node name="6x2 Winter Platform21" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4706, 188)
+position = Vector2(6412, 188)
 
 [node name="6x2 Winter Platform22" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4701, 59)
+position = Vector2(6407, 59)
 
 [node name="6x2 Winter Platform23" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4385, 58)
+position = Vector2(6091, 58)
 
 [node name="6x2 Winter Platform15" parent="above" instance=ExtResource("5_4w0rf")]
 position = Vector2(2651, 253)
@@ -125,6 +143,10 @@ position = Vector2(2637, 597)
 
 [node name="6x2 Winter Platform6" parent="above" instance=ExtResource("5_4w0rf")]
 position = Vector2(1210, 237)
+
+[node name="6x2 Winter Platform35" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(5492, 260)
+scale = Vector2(1.2, 1.2)
 
 [node name="tip" parent="above" instance=ExtResource("6_fwtan")]
 
@@ -148,7 +170,7 @@ metadata/_edit_lock_ = true
 position = Vector2(1900, 117)
 
 [node name="checkpoint2" parent="above" instance=ExtResource("7_60dj8")]
-position = Vector2(4117, 165)
+position = Vector2(4059, 119)
 
 [node name="2x30 Autumn Platform" parent="above" instance=ExtResource("8_fl5ti")]
 position = Vector2(-38, -132)
@@ -157,199 +179,244 @@ position = Vector2(-38, -132)
 position = Vector2(2873, 577)
 
 [node name="6x30 Winter Platform2" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(3175, 577)
+position = Vector2(3161, 564)
 
 [node name="6x30 Winter Platform3" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(3490, 580)
+position = Vector2(3463, 551)
 
 [node name="6x30 Winter Platform4" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(3800, 580)
+position = Vector2(3751, 537)
 
 [node name="6x30 Winter Platform5" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(4120, 593)
+position = Vector2(4054, 540)
+
+[node name="6x30 Winter Platform13" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(4630, 799)
+
+[node name="6x30 Winter Platform17" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(4751, 801)
+
+[node name="6x30 Winter Platform18" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(4808, 800)
+
+[node name="6x30 Winter Platform19" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(4909, 776)
+
+[node name="6x30 Winter Platform20" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(5005, 731)
+
+[node name="6x30 Winter Platform21" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(5089, 740)
+
+[node name="6x30 Winter Platform22" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(5160, 836)
+
+[node name="6x30 Winter Platform23" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(5263, 891)
+
+[node name="6x30 Winter Platform24" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(5373, 1010)
+
+[node name="6x30 Winter Platform25" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(5493, 1135)
+
+[node name="6x30 Winter Platform14" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(4863, 767)
+rotation = -0.261799
+
+[node name="6x30 Winter Platform15" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(5075, 676)
+rotation = -0.523599
+
+[node name="6x30 Winter Platform16" parent="above" instance=ExtResource("9_ddw5d")]
+position = Vector2(5257, 533)
+rotation = -0.785398
 
 [node name="6x30 Winter Platform6" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(4991, 595)
+position = Vector2(6697, 595)
 
 [node name="6x30 Winter Platform7" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(4989, -306)
+position = Vector2(6695, -306)
 
 [node name="6x30 Winter Platform8" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(5304, -292)
+position = Vector2(7010, -292)
 
 [node name="6x30 Winter Platform9" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(5591, -265)
+position = Vector2(7297, -265)
 
 [node name="6x30 Winter Platform10" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(6135, -202)
+position = Vector2(7841, -202)
 
 [node name="6x30 Winter Platform12" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(6435, -538)
+position = Vector2(8141, -538)
 rotation = 1.5708
 
 [node name="6x30 Winter Platform11" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(5864, -234)
+position = Vector2(7570, -234)
 
 [node name="gate" parent="above" instance=ExtResource("10_kpr1e")]
 position = Vector2(2870, 191)
 
 [node name="ladder" parent="above" instance=ExtResource("18_beay8")]
-position = Vector2(4801, 166)
+position = Vector2(6507, 166)
 
 [node name="ladder3" parent="above" instance=ExtResource("18_beay8")]
-position = Vector2(4800, 80)
+position = Vector2(6506, 80)
 
 [node name="ladder2" parent="above" instance=ExtResource("18_beay8")]
-position = Vector2(4290, 31)
+position = Vector2(5996, 31)
 
 [node name="ladder4" parent="above" instance=ExtResource("18_beay8")]
-position = Vector2(4289, -55)
+position = Vector2(5995, -55)
 
 [node name="6x2 Winter Platform24" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4384, -74)
+position = Vector2(6090, -74)
 
 [node name="6x2 Winter Platform25" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4702, -77)
+position = Vector2(6408, -77)
 
 [node name="6x2 Winter Platform26" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4697, -206)
+position = Vector2(6403, -206)
 
 [node name="6x2 Winter Platform27" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4381, -207)
+position = Vector2(6087, -207)
 
 [node name="6x2 Winter Platform31" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(4277, -206)
+position = Vector2(5983, -206)
 
 [node name="ladder5" parent="above" instance=ExtResource("18_beay8")]
-position = Vector2(4797, -99)
+position = Vector2(6503, -99)
 
 [node name="ladder6" parent="above" instance=ExtResource("18_beay8")]
-position = Vector2(4796, -185)
+position = Vector2(6502, -185)
 
 [node name="lever" parent="above" instance=ExtResource("17_53ck2")]
 position = Vector2(2638, 538)
 node_path = NodePath("../gate")
 
 [node name="lever2" parent="above" instance=ExtResource("17_53ck2")]
-position = Vector2(4409, 474)
+position = Vector2(6115, 474)
 node_path = NodePath("../gate2")
 
 [node name="push" parent="above" instance=ExtResource("13_5kj68")]
-position = Vector2(4547, -426)
+position = Vector2(6253, -426)
 
 [node name="gate2" parent="above" instance=ExtResource("10_kpr1e")]
-position = Vector2(4992, 201)
+position = Vector2(6698, 201)
 
 [node name="gate3" parent="above" instance=ExtResource("10_kpr1e")]
-position = Vector2(4481, -393)
+position = Vector2(6187, -393)
 rotation = 1.5708
 
 [node name="2x2 Winter Platform" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4311, -233)
+position = Vector2(6017, -233)
 
 [node name="2x2 Winter Platform2" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4279, -233)
+position = Vector2(5985, -233)
 
 [node name="2x2 Winter Platform6" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4279, -254)
+position = Vector2(5985, -254)
 
 [node name="2x2 Winter Platform3" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4249, -231)
+position = Vector2(5955, -231)
 
 [node name="2x2 Winter Platform7" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4254, -252)
+position = Vector2(5960, -252)
 
 [node name="2x2 Winter Platform4" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4224, -231)
+position = Vector2(5930, -231)
 
 [node name="2x2 Winter Platform8" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4229, -251)
+position = Vector2(5935, -251)
 
 [node name="2x2 Winter Platform5" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4204, -230)
+position = Vector2(5910, -230)
 
 [node name="2x2 Winter Platform9" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4300, -261)
+position = Vector2(6006, -261)
 
 [node name="2x2 Winter Platform10" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4277, -260)
+position = Vector2(5983, -260)
 
 [node name="2x2 Winter Platform11" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4277, -281)
+position = Vector2(5983, -281)
 
 [node name="2x2 Winter Platform12" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4247, -258)
+position = Vector2(5953, -258)
 
 [node name="2x2 Winter Platform13" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4252, -279)
+position = Vector2(5958, -279)
 
 [node name="2x2 Winter Platform14" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4222, -258)
+position = Vector2(5928, -258)
 
 [node name="2x2 Winter Platform15" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4227, -278)
+position = Vector2(5933, -278)
 
 [node name="2x2 Winter Platform16" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4202, -257)
+position = Vector2(5908, -257)
 
 [node name="2x2 Winter Platform20" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4276, -262)
+position = Vector2(5982, -262)
 
 [node name="2x2 Winter Platform21" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4350, -236)
+position = Vector2(6056, -236)
 
 [node name="2x2 Winter Platform22" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4246, -260)
+position = Vector2(5952, -260)
 
 [node name="2x2 Winter Platform23" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4251, -281)
+position = Vector2(5957, -281)
 
 [node name="2x2 Winter Platform24" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4221, -260)
+position = Vector2(5927, -260)
 
 [node name="2x2 Winter Platform25" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4226, -280)
+position = Vector2(5932, -280)
 
 [node name="2x2 Winter Platform26" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4201, -259)
+position = Vector2(5907, -259)
 
 [node name="2x2 Winter Platform27" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4306, -289)
+position = Vector2(6012, -289)
 
 [node name="2x2 Winter Platform28" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4274, -289)
+position = Vector2(5980, -289)
 
 [node name="2x2 Winter Platform29" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4274, -310)
+position = Vector2(5980, -310)
 
 [node name="2x2 Winter Platform30" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4244, -287)
+position = Vector2(5950, -287)
 
 [node name="2x2 Winter Platform31" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4249, -308)
+position = Vector2(5955, -308)
 
 [node name="2x2 Winter Platform32" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4219, -287)
+position = Vector2(5925, -287)
 
 [node name="2x2 Winter Platform33" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4224, -307)
+position = Vector2(5930, -307)
 
 [node name="2x2 Winter Platform34" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(4199, -286)
+position = Vector2(5905, -286)
 
 [node name="pressure_button" parent="above" instance=ExtResource("14_hqehr")]
-position = Vector2(4251, -327)
+position = Vector2(5957, -327)
 node_path = NodePath("../gate3")
 
 [node name="2x30 Winter Platform" parent="above" instance=ExtResource("16_arthw")]
-position = Vector2(4457, -757)
+position = Vector2(6163, -757)
 
 [node name="2x30 Winter Platform2" parent="above" instance=ExtResource("16_arthw")]
-position = Vector2(4629, -756)
+position = Vector2(6335, -756)
 
 [node name="checkpoint3" parent="above" instance=ExtResource("7_60dj8")]
-position = Vector2(6137, 209)
+position = Vector2(7843, 209)
 rotation = 3.14159
+
+[node name="checkpoint4" parent="above" instance=ExtResource("7_60dj8")]
+position = Vector2(6086, 140)
 
 [node name="below" type="Node2D" parent="."]
 
@@ -431,9 +498,12 @@ shape = SubResource("RectangleShape2D_7csv5")
 [node name="Panel" type="Panel" parent="."]
 visible = false
 offset_left = 5111.0
-offset_top = -135.0
+offset_top = -159.0
 offset_right = 6115.0
-offset_bottom = 362.0
+offset_bottom = 338.0
+
+[node name="push" parent="." instance=ExtResource("13_5kj68")]
+position = Vector2(4395, 224)
 
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]

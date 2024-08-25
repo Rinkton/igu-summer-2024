@@ -17,7 +17,7 @@ var in_menu = true
 #replace _ready with create_level(), so can be called for each level creation
 
 func _ready(): ################################
-	$AudioStreamPlayer.play(Global.timestamp)
+	#$AudioStreamPlayer.play(Global.timestamp)
 	$CanvasLayer.process_mode = Node.PROCESS_MODE_DISABLED
 	$CanvasLayer.visible = false
 	print('run')
@@ -59,7 +59,7 @@ func _physics_process(delta):
 			object.freeze = false
 	"""
 	if Input.is_action_just_pressed("reset"):
-		Global.timestamp = $AudioStreamPlayer.get_playback_position()
+		#Global.timestamp = $AudioStreamPlayer.get_playback_position()
 		get_tree().reload_current_scene()
 		
 	character.check_is_above()
@@ -73,7 +73,7 @@ func _physics_process(delta):
 	if can_scroll:
 		if Input.is_action_pressed("scroll_down") or Input.is_action_pressed("scroll_up"): # arrows
 			scroll_max_spd = 135
-			scroll_acc = 6000
+			scroll_acc = 4000
 			scroll_dec = 2000
 		else:
 			scroll_max_spd = 180
