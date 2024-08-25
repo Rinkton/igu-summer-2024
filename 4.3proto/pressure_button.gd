@@ -1,4 +1,5 @@
 extends Area2D
+class_name PressureButton
 
 
 @export var node_path: NodePath

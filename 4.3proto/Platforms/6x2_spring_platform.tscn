@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl41dh6u8r12l"]
+
+[ext_resource type="Script" path="res://Platforms/platform.gd" id="1_oqwv7"]
+[ext_resource type="PackedScene" uid="uid://ubpnfnq1aiji" path="res://tilemap.tscn" id="2_xqvjn"]
+[ext_resource type="PackedScene" uid="uid://d3gwxey50bk4i" path="res://above_tilemap.tscn" id="3_kl14h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjni"]
+size = Vector2(149, 40)
+
+[node name="6x2 Spring Platform" type="StaticBody2D"]
+script = ExtResource("1_oqwv7")
+
+[node name="tilemap" parent="." instance=ExtResource("2_xqvjn")]
+layer_0/tile_data = PackedInt32Array(0, 131075, 6, -65536, 196611, 0, 65535, 65539, 6, -1, 196611, 0, 65534, 196611, 6, -2, 65539, 0, 65533, 3, 6, -3, 3, 0, 2, 393219, 6, -65534, 393219, 0, 1, 262147, 6, -65535, 131075, 0)
+
+[node name="above_tilemap" parent="." instance=ExtResource("3_kl14h")]
+position = Vector2(0, 6)
+layer_0/tile_data = PackedInt32Array(-65539, 3, 7, -65538, 458755, 7, -65537, 196611, 7, -131072, 196611, 7, -131071, 196611, 7, -131070, 589827, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_hgjni")

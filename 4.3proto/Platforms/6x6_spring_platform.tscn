@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6khuu7sgt86m"]
+
+[ext_resource type="Script" path="res://Platforms/platform.gd" id="1_blvlu"]
+[ext_resource type="PackedScene" uid="uid://ubpnfnq1aiji" path="res://tilemap.tscn" id="2_igrma"]
+[ext_resource type="PackedScene" uid="uid://d3gwxey50bk4i" path="res://above_tilemap.tscn" id="3_fgxou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gly8"]
+size = Vector2(149, 142)
+
+[node name="6x6 Spring Platform" type="StaticBody2D"]
+script = ExtResource("1_blvlu")
+
+[node name="tilemap" parent="." instance=ExtResource("2_igrma")]
+layer_0/tile_data = PackedInt32Array(0, 196611, 5, -65536, 262147, 3, 65535, 196611, 3, -1, 131075, 5, 65534, 131075, 5, -2, 196611, 4, 65533, 3, 3, -3, 3, 1, 2, 393219, 5, -65534, 393219, 5, 1, 196611, 4, -65535, 327683, 3, 131074, 393219, 6, 65538, 393219, 3, -131070, 393219, 5, -196606, 393219, 0, 131073, 196611, 6, 65537, 65539, 3, -131071, 131075, 2, -196607, 131075, 0, 131072, 131075, 6, 65536, 262147, 3, -131072, 196611, 1, -196608, 327683, 0, 196607, 65539, 6, 131071, 196611, 2, -65537, 65539, 3, -131073, 131075, 0, 196606, 196611, 6, 131070, 262147, 1, -65538, 131075, 4, -131074, 327683, 0, 196605, 3, 6, 131069, 3, 4, -65539, 3, 3, -131075, 3, 0)
+
+[node name="above_tilemap" parent="." instance=ExtResource("3_fgxou")]
+position = Vector2(0, 6)
+layer_0/tile_data = PackedInt32Array(-196611, 3, 7, -196610, 196611, 7, -196609, 65539, 7, -262144, 393219, 7, -262143, 65539, 7, -262142, 589827, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_6gly8")

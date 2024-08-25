@@ -72,7 +72,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_rinh3")]
-position = Vector2(5842, 177)
+position = Vector2(5150, 152)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_l3eor")]
 
@@ -408,6 +408,9 @@ position = Vector2(8052, 130)
 [node name="6x2 Autumn Platform27" parent="above" instance=ExtResource("8_8a67j")]
 position = Vector2(8052, 109)
 
+[node name="6x2 Autumn Platform47" parent="above" instance=ExtResource("8_8a67j")]
+position = Vector2(7795, -431)
+
 [node name="push12" parent="above" instance=ExtResource("11_6fvm4")]
 position = Vector2(7783, 24)
 
@@ -650,6 +653,7 @@ scale = Vector2(50, 1)
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 process_mode = 4

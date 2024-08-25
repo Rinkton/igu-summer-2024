@@ -11,6 +11,7 @@ func _ready():
 	await get_tree().create_timer(0.1).timeout
 	if get_tree().current_scene.get_node("character").global_position.x > $Area2D/CollisionShape2D.global_position.x:
 		$Area2D/CollisionShape2D.disabled = true
+		visible = false
 
 
 func _process(_delta):

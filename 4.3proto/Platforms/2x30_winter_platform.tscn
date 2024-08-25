@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d3gwxey50bk4i" path="res://above_tilemap.tscn" id="3_s3ni2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utdj6"]
-size = Vector2(44, 761.5)
+size = Vector2(45.5, 761)
 
 [node name="2x30 Winter Platform" type="StaticBody2D"]
 script = ExtResource("1_x8ls1")
@@ -19,5 +19,6 @@ scale = Vector2(0.115, 0.1)
 layer_0/tile_data = PackedInt32Array(-983041, 1, 9, -1048576, 1, 65545)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -2.75)
+visible = false
+position = Vector2(0.25, -2.5)
 shape = SubResource("RectangleShape2D_utdj6")

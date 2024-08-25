@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ddvpgfde0ncl1"]
+[gd_scene load_steps=41 format=3 uid="uid://ddvpgfde0ncl1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qhodj"]
 [ext_resource type="AudioStream" uid="uid://b0hv6wtt7doht" path="res://Soundtrack/SUMMER - V3.mp3" id="2_0gycv"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="18_eo5de"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="19_n8qxa"]
 [ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="19_o6swc"]
+[ext_resource type="PackedScene" uid="uid://c8ean2gmirm0x" path="res://Platforms/2x30_autumn_platform.tscn" id="20_qktwl"]
 [ext_resource type="Texture2D" uid="uid://cp80p0tt02wch" path="res://bg_above.png" id="21_tmqr0"]
 [ext_resource type="FontFile" uid="uid://d1ib73wksvagv" path="res://Alef-Regular.ttf" id="22_jo8n0"]
 [ext_resource type="Texture2D" uid="uid://bni1s0npw1yhs" path="res://Summer Background - Sky.png" id="22_nxeaq"]
@@ -75,7 +76,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_iupp7")]
-position = Vector2(32, 153)
+position = Vector2(2412, 180)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_v0oom")]
 
@@ -572,6 +573,9 @@ position = Vector2(6039, 21)
 
 [node name="checkpoint6" parent="above" instance=ExtResource("7_3ea7n")]
 position = Vector2(5363, 92)
+
+[node name="2x30 Autumn Platform" parent="above" instance=ExtResource("20_qktwl")]
+position = Vector2(-38, -132)
 
 [node name="below" type="Node2D" parent="."]
 

@@ -667,7 +667,7 @@ node_path = NodePath("../gate5")
 [node name="gate5" parent="above" instance=ExtResource("10_kpr1e")]
 position = Vector2(9185, 174)
 rotation = 3.14159
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.6, 1)
 
 [node name="pressure_button3" parent="above" instance=ExtResource("14_hqehr")]
 position = Vector2(8006, 95)
@@ -830,6 +830,7 @@ scale = Vector2(50, 1)
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]

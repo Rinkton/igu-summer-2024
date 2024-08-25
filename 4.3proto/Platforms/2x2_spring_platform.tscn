@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq2ktu6nqevoa"]
+
+[ext_resource type="Script" path="res://Platforms/platform.gd" id="1_gtwjj"]
+[ext_resource type="PackedScene" uid="uid://ubpnfnq1aiji" path="res://tilemap.tscn" id="2_3fbv2"]
+[ext_resource type="PackedScene" uid="uid://d3gwxey50bk4i" path="res://above_tilemap.tscn" id="3_a25c4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgund"]
+size = Vector2(48, 40)
+
+[node name="2x2_summer_platform" type="StaticBody2D"]
+script = ExtResource("1_gtwjj")
+
+[node name="tilemap" parent="." instance=ExtResource("2_3fbv2")]
+layer_0/tile_data = PackedInt32Array(0, 393219, 6, -65536, 393219, 0, 65535, 3, 6, -1, 3, 0)
+
+[node name="above_tilemap" parent="." instance=ExtResource("3_a25c4")]
+position = Vector2(0, 6)
+scale = Vector2(0.09, 0.1)
+layer_0/tile_data = PackedInt32Array(-65537, 3, 7, -131072, 589827, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_sgund")

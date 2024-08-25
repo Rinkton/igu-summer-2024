@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c0sljw8fmhtc0"]
+[gd_scene load_steps=38 format=3 uid="uid://c0sljw8fmhtc0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xpst8"]
 [ext_resource type="AudioStream" uid="uid://c7j8bk6ce873b" path="res://Soundtrack/Spring maybe.mp3" id="2_rwtj8"]
@@ -6,15 +6,33 @@
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_bick0"]
 [ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_lgpnv"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="5_3ccxs"]
-[ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="6_qyw8t"]
+[ext_resource type="PackedScene" uid="uid://dl41dh6u8r12l" path="res://Platforms/6x2_spring_platform.tscn" id="6_sqcny"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="7_30qca"]
+[ext_resource type="PackedScene" uid="uid://c8ean2gmirm0x" path="res://Platforms/2x30_autumn_platform.tscn" id="7_clgxy"]
 [ext_resource type="FontFile" uid="uid://d1ib73wksvagv" path="res://Alef-Regular.ttf" id="8_b61bk"]
-[ext_resource type="Texture2D" uid="uid://b4n81xcjvsq1n" path="res://springscene/springbg.png" id="8_clksg"]
-[ext_resource type="Texture2D" uid="uid://cv0msctumec52" path="res://springscene/springdistant.png" id="9_pwa6r"]
+[ext_resource type="PackedScene" uid="uid://cp4ihidq7wgkg" path="res://rotating_object.tscn" id="8_bksal"]
+[ext_resource type="Texture2D" uid="uid://ku0fgkqv7n6v" path="res://springscene/springbg.png" id="8_clksg"]
+[ext_resource type="PackedScene" uid="uid://dto02t2vsmfq0" path="res://checkpoint.tscn" id="9_a0lxn"]
+[ext_resource type="Texture2D" uid="uid://ce8aaalhkpmqe" path="res://springscene/springdistant.png" id="9_pwa6r"]
 [ext_resource type="Texture2D" uid="uid://dneraibmw1xcw" path="res://menuconfirm.png" id="9_ulmfa"]
 [ext_resource type="Texture2D" uid="uid://dqpb4najivq3e" path="res://1000x250white.png" id="10_er0x5"]
-[ext_resource type="Texture2D" uid="uid://dqyieopfwqiyi" path="res://springscene/springclose.png" id="10_u3cgy"]
+[ext_resource type="Texture2D" uid="uid://j5scx4fex12g" path="res://springscene/springclose.png" id="10_u3cgy"]
+[ext_resource type="PackedScene" uid="uid://b6khuu7sgt86m" path="res://Platforms/6x6_spring_platform.tscn" id="10_ypto5"]
+[ext_resource type="PackedScene" uid="uid://cq2ktu6nqevoa" path="res://Platforms/2x2_spring_platform.tscn" id="11_ukpst"]
+[ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="12_juhkb"]
+[ext_resource type="PackedScene" uid="uid://cswaure8ckm57" path="res://pressure_button.tscn" id="13_e53l1"]
+[ext_resource type="Script" path="res://pressure_button_for_puzzle.gd" id="14_6d6ny"]
+[ext_resource type="PackedScene" uid="uid://dc8adxoou1gms" path="res://spawner.tscn" id="15_3hp32"]
 [ext_resource type="Shader" path="res://water.gdshader" id="15_fxtck"]
+[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="15_lg035"]
+[ext_resource type="PackedScene" uid="uid://bj7uyjqpmm6ux" path="res://gate.tscn" id="17_4rt5j"]
+[ext_resource type="PackedScene" uid="uid://caofxgcnqlkrd" path="res://click_button.tscn" id="17_g0uxt"]
+[ext_resource type="PackedScene" uid="uid://cwd4ogug2w3dx" path="res://Platforms/6x30_spring_platform.tscn" id="18_sr4cc"]
+[ext_resource type="PackedScene" uid="uid://v2x33ict60vu" path="res://ladder.tscn" id="19_3i22g"]
+[ext_resource type="Script" path="res://levels/reset_rotation.gd" id="30_m4nbl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njrnl"]
+size = Vector2(51, 1020)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e65pr"]
 size = Vector2(95, 101)
@@ -40,6 +58,9 @@ shader_parameter/speed = Vector2(0, 0.07)
 shader_parameter/wave_strength = 2.0
 shader_parameter/fast_noise = SubResource("NoiseTexture2D_5ixaq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83bs8"]
+size = Vector2(50, 960)
+
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_xpst8")
 
@@ -53,16 +74,469 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_bick0")]
-position = Vector2(30, 159)
+position = Vector2(7593, -6)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_lgpnv")]
 
 [node name="above" type="Node2D" parent="."]
 z_index = 1
 
-[node name="obst1" parent="above" instance=ExtResource("6_qyw8t")]
-position = Vector2(898, 269)
-scale = Vector2(39.13, 0.605)
+[node name="6x2 Spring Platform" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(58, 166)
+
+[node name="6x2 Spring Platform2" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(194, 166)
+
+[node name="6x2 Spring Platform3" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(332, 167)
+
+[node name="6x2 Spring Platform4" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(2574, 122)
+
+[node name="6x2 Spring Platform5" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(2887, 80)
+
+[node name="6x2 Spring Platform6" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(3270, 222)
+
+[node name="6x2 Spring Platform7" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(3556, 225)
+
+[node name="6x2 Spring Platform9" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(4148, 227)
+
+[node name="6x2 Spring Platform10" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(4433, 219)
+
+[node name="6x2 Spring Platform11" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(7206, 224)
+
+[node name="6x2 Spring Platform15" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(7205, 189)
+
+[node name="6x2 Spring Platform16" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(7206, 158)
+
+[node name="6x2 Spring Platform17" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(7205, 134)
+
+[node name="6x2 Spring Platform18" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(7206, 109)
+
+[node name="6x2 Spring Platform19" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(7206, 96)
+
+[node name="6x2 Spring Platform8" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(3852, 225)
+
+[node name="2x30 Autumn Platform" parent="above" instance=ExtResource("7_clgxy")]
+position = Vector2(-38, -132)
+
+[node name="rotating_object" parent="above" instance=ExtResource("8_bksal")]
+position = Vector2(532, 162)
+rot_spd = 1.5
+
+[node name="rotating_object2" parent="above" instance=ExtResource("8_bksal")]
+position = Vector2(1259, 166)
+rot_spd = 1.5
+
+[node name="rotating_object4" parent="above" instance=ExtResource("8_bksal")]
+position = Vector2(1792, 167)
+rot_spd = -1.5
+
+[node name="rotating_object5" parent="above" instance=ExtResource("8_bksal")]
+position = Vector2(2725, 194)
+rot_spd = 0.75
+
+[node name="checkpoint" parent="above" instance=ExtResource("9_a0lxn")]
+position = Vector2(2213, 128)
+
+[node name="6x6 Spring Platform" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(757, 221)
+
+[node name="6x6 Spring Platform2" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(868, 222)
+
+[node name="6x6 Spring Platform3" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(957, 222)
+
+[node name="6x6 Spring Platform4" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(1024, 221)
+
+[node name="6x6 Spring Platform5" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(1523, 230)
+
+[node name="6x6 Spring Platform6" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(2035, 235)
+
+[node name="6x6 Spring Platform7" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(2156, 236)
+
+[node name="6x6 Spring Platform8" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(2262, 236)
+
+[node name="6x6 Spring Platform9" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(2401, 290)
+
+[node name="6x6 Spring Platform11" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(2933, 309)
+
+[node name="6x6 Spring Platform12" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(5547, -23)
+
+[node name="6x6 Spring Platform13" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(5548, -144)
+
+[node name="6x6 Spring Platform10" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(2520, 72)
+
+[node name="2x2_summer_platform" parent="above" instance=ExtResource("11_ukpst")]
+position = Vector2(2985, 219)
+
+[node name="2x2_summer_platform4" parent="above" instance=ExtResource("11_ukpst")]
+position = Vector2(2967, 221)
+
+[node name="2x2_summer_platform2" parent="above" instance=ExtResource("11_ukpst")]
+position = Vector2(2986, 179)
+
+[node name="2x2_summer_platform3" parent="above" instance=ExtResource("11_ukpst")]
+position = Vector2(2986, 138)
+
+[node name="checkpoint2" parent="above" instance=ExtResource("9_a0lxn")]
+position = Vector2(4721, 154)
+
+[node name="checkpoint3" parent="above" instance=ExtResource("9_a0lxn")]
+position = Vector2(7445, 46)
+
+[node name="tip" parent="above" instance=ExtResource("12_juhkb")]
+position = Vector2(7342, 0)
+
+[node name="Content" parent="above/tip" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Label" parent="above/tip/Content" index="0"]
+offset_left = 555.0
+offset_top = 70.0
+offset_right = 2261.0
+offset_bottom = 246.0
+text = "A final push..."
+
+[node name="Area2D" parent="above/tip" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="above/tip/Area2D" index="0"]
+position = Vector2(83.5, 497)
+shape = SubResource("RectangleShape2D_njrnl")
+
+[node name="Panel" parent="above/tip" index="3"]
+metadata/_edit_lock_ = true
+
+[node name="rotating_object3" parent="above" instance=ExtResource("8_bksal")]
+position = Vector2(5333, 59)
+rot_spd = 1.5
+
+[node name="whatto" type="Node2D" parent="above/rotating_object3"]
+position = Vector2(0, -14)
+
+[node name="pressure_button_for_puzzle" parent="above" instance=ExtResource("13_e53l1")]
+position = Vector2(5333, 45)
+script = ExtResource("14_6d6ny")
+to_what = NodePath("../rotating_object3")
+node_path = NodePath("../gate")
+
+[node name="spawner" parent="above" instance=ExtResource("15_3hp32")]
+position = Vector2(5334, -22)
+cooldown = 1.0
+what = ExtResource("15_lg035")
+
+[node name="click_button" parent="above" instance=ExtResource("17_g0uxt")]
+position = Vector2(5049, 136)
+node_path = NodePath("../spawner")
+
+[node name="gate" parent="above" instance=ExtResource("17_4rt5j")]
+position = Vector2(5541, 181)
+
+[node name="6x30 Spring Platform" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(4715, 570)
+
+[node name="6x30 Spring Platform2" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(4857, 570)
+
+[node name="6x30 Spring Platform3" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(4999, 570)
+
+[node name="6x30 Spring Platform4" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(5139, 570)
+
+[node name="6x30 Spring Platform5" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(5249, 570)
+
+[node name="6x30 Spring Platform6" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(5371, 570)
+
+[node name="6x30 Spring Platform7" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(5508, 570)
+
+[node name="6x30 Spring Platform8" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(5602, 570)
+
+[node name="6x30 Spring Platform9" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(5698, 570)
+
+[node name="6x30 Spring Platform10" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(5805, 570)
+
+[node name="6x30 Spring Platform11" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(6054, 634)
+
+[node name="6x30 Spring Platform12" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(6328, 711)
+
+[node name="6x30 Spring Platform13" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(6628, 798)
+
+[node name="6x30 Spring Platform14" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(6726, 799)
+
+[node name="6x30 Spring Platform15" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(6851, 800)
+
+[node name="6x30 Spring Platform16" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(6952, 801)
+
+[node name="6x30 Spring Platform17" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(7465, 458)
+
+[node name="6x30 Spring Platform18" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(7567, 459)
+
+[node name="6x30 Spring Platform19" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(7653, 460)
+
+[node name="6x30 Spring Platform20" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(7892, 584)
+
+[node name="6x30 Spring Platform21" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(7985, 585)
+
+[node name="6x30 Spring Platform22" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(8192, 594)
+
+[node name="6x30 Spring Platform23" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(8397, 594)
+
+[node name="6x30 Spring Platform24" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(8612, 576)
+
+[node name="6x30 Spring Platform25" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(8705, 577)
+
+[node name="6x30 Spring Platform26" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(8912, 586)
+
+[node name="6x30 Spring Platform27" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(9112, 568)
+
+[node name="6x30 Spring Platform28" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(9312, 540)
+
+[node name="ladder" parent="above" instance=ExtResource("19_3i22g")]
+position = Vector2(7337, 230)
+
+[node name="ladder2" parent="above" instance=ExtResource("19_3i22g")]
+position = Vector2(7337, 230)
+
+[node name="ladder6" parent="above" instance=ExtResource("19_3i22g")]
+position = Vector2(7337, 144)
+
+[node name="ladder7" parent="above" instance=ExtResource("19_3i22g")]
+position = Vector2(7337, 58)
+
+[node name="ladder3" parent="above" instance=ExtResource("19_3i22g")]
+position = Vector2(7337, 315)
+
+[node name="ladder4" parent="above" instance=ExtResource("19_3i22g")]
+position = Vector2(7337, 401)
+
+[node name="ladder5" parent="above" instance=ExtResource("19_3i22g")]
+position = Vector2(7337, 487)
+
+[node name="6x2 Spring Platform12" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(9692, 108)
+
+[node name="6x2 Spring Platform13" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(9934, 145)
+
+[node name="6x2 Spring Platform14" parent="above" instance=ExtResource("6_sqcny")]
+position = Vector2(10178, 182)
+
+[node name="6x30 Spring Platform29" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(11309, 591)
+
+[node name="6x30 Spring Platform30" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(11403, 591)
+
+[node name="6x30 Spring Platform31" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(11487, 591)
+
+[node name="6x30 Spring Platform32" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(11583, 592)
+
+[node name="6x30 Spring Platform33" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(11724, 593)
+
+[node name="6x30 Spring Platform34" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(11818, 593)
+
+[node name="6x30 Spring Platform35" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(11902, 593)
+
+[node name="6x30 Spring Platform36" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(11998, 594)
+
+[node name="6x30 Spring Platform37" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(12123, 593)
+
+[node name="6x30 Spring Platform38" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(12241, 594)
+
+[node name="6x30 Spring Platform39" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(12337, 594)
+
+[node name="6x30 Spring Platform40" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(12423, 594)
+
+[node name="6x30 Spring Platform41" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(12456, 592)
+
+[node name="6x30 Spring Platform46" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(12465, 501)
+
+[node name="6x30 Spring Platform47" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(13534, 501)
+
+[node name="6x30 Spring Platform48" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(14075, 509)
+
+[node name="pressure_button" parent="above" instance=ExtResource("13_e53l1")]
+position = Vector2(11482, 208)
+node_path = NodePath("../gate2")
+
+[node name="gate2" parent="above" instance=ExtResource("17_4rt5j")]
+position = Vector2(12281, 64)
+rotation = -1.5708
+
+[node name="push" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(12260, 28)
+
+[node name="6x30 Spring Platform42" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(10655, 555)
+
+[node name="6x30 Spring Platform45" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(10423, 624)
+
+[node name="6x30 Spring Platform43" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(10881, 521)
+
+[node name="6x30 Spring Platform44" parent="above" instance=ExtResource("18_sr4cc")]
+position = Vector2(11104, 475)
+
+[node name="push2" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(13155, 221)
+
+[node name="push5" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(13328, 223)
+
+[node name="push6" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(13328, 182)
+
+[node name="push3" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(12763, 228)
+
+[node name="push4" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(12957, 225)
+
+[node name="rotating_object6" parent="above" instance=ExtResource("8_bksal")]
+position = Vector2(13808, 172)
+rot_spd = 1.5
+
+[node name="6x6 Spring Platform14" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(14424, 83)
+
+[node name="6x6 Spring Platform21" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(14460, 83)
+
+[node name="6x6 Spring Platform15" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(14689, 58)
+
+[node name="6x6 Spring Platform22" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(14734, 58)
+
+[node name="6x6 Spring Platform16" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(14928, 116)
+
+[node name="6x6 Spring Platform23" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(14964, 116)
+
+[node name="6x6 Spring Platform17" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(15157, 93)
+
+[node name="6x6 Spring Platform24" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(15200, 93)
+
+[node name="6x6 Spring Platform31" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(15254, 93)
+
+[node name="6x6 Spring Platform18" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(15389, 117)
+
+[node name="6x6 Spring Platform20" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(15497, -8)
+
+[node name="6x6 Spring Platform19" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(15606, 90)
+
+[node name="push7" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(14365, 216)
+
+[node name="push8" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(14637, 226)
+
+[node name="push11" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(15199, 220)
+
+[node name="push12" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(15198, 187)
+
+[node name="push13" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(15494, 228)
+
+[node name="6x6 Spring Platform25" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(15802, 119)
+
+[node name="6x6 Spring Platform26" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(15910, -6)
+
+[node name="6x6 Spring Platform27" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(16019, 92)
+
+[node name="push14" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(15907, 230)
+
+[node name="6x6 Spring Platform28" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(16216, 121)
+
+[node name="6x6 Spring Platform29" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(16324, -4)
+
+[node name="6x6 Spring Platform30" parent="above" instance=ExtResource("10_ypto5")]
+position = Vector2(16433, 94)
+
+[node name="push15" parent="above" instance=ExtResource("15_lg035")]
+position = Vector2(16321, 232)
+
+[node name="2x2_summer_platform5" parent="above" instance=ExtResource("11_ukpst")]
+position = Vector2(12160, 209)
 
 [node name="below" type="Node2D" parent="."]
 
@@ -148,6 +622,7 @@ metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 process_mode = 4
@@ -218,5 +693,18 @@ material = SubResource("ShaderMaterial_f681n")
 position = Vector2(500, 375)
 texture = ExtResource("10_er0x5")
 
+[node name="reset_rotation" type="Area2D" parent="."]
+position = Vector2(7823, 166)
+script = ExtResource("30_m4nbl")
+what = NodePath("../above/rotating_object6")
+rot = 3.892
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reset_rotation"]
+position = Vector2(15, 320)
+shape = SubResource("RectangleShape2D_83bs8")
+
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]
+[connection signal="body_entered" from="reset_rotation" to="reset_rotation" method="_on_body_entered"]
+
+[editable path="above/tip"]
