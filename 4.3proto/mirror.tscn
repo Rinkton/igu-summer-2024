@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckn3nmwesedis"]
+
+[ext_resource type="Texture2D" uid="uid://yjsh87ssrqoa" path="res://Ending Mirror.png" id="1_tg7to"]
+
+[node name="mirror" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tg7to")
+flip_h = true

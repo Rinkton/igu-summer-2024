@@ -1,8 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://cv5tdfv31jov7"]
+[gd_scene load_steps=47 format=3 uid="uid://cv5tdfv31jov7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_4452g"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_kijc5"]
-[ext_resource type="AudioStream" uid="uid://dhtewd5scjim2" path="res://Soundtrack/Autumn - V1.mp3" id="2_wtmjr"]
+[ext_resource type="AudioStream" uid="uid://dhtewd5scjim2" path="res://Soundtrack/autumn.mp3" id="2_wtmjr"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_rinh3"]
 [ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_l3eor"]
 [ext_resource type="PackedScene" uid="uid://bl0n1rwwlujg6" path="res://Platforms/30x2_autumn_platform.tscn" id="5_ck3wk"]
@@ -24,8 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://c8ean2gmirm0x" path="res://Platforms/2x30_autumn_platform.tscn" id="19_w4yu4"]
 [ext_resource type="PackedScene" uid="uid://hw2ef7yirqhk" path="res://lever.tscn" id="20_s2uky"]
 [ext_resource type="PackedScene" uid="uid://s5c8talhieq" path="res://just_round_push.tscn" id="21_6mwr7"]
+[ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="23_mn781"]
 [ext_resource type="FontFile" uid="uid://d1ib73wksvagv" path="res://Alef-Regular.ttf" id="24_6cli6"]
 [ext_resource type="Texture2D" uid="uid://cp80p0tt02wch" path="res://bg_above.png" id="24_h3khk"]
+[ext_resource type="Texture2D" uid="uid://b7t6s1wycftkj" path="res://Spacebar Tooltip Spritesheet.png" id="24_nb6vw"]
 [ext_resource type="Texture2D" uid="uid://dneraibmw1xcw" path="res://menuconfirm.png" id="25_r8riy"]
 [ext_resource type="Texture2D" uid="uid://dd6e8ylc85u7a" path="res://treescene/bgtree.png" id="25_vu6lk"]
 [ext_resource type="Texture2D" uid="uid://gbbkkhys7fr3" path="res://mountainparallax.png" id="26_3obws"]
@@ -34,6 +36,38 @@
 [ext_resource type="Texture2D" uid="uid://botrbifc1ersy" path="res://treescene/closetrees.png" id="28_8avfp"]
 [ext_resource type="Texture2D" uid="uid://c6w3unwxitc3f" path="res://bg_below.png" id="29_wturj"]
 [ext_resource type="Shader" path="res://water.gdshader" id="34_t84dw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yol5"]
+atlas = ExtResource("24_nb6vw")
+region = Rect2(0, 0, 477, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0u2m"]
+atlas = ExtResource("24_nb6vw")
+region = Rect2(477, 0, 477, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1108i"]
+atlas = ExtResource("24_nb6vw")
+region = Rect2(954, 0, 477, 323)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xd5u2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yol5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0u2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1108i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylv2l"]
+size = Vector2(78, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfpc5"]
 size = Vector2(95, 101)
@@ -72,7 +106,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_rinh3")]
-position = Vector2(5150, 152)
+position = Vector2(8165, 163)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_l3eor")]
 
@@ -496,6 +530,24 @@ position = Vector2(1748, 85)
 position = Vector2(6581, 186)
 node_path = NodePath("../gate3")
 
+[node name="tip" parent="above" instance=ExtResource("23_mn781")]
+position = Vector2(8301, 0)
+
+[node name="Label" parent="above/tip/Content" index="0"]
+visible = false
+text = ""
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="above/tip/Content" index="1"]
+position = Vector2(879, 98)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_xd5u2")
+frame = 2
+frame_progress = 0.429624
+
+[node name="CollisionShape2D" parent="above/tip/Area2D" index="0"]
+position = Vector2(-34, 47)
+shape = SubResource("RectangleShape2D_ylv2l")
+
 [node name="below" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -726,3 +778,5 @@ texture = ExtResource("26_8nwop")
 
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]
+
+[editable path="above/tip"]

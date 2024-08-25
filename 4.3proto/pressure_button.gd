@@ -24,9 +24,8 @@ func _physics_process(_delta):
 	else:
 		if above_node.activated:
 			above_node.deactivate()
-			$AnimationPlayer.play_backwards("press")
-	get_node("symmetry_link").obj.get_node("Sprite2D").scale = $Sprite2D.scale
-	get_node("symmetry_link").obj.get_node("Sprite2D").position = $Sprite2D.position
+			$AnimationPlayer.play("idle")
+	get_node("symmetry_link").obj.get_node("Sprite2D").frame = $Sprite2D.frame
 
 
 func _on_body_entered(body):

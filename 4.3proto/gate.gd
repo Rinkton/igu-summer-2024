@@ -22,7 +22,6 @@ func _process(_delta):
 func activate():
 	$AnimationPlayer.play("open")
 	activated = true
-	print(name)
 
 func deactivate():
 	$AnimationPlayer.play_backwards("open")

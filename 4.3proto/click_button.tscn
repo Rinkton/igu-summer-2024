@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://caofxgcnqlkrd"]
 
-[ext_resource type="Texture2D" uid="uid://rk31q3u8ahij" path="res://icon.svg" id="1_ml3aj"]
 [ext_resource type="Script" path="res://click_button.gd" id="1_mnwvy"]
+[ext_resource type="Texture2D" uid="uid://oobsmugu58pq" path="res://lever.png" id="2_mildk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncon2"]
 
@@ -9,9 +9,12 @@
 collision_layer = 5
 script = ExtResource("1_mnwvy")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_ml3aj")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ncon2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.38419e-07, 4.76837e-07)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_mildk")
+hframes = 2

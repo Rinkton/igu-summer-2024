@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://vbti41wv78w7"]
+[gd_scene load_steps=9 format=3 uid="uid://bsjmh36fgfxjm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_h17n7"]
 [ext_resource type="Texture2D" uid="uid://ikg01mwhr1j2" path="res://bgcheckeredgreen.png" id="2_0tffq"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="3_7o23t"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="4_t7aqb"]
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="5_ys24e"]
-[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://node_2d.tscn" id="6_3fail"]
+[ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="6_3fail"]
 
 [sub_resource type="Gradient" id="Gradient_kcv1g"]
 offsets = PackedFloat32Array(1)

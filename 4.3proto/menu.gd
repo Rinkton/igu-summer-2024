@@ -1,25 +1,19 @@
 extends Node2D
 
 
-func disable_all_point_lights():
-	$level1/PointLight2D.visible = false
-	$level2/PointLight2D2.visible = false
-	$level3/PointLight2D3.visible = false
-	$level4/PointLight2D4.visible = false
+func _ready():
+	Global.lst_checkpoint_pos = null
+	for level_number in Global.lst_unlocked_levels:
+		get_node("level" + str(level_number)).unlock_silently()
+	var new_unlocked_levels = difference(Global.unlocked_levels, Global.lst_unlocked_levels)
+	for level_number in new_unlocked_levels:
+		get_node("level" + str(level_number)).unlock_loudly()
+	Global.lst_unlocked_levels = Global.unlocked_levels
 
 
-func _on_level_1_input_event(viewport, event, shape_idx):
-	disable_all_point_lights()
-	$level1/PointLight2D.visible = true
-	
-	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
-		get_tree().change_scene_to_file("res://levels/level_1.tscn")
-
-func _on_level_2_input_event(viewport, event, shape_idx):
-	pass
-
-func _on_level_3_input_event(viewport, event, shape_idx):
-	pass # Replace with function body.
-
-func _on_level_4_input_event(viewport, event, shape_idx):
-	pass # Replace with function body.
+func difference(arr1, arr2):
+	var only_in_arr1 = []
+	for v in arr1:
+		if not (v in arr2):
+			only_in_arr1.append(v)
+	return only_in_arr1

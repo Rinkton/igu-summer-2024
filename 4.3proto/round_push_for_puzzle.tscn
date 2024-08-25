@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0y4jr5rnknc4"]
 
 [ext_resource type="Script" path="res://round_push_for_puzzle.gd" id="1_o37aj"]
-[ext_resource type="Texture2D" uid="uid://dpu2sxsajpwm4" path="res://attract_attention.png" id="1_xmex5"]
+[ext_resource type="Texture2D" uid="uid://2njsurj8hyq1" path="res://Circle - pushable.png" id="2_i7wp1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_626no"]
 radius = 15.0
@@ -16,9 +16,8 @@ sleeping = true
 script = ExtResource("1_o37aj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
-scale = Vector2(0.96, 0.96)
-texture = ExtResource("1_xmex5")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_i7wp1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_626no")

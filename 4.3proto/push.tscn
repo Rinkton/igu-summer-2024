@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://y670nsgjw3ha"]
 
-[ext_resource type="Texture2D" uid="uid://crc7t5b2uwgb2" path="res://bgcheckeredgreen.png" id="1_187i3"]
+[ext_resource type="Texture2D" uid="uid://cgq4x6dwsey77" path="res://Square - pushable.png" id="1_osauq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_niogq"]
 friction = 0.6
@@ -18,9 +18,8 @@ sleeping = true
 linear_damp = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
-scale = Vector2(0.16, 0.32)
-texture = ExtResource("1_187i3")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_osauq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ntpfh")

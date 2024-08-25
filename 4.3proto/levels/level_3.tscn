@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://dk6dtc33xwbdk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rsmav"]
-[ext_resource type="AudioStream" uid="uid://kbq03vwiimge" path="res://Soundtrack/WINTER V9.mp3" id="2_udmfp"]
+[ext_resource type="AudioStream" uid="uid://kbq03vwiimge" path="res://Soundtrack/winter.mp3" id="2_udmfp"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_y6af0"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_v2aw0"]
 [ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_46wyi"]
@@ -72,7 +72,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_v2aw0")]
-position = Vector2(29, 163)
+position = Vector2(7947, -13)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_46wyi")]
 
@@ -349,9 +349,6 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" parent="above/tip/Area2D" index="0"]
 position = Vector2(277, 251.5)
 shape = SubResource("RectangleShape2D_w8m6x")
-
-[node name="Panel" parent="above/tip" index="3"]
-metadata/_edit_lock_ = true
 
 [node name="checkpoint" parent="above" instance=ExtResource("7_60dj8")]
 position = Vector2(1900, 117)

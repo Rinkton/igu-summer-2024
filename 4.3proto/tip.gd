@@ -31,3 +31,6 @@ func _on_area_2d_body_entered(body):
 			if child.name.contains("tip") and child != self:
 				child.visible = false
 		visible = true
+		for child in $Content.get_children():
+			if child.name.contains("AnimatedSprite"):
+				child.play()

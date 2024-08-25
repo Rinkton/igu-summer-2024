@@ -20,7 +20,6 @@ func _ready(): ################################
 	$AudioStreamPlayer.play(Global.timestamp)
 	$CanvasLayer.process_mode = Node.PROCESS_MODE_DISABLED
 	$CanvasLayer.visible = false
-	print('run')
 	for object in $above.get_children():
 		
 		if not(object is RigidBody2D): # Idk, but the push is feeling bad when I lay material on its sprite
@@ -91,7 +90,8 @@ func _physics_process(delta):
 			return
 		else:
 			for object in cur_side.get_children():
-				object.position.y += scroll_vel * delta * (1 if cur_side == $above else -1)
+				if not object.name.contains("tip"):
+					object.position.y += scroll_vel * delta * (1 if cur_side == $above else -1)
 	
 
 func set_symmetric():

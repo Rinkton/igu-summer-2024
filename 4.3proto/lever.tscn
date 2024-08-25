@@ -1,12 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://hw2ef7yirqhk"]
 
-[ext_resource type="Texture2D" uid="uid://rk31q3u8ahij" path="res://icon.svg" id="1_f8hlj"]
 [ext_resource type="Script" path="res://lever.gd" id="1_pyg23"]
+[ext_resource type="Texture2D" uid="uid://oobsmugu58pq" path="res://lever.png" id="2_jw5qf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eklwb"]
 
 [node name="lever" type="Area2D"]
-modulate = Color(100, 1, 1, 1)
 collision_layer = 5
 script = ExtResource("1_pyg23")
 
@@ -14,5 +13,8 @@ script = ExtResource("1_pyg23")
 shape = SubResource("RectangleShape2D_eklwb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.152344, 0.152344)
-texture = ExtResource("1_f8hlj")
+texture_filter = 1
+position = Vector2(2.38419e-07, 4.76837e-07)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_jw5qf")
+hframes = 2

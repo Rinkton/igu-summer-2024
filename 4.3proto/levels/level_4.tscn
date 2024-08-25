@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://c0sljw8fmhtc0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xpst8"]
-[ext_resource type="AudioStream" uid="uid://c7j8bk6ce873b" path="res://Soundtrack/Spring maybe.mp3" id="2_rwtj8"]
+[ext_resource type="AudioStream" uid="uid://c7j8bk6ce873b" path="res://Soundtrack/spring.mp3" id="2_rwtj8"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_t7o2s"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_bick0"]
 [ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_lgpnv"]
@@ -74,7 +74,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_bick0")]
-position = Vector2(7593, -6)
+position = Vector2(4858, 127)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_lgpnv")]
 
@@ -227,9 +227,6 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" parent="above/tip/Area2D" index="0"]
 position = Vector2(83.5, 497)
 shape = SubResource("RectangleShape2D_njrnl")
-
-[node name="Panel" parent="above/tip" index="3"]
-metadata/_edit_lock_ = true
 
 [node name="rotating_object3" parent="above" instance=ExtResource("8_bksal")]
 position = Vector2(5333, 59)
