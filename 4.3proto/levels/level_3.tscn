@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dk6dtc33xwbdk"]
+[gd_scene load_steps=36 format=3 uid="uid://dk6dtc33xwbdk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rsmav"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_y6af0"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_s7vtf"]
 [ext_resource type="PackedScene" uid="uid://c8ean2gmirm0x" path="res://Platforms/2x30_autumn_platform.tscn" id="8_fl5ti"]
 [ext_resource type="FontFile" uid="uid://d1ib73wksvagv" path="res://Alef-Regular.ttf" id="8_pntx4"]
-[ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_wtvmu"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="9_1nro7"]
 [ext_resource type="PackedScene" uid="uid://du28fyi2nelxk" path="res://Platforms/6x30_winter_platform.tscn" id="9_ddw5d"]
 [ext_resource type="Texture2D" uid="uid://dneraibmw1xcw" path="res://menuconfirm.png" id="9_t70k3"]
@@ -23,6 +22,13 @@
 [ext_resource type="PackedScene" uid="uid://hw2ef7yirqhk" path="res://lever.tscn" id="17_53ck2"]
 [ext_resource type="PackedScene" uid="uid://d2pfavut6cjl2" path="res://Platforms/30x2_winter_platform.tscn" id="17_v075i"]
 [ext_resource type="PackedScene" uid="uid://v2x33ict60vu" path="res://ladder.tscn" id="18_beay8"]
+[ext_resource type="Texture2D" uid="uid://cp80p0tt02wch" path="res://bg_above.png" id="20_2mtdw"]
+[ext_resource type="Texture2D" uid="uid://cycg36dpw0pli" path="res://Aurora.png" id="21_i414k"]
+[ext_resource type="Texture2D" uid="uid://c6w3unwxitc3f" path="res://bg_below.png" id="21_sv3b4"]
+[ext_resource type="Texture2D" uid="uid://gbbkkhys7fr3" path="res://mountainparallax.png" id="22_0o8d2"]
+[ext_resource type="Texture2D" uid="uid://bcnsei0clqfah" path="res://Mountains.png" id="23_p8ltt"]
+[ext_resource type="Texture2D" uid="uid://dsq5g64k6s44l" path="res://treeline.png" id="24_lwx6x"]
+[ext_resource type="Shader" path="res://water.gdshader" id="28_kck1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8m6x"]
 size = Vector2(31, 507)
@@ -33,8 +39,29 @@ size = Vector2(95, 101)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7csv5"]
 size = Vector2(99, 101)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7li5l"]
+noise_type = 2
+frequency = 0.0036
+fractal_type = 2
+fractal_gain = 0.72
+fractal_weighted_strength = 0.7
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_naywi"]
+seamless = true
+noise = SubResource("FastNoiseLite_7li5l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1imj"]
+shader = ExtResource("28_kck1w")
+shader_parameter/color = Color(0.803922, 0.803922, 0.803922, 0.976471)
+shader_parameter/speed = Vector2(0, 0.07)
+shader_parameter/wave_strength = 2.0
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_naywi")
+
 [node name="level_3" type="Node2D"]
 script = ExtResource("1_rsmav")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
 
 [node name="axis" parent="." instance=ExtResource("2_y6af0")]
 position = Vector2(500, 250)
@@ -147,6 +174,19 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" parent="above/6x2 Winter Platform41" index="2"]
 metadata/_edit_lock_ = true
 
+[node name="6x2 Winter Platform52" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(8895, 201)
+
+[node name="tilemap" parent="above/6x2 Winter Platform52" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="above_tilemap" parent="above/6x2 Winter Platform52" index="1"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="above/6x2 Winter Platform52" index="2"]
+metadata/_edit_lock_ = true
+
 [node name="6x2 Winter Platform42" parent="above" instance=ExtResource("5_4w0rf")]
 position = Vector2(8801, 164)
 
@@ -223,58 +263,6 @@ visible = false
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="above/6x2 Winter Platform47" index="2"]
-metadata/_edit_lock_ = true
-
-[node name="6x2 Winter Platform48" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(8724, -93)
-
-[node name="tilemap" parent="above/6x2 Winter Platform48" index="0"]
-metadata/_edit_lock_ = true
-
-[node name="above_tilemap" parent="above/6x2 Winter Platform48" index="1"]
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" parent="above/6x2 Winter Platform48" index="2"]
-metadata/_edit_lock_ = true
-
-[node name="6x2 Winter Platform49" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(9018, -44)
-
-[node name="tilemap" parent="above/6x2 Winter Platform49" index="0"]
-metadata/_edit_lock_ = true
-
-[node name="above_tilemap" parent="above/6x2 Winter Platform49" index="1"]
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" parent="above/6x2 Winter Platform49" index="2"]
-metadata/_edit_lock_ = true
-
-[node name="6x2 Winter Platform50" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(8861, -190)
-
-[node name="tilemap" parent="above/6x2 Winter Platform50" index="0"]
-metadata/_edit_lock_ = true
-
-[node name="above_tilemap" parent="above/6x2 Winter Platform50" index="1"]
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" parent="above/6x2 Winter Platform50" index="2"]
-metadata/_edit_lock_ = true
-
-[node name="6x2 Winter Platform51" parent="above" instance=ExtResource("5_4w0rf")]
-position = Vector2(8840, -297)
-
-[node name="tilemap" parent="above/6x2 Winter Platform51" index="0"]
-metadata/_edit_lock_ = true
-
-[node name="above_tilemap" parent="above/6x2 Winter Platform51" index="1"]
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" parent="above/6x2 Winter Platform51" index="2"]
 metadata/_edit_lock_ = true
 
 [node name="6x2 Winter Platform22" parent="above" instance=ExtResource("5_4w0rf")]
@@ -622,22 +610,6 @@ metadata/_edit_lock_ = true
 [node name="push2" parent="above" instance=ExtResource("13_5kj68")]
 position = Vector2(8007, 73)
 
-[node name="push3" parent="above" instance=ExtResource("13_5kj68")]
-position = Vector2(8873, -231)
-
-[node name="2x2 Winter Platform17" parent="above" instance=ExtResource("15_yadab")]
-position = Vector2(8307, 93)
-
-[node name="tilemap" parent="above/2x2 Winter Platform17" index="0"]
-metadata/_edit_lock_ = true
-
-[node name="above_tilemap" parent="above/2x2 Winter Platform17" index="1"]
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" parent="above/2x2 Winter Platform17" index="2"]
-metadata/_edit_lock_ = true
-
 [node name="gate4" parent="above" instance=ExtResource("10_kpr1e")]
 position = Vector2(8088, 98)
 
@@ -650,8 +622,147 @@ node_path = NodePath("../gate4")
 [node name="camera" parent="." instance=ExtResource("7_s7vtf")]
 metadata/_edit_lock_ = true
 
-[node name="parallax" parent="." instance=ExtResource("8_wtvmu")]
+[node name="parallax" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
+
+[node name="parallaxbelow" type="Node2D" parent="parallax"]
+z_index = -2
+
+[node name="sky" type="Parallax2D" parent="parallax/parallaxbelow"]
+scroll_scale = Vector2(0, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxbelow/sky"]
+visible = false
+z_index = 2
+scale = Vector2(0.521, 0.231)
+texture = ExtResource("20_2mtdw")
+centered = false
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxbelow/sky"]
+z_index = -1
+position = Vector2(3.55271e-15, 504)
+scale = Vector2(0.527, -0.256)
+texture = ExtResource("21_i414k")
+centered = false
+
+[node name="farmountains" type="Parallax2D" parent="parallax/parallaxbelow"]
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxbelow/farmountains"]
+visible = false
+modulate = Color(1, 0.898039, 0.815686, 1)
+z_index = 2
+texture_filter = 1
+position = Vector2(500, 150)
+scale = Vector2(2, 2)
+texture = ExtResource("22_0o8d2")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxbelow/farmountains"]
+modulate = Color(1, 0.913725, 0.843137, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(500, 497)
+scale = Vector2(0.527, -0.5)
+texture = ExtResource("23_p8ltt")
+
+[node name="closermountains" type="Parallax2D" parent="parallax/parallaxbelow"]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxbelow/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = 2
+texture_filter = 1
+position = Vector2(750, 220)
+scale = Vector2(1, 0.6)
+texture = ExtResource("22_0o8d2")
+
+[node name="above2" type="Sprite2D" parent="parallax/parallaxbelow/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = 2
+texture_filter = 1
+position = Vector2(250, 220)
+scale = Vector2(1, 0.6)
+texture = ExtResource("22_0o8d2")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxbelow/closermountains"]
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(502, 274)
+scale = Vector2(0.523, -0.3)
+texture = ExtResource("24_lwx6x")
+
+[node name="parallaxabove" type="Node2D" parent="parallax"]
+z_index = -1
+
+[node name="sky" type="Parallax2D" parent="parallax/parallaxabove"]
+scroll_scale = Vector2(0, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxabove/sky"]
+scale = Vector2(0.521, 0.231)
+texture = ExtResource("20_2mtdw")
+centered = false
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxabove/sky"]
+visible = false
+z_index = -1
+position = Vector2(0, 250)
+scale = Vector2(0.521, 0.231)
+texture = ExtResource("21_sv3b4")
+centered = false
+
+[node name="farmountains" type="Parallax2D" parent="parallax/parallaxabove"]
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxabove/farmountains"]
+modulate = Color(1, 0.898039, 0.815686, 1)
+texture_filter = 1
+position = Vector2(500, 0)
+scale = Vector2(0.527, 0.5)
+texture = ExtResource("23_p8ltt")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxabove/farmountains"]
+visible = false
+modulate = Color(1, 0.913725, 0.843137, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(500, 350)
+scale = Vector2(2, -2)
+texture = ExtResource("22_0o8d2")
+
+[node name="closermountains" type="Parallax2D" parent="parallax/parallaxabove"]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxabove/closermountains"]
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+texture_filter = 1
+position = Vector2(505, 226)
+scale = Vector2(0.527, 0.3)
+texture = ExtResource("24_lwx6x")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxabove/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(750, 280)
+scale = Vector2(1, -0.6)
+texture = ExtResource("22_0o8d2")
+
+[node name="below2" type="Sprite2D" parent="parallax/parallaxabove/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(250, 280)
+scale = Vector2(1, -0.6)
+texture = ExtResource("22_0o8d2")
 
 [node name="death_zone" parent="." instance=ExtResource("9_1nro7")]
 position = Vector2(32, 628)
@@ -659,6 +770,7 @@ scale = Vector2(50, 1)
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 process_mode = 4
@@ -732,23 +844,26 @@ offset_bottom = 338.0
 [node name="push" parent="." instance=ExtResource("13_5kj68")]
 position = Vector2(4395, 224)
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_m1imj")
+position = Vector2(500, 375)
+texture = ExtResource("10_qrloi")
+
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]
 
 [editable path="above/6x2 Winter Platform40"]
 [editable path="above/6x2 Winter Platform41"]
+[editable path="above/6x2 Winter Platform52"]
 [editable path="above/6x2 Winter Platform42"]
 [editable path="above/6x2 Winter Platform43"]
 [editable path="above/6x2 Winter Platform44"]
 [editable path="above/6x2 Winter Platform45"]
 [editable path="above/6x2 Winter Platform46"]
 [editable path="above/6x2 Winter Platform47"]
-[editable path="above/6x2 Winter Platform48"]
-[editable path="above/6x2 Winter Platform49"]
-[editable path="above/6x2 Winter Platform50"]
-[editable path="above/6x2 Winter Platform51"]
 [editable path="above/tip"]
 [editable path="above/6x30 Winter Platform26"]
 [editable path="above/30x2 Winter Platform"]
 [editable path="above/30x2 Winter Platform2"]
-[editable path="above/2x2 Winter Platform17"]

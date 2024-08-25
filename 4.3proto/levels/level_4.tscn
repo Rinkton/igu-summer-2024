@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://c0sljw8fmhtc0"]
+[gd_scene load_steps=21 format=3 uid="uid://c0sljw8fmhtc0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xpst8"]
+[ext_resource type="AudioStream" uid="uid://c7j8bk6ce873b" path="res://Soundtrack/Spring maybe.mp3" id="2_rwtj8"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_t7o2s"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_bick0"]
 [ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_lgpnv"]
@@ -8,8 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://bhrou6ujbten2" path="res://obst1.tscn" id="6_qyw8t"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="7_30qca"]
 [ext_resource type="FontFile" uid="uid://d1ib73wksvagv" path="res://Alef-Regular.ttf" id="8_b61bk"]
+[ext_resource type="Texture2D" uid="uid://b4n81xcjvsq1n" path="res://springscene/springbg.png" id="8_clksg"]
+[ext_resource type="Texture2D" uid="uid://cv0msctumec52" path="res://springscene/springdistant.png" id="9_pwa6r"]
 [ext_resource type="Texture2D" uid="uid://dneraibmw1xcw" path="res://menuconfirm.png" id="9_ulmfa"]
 [ext_resource type="Texture2D" uid="uid://dqpb4najivq3e" path="res://1000x250white.png" id="10_er0x5"]
+[ext_resource type="Texture2D" uid="uid://dqyieopfwqiyi" path="res://springscene/springclose.png" id="10_u3cgy"]
 [ext_resource type="Shader" path="res://water.gdshader" id="15_fxtck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e65pr"]
@@ -25,7 +29,7 @@ fractal_type = 2
 fractal_gain = 0.72
 fractal_weighted_strength = 0.7
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_naywi"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5ixaq"]
 seamless = true
 noise = SubResource("FastNoiseLite_5mxjf")
 
@@ -34,12 +38,13 @@ shader = ExtResource("15_fxtck")
 shader_parameter/color = Color(0.803922, 0.803922, 0.803922, 0.976471)
 shader_parameter/speed = Vector2(0, 0.07)
 shader_parameter/wave_strength = 2.0
-shader_parameter/fast_noise = SubResource("NoiseTexture2D_naywi")
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_5ixaq")
 
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_xpst8")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rwtj8")
 autoplay = true
 
 [node name="axis" parent="." instance=ExtResource("2_t7o2s")]
@@ -76,6 +81,7 @@ scroll_scale = Vector2(0, 0)
 z_index = -1
 position = Vector2(0, 500)
 scale = Vector2(0.5, -0.5)
+texture = ExtResource("8_clksg")
 centered = false
 
 [node name="farmountains" type="Parallax2D" parent="parallax/parallaxbelow"]
@@ -88,6 +94,7 @@ z_index = -1
 texture_filter = 1
 position = Vector2(500, 375)
 scale = Vector2(0.5, -0.5)
+texture = ExtResource("9_pwa6r")
 
 [node name="closermountains" type="Parallax2D" parent="parallax/parallaxbelow"]
 scroll_scale = Vector2(0.3, 0.3)
@@ -99,6 +106,7 @@ z_index = -1
 texture_filter = 1
 position = Vector2(500, 375)
 scale = Vector2(0.5, -0.5)
+texture = ExtResource("10_u3cgy")
 
 [node name="parallaxabove" type="Node2D" parent="parallax"]
 z_index = -1
@@ -108,6 +116,7 @@ scroll_scale = Vector2(0, 0)
 
 [node name="above" type="Sprite2D" parent="parallax/parallaxabove/sky"]
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_clksg")
 centered = false
 
 [node name="farmountains" type="Parallax2D" parent="parallax/parallaxabove"]
@@ -119,6 +128,7 @@ modulate = Color(1, 0.898039, 0.815686, 1)
 texture_filter = 1
 position = Vector2(500, 125)
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_pwa6r")
 
 [node name="closermountains" type="Parallax2D" parent="parallax/parallaxabove"]
 scroll_scale = Vector2(0.3, 0.3)
@@ -129,6 +139,7 @@ modulate = Color(0.729953, 0.77321, 0.855766, 1)
 texture_filter = 1
 position = Vector2(500, 125)
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_u3cgy")
 
 [node name="death_zone" parent="." instance=ExtResource("7_30qca")]
 position = Vector2(32, 628)

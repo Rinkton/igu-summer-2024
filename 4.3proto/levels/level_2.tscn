@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cv5tdfv31jov7"]
+[gd_scene load_steps=39 format=3 uid="uid://cv5tdfv31jov7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_4452g"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_kijc5"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bl0n1rwwlujg6" path="res://Platforms/30x2_autumn_platform.tscn" id="5_ck3wk"]
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="5_hgakc"]
 [ext_resource type="PackedScene" uid="uid://cswaure8ckm57" path="res://pressure_button.tscn" id="6_hyaei"]
-[ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="6_j62xv"]
 [ext_resource type="PackedScene" uid="uid://bj7uyjqpmm6ux" path="res://gate.tscn" id="7_2ygt7"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="7_ysjqj"]
 [ext_resource type="PackedScene" uid="uid://c6q7o4sjm3ox8" path="res://Platforms/6x2_autumn_platform.tscn" id="8_8a67j"]
@@ -25,8 +24,15 @@
 [ext_resource type="PackedScene" uid="uid://hw2ef7yirqhk" path="res://lever.tscn" id="20_s2uky"]
 [ext_resource type="PackedScene" uid="uid://s5c8talhieq" path="res://just_round_push.tscn" id="21_6mwr7"]
 [ext_resource type="FontFile" uid="uid://d1ib73wksvagv" path="res://Alef-Regular.ttf" id="24_6cli6"]
+[ext_resource type="Texture2D" uid="uid://cp80p0tt02wch" path="res://bg_above.png" id="24_h3khk"]
 [ext_resource type="Texture2D" uid="uid://dneraibmw1xcw" path="res://menuconfirm.png" id="25_r8riy"]
+[ext_resource type="Texture2D" uid="uid://dd6e8ylc85u7a" path="res://treescene/bgtree.png" id="25_vu6lk"]
+[ext_resource type="Texture2D" uid="uid://gbbkkhys7fr3" path="res://mountainparallax.png" id="26_3obws"]
 [ext_resource type="Texture2D" uid="uid://dqpb4najivq3e" path="res://1000x250white.png" id="26_8nwop"]
+[ext_resource type="Texture2D" uid="uid://dvynjev5bhw4p" path="res://treescene/distanttrees.png" id="27_h4xle"]
+[ext_resource type="Texture2D" uid="uid://botrbifc1ersy" path="res://treescene/closetrees.png" id="28_8avfp"]
+[ext_resource type="Texture2D" uid="uid://c6w3unwxitc3f" path="res://bg_below.png" id="29_wturj"]
+[ext_resource type="Shader" path="res://water.gdshader" id="34_t84dw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfpc5"]
 size = Vector2(95, 101)
@@ -34,8 +40,29 @@ size = Vector2(95, 101)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86khv"]
 size = Vector2(99, 101)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iqjx4"]
+noise_type = 2
+frequency = 0.0036
+fractal_type = 2
+fractal_gain = 0.72
+fractal_weighted_strength = 0.7
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6805q"]
+seamless = true
+noise = SubResource("FastNoiseLite_iqjx4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhwb5"]
+shader = ExtResource("34_t84dw")
+shader_parameter/color = Color(0.803922, 0.803922, 0.803922, 0.976471)
+shader_parameter/speed = Vector2(0, 0.07)
+shader_parameter/wave_strength = 2.0
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_6805q")
+
 [node name="level_2" type="Node2D"]
 script = ExtResource("1_4452g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
 
 [node name="axis" parent="." instance=ExtResource("2_kijc5")]
 position = Vector2(500, 250)
@@ -186,10 +213,6 @@ scale = Vector2(1.08002, 0.6)
 
 [node name="push7" parent="above" instance=ExtResource("11_6fvm4")]
 position = Vector2(6302, 86)
-
-[node name="pressure_button3" parent="above" instance=ExtResource("6_hyaei")]
-position = Vector2(6581, 186)
-node_path = NodePath("../gate3")
 
 [node name="gate3" parent="above" instance=ExtResource("7_2ygt7")]
 position = Vector2(6713, 113)
@@ -464,6 +487,10 @@ position = Vector2(1809, 96)
 [node name="checkpoint7" parent="above" instance=ExtResource("15_tbvmx")]
 position = Vector2(1748, 85)
 
+[node name="pressure_button3" parent="above" instance=ExtResource("6_hyaei")]
+position = Vector2(6581, 186)
+node_path = NodePath("../gate3")
+
 [node name="below" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -473,8 +500,147 @@ metadata/_edit_lock_ = true
 [node name="camera" parent="." instance=ExtResource("5_hgakc")]
 metadata/_edit_lock_ = true
 
-[node name="parallax" parent="." instance=ExtResource("6_j62xv")]
+[node name="parallax" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
+
+[node name="parallaxbelow" type="Node2D" parent="parallax"]
+z_index = -2
+
+[node name="sky" type="Parallax2D" parent="parallax/parallaxbelow"]
+scroll_scale = Vector2(0, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxbelow/sky"]
+visible = false
+z_index = 2
+scale = Vector2(0.521, 0.231)
+texture = ExtResource("24_h3khk")
+centered = false
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxbelow/sky"]
+z_index = -1
+position = Vector2(0, 500)
+scale = Vector2(0.5, -0.5)
+texture = ExtResource("25_vu6lk")
+centered = false
+
+[node name="farmountains" type="Parallax2D" parent="parallax/parallaxbelow"]
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxbelow/farmountains"]
+visible = false
+modulate = Color(1, 0.898039, 0.815686, 1)
+z_index = 2
+texture_filter = 1
+position = Vector2(500, 150)
+scale = Vector2(2, 2)
+texture = ExtResource("26_3obws")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxbelow/farmountains"]
+modulate = Color(1, 0.913725, 0.843137, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(500, 375)
+scale = Vector2(0.5, -0.5)
+texture = ExtResource("27_h4xle")
+
+[node name="closermountains" type="Parallax2D" parent="parallax/parallaxbelow"]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxbelow/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = 2
+texture_filter = 1
+position = Vector2(750, 220)
+scale = Vector2(1, 0.6)
+texture = ExtResource("26_3obws")
+
+[node name="above2" type="Sprite2D" parent="parallax/parallaxbelow/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = 2
+texture_filter = 1
+position = Vector2(250, 220)
+scale = Vector2(1, 0.6)
+texture = ExtResource("26_3obws")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxbelow/closermountains"]
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(498, 377)
+scale = Vector2(0.5, -0.5)
+texture = ExtResource("28_8avfp")
+
+[node name="parallaxabove" type="Node2D" parent="parallax"]
+z_index = -1
+
+[node name="sky" type="Parallax2D" parent="parallax/parallaxabove"]
+scroll_scale = Vector2(0, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxabove/sky"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("25_vu6lk")
+centered = false
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxabove/sky"]
+visible = false
+z_index = -1
+position = Vector2(0, 250)
+scale = Vector2(0.521, 0.231)
+texture = ExtResource("29_wturj")
+centered = false
+
+[node name="farmountains" type="Parallax2D" parent="parallax/parallaxabove"]
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxabove/farmountains"]
+modulate = Color(1, 0.898039, 0.815686, 1)
+texture_filter = 1
+position = Vector2(500, 125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("27_h4xle")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxabove/farmountains"]
+visible = false
+modulate = Color(1, 0.913725, 0.843137, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(500, 350)
+scale = Vector2(2, -2)
+texture = ExtResource("26_3obws")
+
+[node name="closermountains" type="Parallax2D" parent="parallax/parallaxabove"]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxabove/closermountains"]
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+texture_filter = 1
+position = Vector2(500, 125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("28_8avfp")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxabove/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(750, 280)
+scale = Vector2(1, -0.6)
+texture = ExtResource("26_3obws")
+
+[node name="below2" type="Sprite2D" parent="parallax/parallaxabove/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(250, 280)
+scale = Vector2(1, -0.6)
+texture = ExtResource("26_3obws")
 
 [node name="death_zone" parent="." instance=ExtResource("7_ysjqj")]
 position = Vector2(32, 628)
@@ -544,6 +710,13 @@ position = Vector2(500, 250)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/no"]
 position = Vector2(178.5, 52.5)
 shape = SubResource("RectangleShape2D_86khv")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_mhwb5")
+position = Vector2(500, 375)
+texture = ExtResource("26_8nwop")
 
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]

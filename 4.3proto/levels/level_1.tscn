@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://ddvpgfde0ncl1"]
+[gd_scene load_steps=40 format=3 uid="uid://ddvpgfde0ncl1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qhodj"]
+[ext_resource type="AudioStream" uid="uid://b0hv6wtt7doht" path="res://Soundtrack/SUMMER - V3.mp3" id="2_0gycv"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_7o2p0"]
 [ext_resource type="PackedScene" uid="uid://bl0p65sry0nln" path="res://character.tscn" id="3_iupp7"]
 [ext_resource type="PackedScene" uid="uid://clhrvu46oyrm4" path="res://point_light_2d.tscn" id="4_v0oom"]
@@ -9,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://pqw12i2ojyfo" path="res://camera.tscn" id="7_b4ll1"]
 [ext_resource type="PackedScene" uid="uid://ywp74r4cfkyr" path="res://Platforms/6x6_diagonal_autumn_platform.tscn" id="7_c27de"]
 [ext_resource type="PackedScene" uid="uid://caofxgcnqlkrd" path="res://click_button.tscn" id="8_f3q5g"]
-[ext_resource type="PackedScene" uid="uid://bqmij2fhvf2sv" path="res://parallax_winter.tscn" id="8_p8igi"]
 [ext_resource type="PackedScene" uid="uid://dg8inp7ihsp1w" path="res://Platforms/2x2_summer_platform.tscn" id="9_55gb4"]
 [ext_resource type="PackedScene" uid="uid://dc8adxoou1gms" path="res://spawner.tscn" id="11_b8bok"]
 [ext_resource type="PackedScene" uid="uid://c0y4jr5rnknc4" path="res://round_push_for_puzzle.tscn" id="12_kwlqp"]
@@ -21,10 +21,18 @@
 [ext_resource type="PackedScene" uid="uid://y670nsgjw3ha" path="res://push.tscn" id="18_eo5de"]
 [ext_resource type="PackedScene" uid="uid://cl1ropcddlo0a" path="res://death_zone.tscn" id="19_n8qxa"]
 [ext_resource type="PackedScene" uid="uid://0lv2gr7wge4g" path="res://tip.tscn" id="19_o6swc"]
+[ext_resource type="Texture2D" uid="uid://cp80p0tt02wch" path="res://bg_above.png" id="21_tmqr0"]
 [ext_resource type="FontFile" uid="uid://d1ib73wksvagv" path="res://Alef-Regular.ttf" id="22_jo8n0"]
+[ext_resource type="Texture2D" uid="uid://bni1s0npw1yhs" path="res://Summer Background - Sky.png" id="22_nxeaq"]
+[ext_resource type="Texture2D" uid="uid://gbbkkhys7fr3" path="res://mountainparallax.png" id="23_2vpq6"]
+[ext_resource type="Texture2D" uid="uid://bu1lyopfigwon" path="res://Summer Background - Birds.png" id="23_j24wc"]
 [ext_resource type="Texture2D" uid="uid://dneraibmw1xcw" path="res://menuconfirm.png" id="23_kagis"]
 [ext_resource type="Texture2D" uid="uid://dqpb4najivq3e" path="res://1000x250white.png" id="24_g05v2"]
 [ext_resource type="Shader" path="res://water.gdshader" id="25_85vfx"]
+[ext_resource type="Texture2D" uid="uid://df7eyh1drbuvd" path="res://Summer Background - Close mountains(1).png" id="25_ei8u5"]
+[ext_resource type="Texture2D" uid="uid://dne8n34rhynj5" path="res://Summer Background - Distant mountains smallres.png" id="25_lv7tb"]
+[ext_resource type="Texture2D" uid="uid://3n20jdtdex0j" path="res://Summer Background - Balloons.png" id="26_nvc8c"]
+[ext_resource type="Texture2D" uid="uid://c6w3unwxitc3f" path="res://bg_below.png" id="26_ryo6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kq7x"]
 size = Vector2(27, 518)
@@ -58,6 +66,7 @@ script = ExtResource("1_qhodj")
 can_scroll = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0gycv")
 autoplay = true
 
 [node name="axis" parent="." instance=ExtResource("2_7o2p0")]
@@ -573,8 +582,168 @@ metadata/_edit_lock_ = true
 [node name="camera" parent="." instance=ExtResource("7_b4ll1")]
 metadata/_edit_lock_ = true
 
-[node name="parallax" parent="." instance=ExtResource("8_p8igi")]
+[node name="parallax" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
+
+[node name="parallaxbelow" type="Node2D" parent="parallax"]
+z_index = -2
+
+[node name="sky" type="Parallax2D" parent="parallax/parallaxbelow"]
+scroll_scale = Vector2(0, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxbelow/sky"]
+visible = false
+z_index = 2
+scale = Vector2(0.521, 0.231)
+texture = ExtResource("21_tmqr0")
+centered = false
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxbelow/sky"]
+z_index = -1
+position = Vector2(0, 499)
+scale = Vector2(0.261, -0.232)
+texture = ExtResource("22_nxeaq")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/parallaxbelow/sky"]
+position = Vector2(497, 375)
+scale = Vector2(0.261, -0.232)
+texture = ExtResource("23_j24wc")
+
+[node name="farmountains" type="Parallax2D" parent="parallax/parallaxbelow"]
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxbelow/farmountains"]
+visible = false
+modulate = Color(1, 0.898039, 0.815686, 1)
+z_index = 2
+texture_filter = 1
+position = Vector2(500, 150)
+scale = Vector2(2, 2)
+texture = ExtResource("23_2vpq6")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxbelow/farmountains"]
+modulate = Color(1, 0.913725, 0.843137, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(500, 375)
+scale = Vector2(0.5, -0.5)
+texture = ExtResource("25_lv7tb")
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/parallaxbelow/farmountains"]
+position = Vector2(500, 375)
+scale = Vector2(0.261, -0.232)
+texture = ExtResource("26_nvc8c")
+
+[node name="closermountains" type="Parallax2D" parent="parallax/parallaxbelow"]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxbelow/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = 2
+texture_filter = 1
+position = Vector2(750, 220)
+scale = Vector2(1, 0.6)
+texture = ExtResource("23_2vpq6")
+
+[node name="above2" type="Sprite2D" parent="parallax/parallaxbelow/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = 2
+texture_filter = 1
+position = Vector2(250, 220)
+scale = Vector2(1, 0.6)
+texture = ExtResource("23_2vpq6")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxbelow/closermountains"]
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(501, 362)
+scale = Vector2(0.261, -0.232)
+texture = ExtResource("25_ei8u5")
+
+[node name="parallaxabove" type="Node2D" parent="parallax"]
+z_index = -1
+
+[node name="sky" type="Parallax2D" parent="parallax/parallaxabove"]
+scroll_scale = Vector2(0, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxabove/sky"]
+position = Vector2(-1, 0)
+scale = Vector2(0.261, 0.232)
+texture = ExtResource("22_nxeaq")
+centered = false
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxabove/sky"]
+visible = false
+z_index = -1
+position = Vector2(0, 250)
+scale = Vector2(0.521, 0.231)
+texture = ExtResource("26_ryo6m")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/parallaxabove/sky"]
+position = Vector2(500, 125)
+scale = Vector2(0.261, 0.232)
+texture = ExtResource("23_j24wc")
+
+[node name="farmountains" type="Parallax2D" parent="parallax/parallaxabove"]
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxabove/farmountains"]
+modulate = Color(1, 0.898039, 0.815686, 1)
+texture_filter = 1
+position = Vector2(500, 125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("25_lv7tb")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxabove/farmountains"]
+visible = false
+modulate = Color(1, 0.913725, 0.843137, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(500, 350)
+scale = Vector2(2, -2)
+texture = ExtResource("23_2vpq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/parallaxabove/farmountains"]
+position = Vector2(500, 125)
+scale = Vector2(0.261, 0.232)
+texture = ExtResource("26_nvc8c")
+
+[node name="closermountains" type="Parallax2D" parent="parallax/parallaxabove"]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1000, 0)
+
+[node name="above" type="Sprite2D" parent="parallax/parallaxabove/closermountains"]
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+texture_filter = 1
+position = Vector2(501, 138)
+scale = Vector2(0.261, 0.232)
+texture = ExtResource("25_ei8u5")
+
+[node name="below" type="Sprite2D" parent="parallax/parallaxabove/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(750, 280)
+scale = Vector2(1, -0.6)
+texture = ExtResource("23_2vpq6")
+
+[node name="below2" type="Sprite2D" parent="parallax/parallaxabove/closermountains"]
+visible = false
+modulate = Color(0.729953, 0.77321, 0.855766, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(250, 280)
+scale = Vector2(1, -0.6)
+texture = ExtResource("23_2vpq6")
 
 [node name="death_zone" parent="." instance=ExtResource("19_n8qxa")]
 position = Vector2(32, 628)
