@@ -17,9 +17,10 @@ var in_menu = true
 #replace _ready with create_level(), so can be called for each level creation
 
 func _ready(): ################################
+	$AudioStreamPlayer.play(Global.timestamp)
 	$CanvasLayer.process_mode = Node.PROCESS_MODE_DISABLED
 	$CanvasLayer.visible = false
-	
+	print('run')
 	for object in $above.get_children():
 		
 		if not(object is RigidBody2D): # Idk, but the push is feeling bad when I lay material on its sprite
@@ -42,6 +43,7 @@ func _ready(): ################################
 
 func _physics_process(delta):
 	
+	
 	if Input.is_action_just_pressed("esc_to_menu"):
 		$CanvasLayer.process_mode = Node.PROCESS_MODE_ALWAYS
 		$CanvasLayer.visible = true
@@ -57,8 +59,9 @@ func _physics_process(delta):
 			object.freeze = false
 	"""
 	if Input.is_action_just_pressed("reset"):
+		Global.timestamp = $AudioStreamPlayer.get_playback_position()
 		get_tree().reload_current_scene()
-
+		
 	character.check_is_above()
 
 	if character.is_above:
