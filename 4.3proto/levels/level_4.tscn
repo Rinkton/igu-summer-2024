@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c0sljw8fmhtc0"]
+[gd_scene load_steps=39 format=3 uid="uid://c0sljw8fmhtc0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xpst8"]
 [ext_resource type="AudioStream" uid="uid://c7j8bk6ce873b" path="res://Soundtrack/spring.mp3" id="2_rwtj8"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cwd4ogug2w3dx" path="res://Platforms/6x30_spring_platform.tscn" id="18_sr4cc"]
 [ext_resource type="PackedScene" uid="uid://v2x33ict60vu" path="res://ladder.tscn" id="19_3i22g"]
 [ext_resource type="Script" path="res://levels/reset_rotation.gd" id="30_m4nbl"]
+[ext_resource type="PackedScene" uid="uid://ckn3nmwesedis" path="res://mirror.tscn" id="31_2oxlr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njrnl"]
 size = Vector2(51, 1020)
@@ -699,6 +700,9 @@ rot = 3.892
 [node name="CollisionShape2D" type="CollisionShape2D" parent="reset_rotation"]
 position = Vector2(15, 320)
 shape = SubResource("RectangleShape2D_83bs8")
+
+[node name="mirror" parent="." instance=ExtResource("31_2oxlr")]
+position = Vector2(16560, 250)
 
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]

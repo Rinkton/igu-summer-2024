@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://nn62q22vnjpk"
+path="res://.godot/imported/Checkpoint SFX - More tame.wav-5779609914b2154b5e131a0ff816698c.sample"
+
+[deps]
+
+source_file="res://SFX/Checkpoint SFX - More tame.wav"
+dest_files=["res://.godot/imported/Checkpoint SFX - More tame.wav-5779609914b2154b5e131a0ff816698c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -19,3 +19,7 @@ func _physics_process(_delta):
 			global_position = Vector2(target_pos_x, 250)
 		else:
 			global_position.x = 500
+		if target_pos_x < get_tree().current_scene.get_node("mirror").global_position.x - 500+30:
+			global_position = Vector2(target_pos_x, 250)
+		else:
+			global_position = Vector2(get_tree().current_scene.get_node("mirror").global_position.x - 500+30, 250)

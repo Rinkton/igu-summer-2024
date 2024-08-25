@@ -242,7 +242,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_iupp7")]
-position = Vector2(6522, 216)
+position = Vector2(6020, 87)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_v0oom")]
 
@@ -914,7 +914,8 @@ position = Vector2(500, 375)
 texture = ExtResource("24_g05v2")
 
 [node name="mirror" parent="." instance=ExtResource("29_mdhnt")]
-position = Vector2(6627, 250)
+position = Vector2(6608, 250)
+unlock_level = 2
 
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]

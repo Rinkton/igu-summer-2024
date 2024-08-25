@@ -60,7 +60,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("reset"):
 		Global.timestamp = $AudioStreamPlayer.get_playback_position()
 		get_tree().reload_current_scene()
-		
+	
 	character.check_is_above()
 
 	if character.is_above:

@@ -8,7 +8,7 @@ func _ready():
 	var new_unlocked_levels = difference(Global.unlocked_levels, Global.lst_unlocked_levels)
 	for level_number in new_unlocked_levels:
 		get_node("level" + str(level_number)).unlock_loudly()
-	Global.lst_unlocked_levels = Global.unlocked_levels
+	Global.lst_unlocked_levels = Global.unlocked_levels.duplicate()
 
 
 func difference(arr1, arr2):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dk6dtc33xwbdk"]
+[gd_scene load_steps=39 format=3 uid="uid://dk6dtc33xwbdk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rsmav"]
 [ext_resource type="AudioStream" uid="uid://kbq03vwiimge" path="res://Soundtrack/winter.mp3" id="2_udmfp"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bcnsei0clqfah" path="res://Mountains.png" id="23_p8ltt"]
 [ext_resource type="Texture2D" uid="uid://dsq5g64k6s44l" path="res://treeline.png" id="24_lwx6x"]
 [ext_resource type="Shader" path="res://water.gdshader" id="28_kck1w"]
+[ext_resource type="PackedScene" uid="uid://ckn3nmwesedis" path="res://mirror.tscn" id="32_mxjgj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8m6x"]
 size = Vector2(31, 507)
@@ -908,6 +909,10 @@ position = Vector2(4395, 224)
 material = SubResource("ShaderMaterial_m1imj")
 position = Vector2(500, 375)
 texture = ExtResource("10_qrloi")
+
+[node name="mirror" parent="." instance=ExtResource("32_mxjgj")]
+position = Vector2(9819, 250)
+unlock_level = 4
 
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]

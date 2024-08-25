@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cv5tdfv31jov7"]
+[gd_scene load_steps=48 format=3 uid="uid://cv5tdfv31jov7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_4452g"]
 [ext_resource type="PackedScene" uid="uid://biiv6nh0k0pum" path="res://axis.tscn" id="2_kijc5"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://botrbifc1ersy" path="res://treescene/closetrees.png" id="28_8avfp"]
 [ext_resource type="Texture2D" uid="uid://c6w3unwxitc3f" path="res://bg_below.png" id="29_wturj"]
 [ext_resource type="Shader" path="res://water.gdshader" id="34_t84dw"]
+[ext_resource type="PackedScene" uid="uid://ckn3nmwesedis" path="res://mirror.tscn" id="37_gdwqa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6yol5"]
 atlas = ExtResource("24_nb6vw")
@@ -775,6 +776,10 @@ shape = SubResource("RectangleShape2D_86khv")
 material = SubResource("ShaderMaterial_mhwb5")
 position = Vector2(500, 375)
 texture = ExtResource("26_8nwop")
+
+[node name="mirror" parent="." instance=ExtResource("37_gdwqa")]
+position = Vector2(12009, 250)
+unlock_level = 3
 
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]

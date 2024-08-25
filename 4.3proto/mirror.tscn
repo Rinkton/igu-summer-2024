@@ -1,10 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckn3nmwesedis"]
+[gd_scene load_steps=5 format=3 uid="uid://ckn3nmwesedis"]
 
 [ext_resource type="Texture2D" uid="uid://yjsh87ssrqoa" path="res://Ending Mirror.png" id="1_tg7to"]
+[ext_resource type="Script" path="res://mirror.gd" id="1_tqh2r"]
+[ext_resource type="AudioStream" uid="uid://bdjg38d4aabdh" path="res://SFX/Level finished SFX.wav" id="3_12y18"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axybu"]
+size = Vector2(80.0001, 505)
 
 [node name="mirror" type="Area2D"]
 scale = Vector2(0.2, 0.2)
+script = ExtResource("1_tqh2r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_tg7to")
 flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(165, -2.50003)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_axybu")
+
+[node name="level_finished_audiostream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_12y18")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
