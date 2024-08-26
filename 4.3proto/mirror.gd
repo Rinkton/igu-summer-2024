@@ -32,5 +32,6 @@ func _on_body_entered(body):
 		if unlock_level: # not equal zero
 			if not(unlock_level in Global.unlocked_levels):
 				Global.unlocked_levels.append(unlock_level)
+		Global.timestamp = 0
 		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://menu.tscn")

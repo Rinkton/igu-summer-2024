@@ -17,11 +17,15 @@ func _physics_process(delta):
 		camera.global_position.x = move_toward(camera.global_position.x, lst_camera_pos_x+1000, 1500*delta)
 		$AudioStreamPlayer2D.volume_db -= 5 * delta
 	if first_text:
-		var label = get_tree().current_scene.get_node("above/Label")
+		var label = get_tree().current_scene.get_node("Label")
+		var label3 = get_tree().current_scene.get_node("Label3")
 		label.modulate.a = move_toward(label.modulate.a, 1, 1*delta)
+		label3.modulate.a = move_toward(label3.modulate.a, 1, 1*delta)
 	if second_text:
-		var label2 = get_tree().current_scene.get_node("above/Label2")
+		var label2 = get_tree().current_scene.get_node("Label2")
+		var label4 = get_tree().current_scene.get_node("Label4")
 		label2.modulate.a = move_toward(label2.modulate.a, 1, 1*delta)
+		label4.modulate.a = move_toward(label4.modulate.a, 1, 1*delta)
 		if Input.is_action_just_pressed("esc_to_menu"):
 			get_tree().change_scene_to_file("res://menu.tscn")
 

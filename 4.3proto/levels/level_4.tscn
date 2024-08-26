@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://c0sljw8fmhtc0"]
+[gd_scene load_steps=52 format=3 uid="uid://c0sljw8fmhtc0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xpst8"]
 [ext_resource type="AudioStream" uid="uid://c7j8bk6ce873b" path="res://Soundtrack/spring.mp3" id="2_rwtj8"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://caofxgcnqlkrd" path="res://click_button.tscn" id="17_g0uxt"]
 [ext_resource type="PackedScene" uid="uid://cwd4ogug2w3dx" path="res://Platforms/6x30_spring_platform.tscn" id="18_sr4cc"]
 [ext_resource type="PackedScene" uid="uid://v2x33ict60vu" path="res://ladder.tscn" id="19_3i22g"]
+[ext_resource type="Script" path="res://levels/label.gd" id="22_nahk2"]
 [ext_resource type="Script" path="res://levels/reset_rotation.gd" id="30_m4nbl"]
 [ext_resource type="PackedScene" uid="uid://ckn3nmwesedis" path="res://mirror.tscn" id="31_2oxlr"]
 [ext_resource type="Script" path="res://final_mirror.gd" id="32_0wcvi"]
@@ -136,7 +137,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_bick0")]
-position = Vector2(16190, 245)
+position = Vector2(37, 106)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_lgpnv")]
 
@@ -597,32 +598,6 @@ position = Vector2(16321, 232)
 [node name="2x2_summer_platform5" parent="above" instance=ExtResource("11_ukpst")]
 position = Vector2(12160, 209)
 
-[node name="Label" type="Label" parent="above"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 17036.0
-offset_top = 32.0
-offset_right = 17451.0
-offset_bottom = 185.0
-theme_override_fonts/font = ExtResource("35_qcj0w")
-text = "Thanks for playing Reflectica!
-The game was made for IGU Summer Game Jam 2024
-By
-Nils K - Music and Art
-Marz - Code and Art
-Rinkton - Code and Level design"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="above"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 17059.0
-offset_top = 215.0
-offset_right = 17446.0
-offset_bottom = 368.0
-theme_override_colors/font_color = Color(0.813258, 0.813258, 0.813258, 1)
-theme_override_fonts/font = ExtResource("35_qcj0w")
-text = "Press Esc to exit in main menu"
-horizontal_alignment = 1
-
 [node name="below" type="Node2D" parent="."]
 
 [node name="camera" parent="." instance=ExtResource("5_3ccxs")]
@@ -798,8 +773,9 @@ one_shot = true
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_left = 16590.0
-offset_right = 17582.0
-offset_bottom = 496.0
+offset_right = 17590.0
+offset_bottom = 500.0
+scale = Vector2(1.02, 1.02)
 stream = ExtResource("32_lxxqf")
 volume_db = -80.0
 loop = true
@@ -809,6 +785,68 @@ position = Vector2(16662, 160)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_rxhb4")
 speed_scale = 2.0
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_left = 17036.0
+offset_top = 32.0
+offset_right = 17451.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("35_qcj0w")
+text = "Thanks for playing Reflectica!
+The game was made for IGU Summer Game Jam 2024
+By
+Nils K - Music and Art
+Marz - Code and Art
+Rinkton - Code and Level design"
+horizontal_alignment = 1
+script = ExtResource("22_nahk2")
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_left = 17059.0
+offset_top = 215.0
+offset_right = 17446.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(0.813258, 0.813258, 0.813258, 1)
+theme_override_fonts/font = ExtResource("35_qcj0w")
+text = "Press Esc to exit in main menu"
+horizontal_alignment = 1
+script = ExtResource("22_nahk2")
+
+[node name="Label3" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_left = 17036.0
+offset_top = 468.0
+offset_right = 17451.0
+offset_bottom = 621.0
+scale = Vector2(1, -1)
+theme_override_fonts/font = ExtResource("35_qcj0w")
+text = "Thanks for playing Reflectica!
+The game was made for IGU Summer Game Jam 2024
+By
+Nils K - Music and Art
+Marz - Code and Art
+Rinkton - Code and Level design"
+horizontal_alignment = 1
+script = ExtResource("22_nahk2")
+
+[node name="Label4" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_left = 17059.0
+offset_top = 285.0
+offset_right = 17446.0
+offset_bottom = 438.0
+scale = Vector2(1, -1)
+theme_override_colors/font_color = Color(0.813258, 0.813258, 0.813258, 1)
+theme_override_fonts/font = ExtResource("35_qcj0w")
+text = "Press Esc to exit in main menu"
+horizontal_alignment = 1
+script = ExtResource("22_nahk2")
 
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]

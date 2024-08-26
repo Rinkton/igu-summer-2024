@@ -73,7 +73,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_v2aw0")]
-position = Vector2(5748, 122)
+position = Vector2(30, 169)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_46wyi")]
 
@@ -352,7 +352,7 @@ position = Vector2(277, 251.5)
 shape = SubResource("RectangleShape2D_w8m6x")
 
 [node name="checkpoint" parent="above" instance=ExtResource("7_60dj8")]
-position = Vector2(1900, 117)
+position = Vector2(1899, 113)
 
 [node name="checkpoint2" parent="above" instance=ExtResource("7_60dj8")]
 position = Vector2(4059, 119)
@@ -485,6 +485,12 @@ position = Vector2(6403, -206)
 
 [node name="6x2 Winter Platform27" parent="above" instance=ExtResource("5_4w0rf")]
 position = Vector2(6087, -207)
+
+[node name="6x2 Winter Platform39" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(6255, -826)
+
+[node name="6x2 Winter Platform51" parent="above" instance=ExtResource("5_4w0rf")]
+position = Vector2(6257, -857)
 
 [node name="6x2 Winter Platform31" parent="above" instance=ExtResource("5_4w0rf")]
 position = Vector2(5983, -206)
