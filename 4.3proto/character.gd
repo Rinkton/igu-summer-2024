@@ -41,6 +41,7 @@ func _physics_process(delta):
 	
 	if not $jump_buffer_timer.is_stopped() and not $coyote_timer.is_stopped():
 		velocity.y = -500
+		$jump_sound.play()
 		$jump_buffer_timer.stop()
 		$coyote_timer.stop()
 	var horz = Input.get_axis('a','d')

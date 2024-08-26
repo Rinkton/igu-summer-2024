@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://caofxgcnqlkrd"]
+[gd_scene load_steps=5 format=3 uid="uid://caofxgcnqlkrd"]
 
 [ext_resource type="Script" path="res://click_button.gd" id="1_mnwvy"]
 [ext_resource type="Texture2D" uid="uid://oobsmugu58pq" path="res://lever.png" id="2_mildk"]
+[ext_resource type="AudioStream" uid="uid://dfh4jjgfqyd74" path="res://SFX/click.wav" id="3_c4wts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncon2"]
 
@@ -18,3 +19,6 @@ position = Vector2(2.38419e-07, 4.76837e-07)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_mildk")
 hframes = 2
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c4wts")

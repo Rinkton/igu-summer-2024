@@ -21,8 +21,10 @@ func _process(_delta):
 
 func activate():
 	$AnimationPlayer.play("open")
+	$activate.play()
 	activated = true
 
 func deactivate():
 	$AnimationPlayer.play_backwards("open")
+	$deactivate.play()
 	activated = false

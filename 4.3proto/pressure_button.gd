@@ -20,10 +20,12 @@ func _physics_process(_delta):
 		for body in get_overlapping_bodies():
 			if not above_node.activated:
 				above_node.activate()
+				$activate.play()
 				$AnimationPlayer.play("press")
 	else:
 		if above_node.activated:
 			above_node.deactivate()
+			$deactivate.play()
 			$AnimationPlayer.play("idle")
 	get_node("symmetry_link").obj.get_node("Sprite2D").frame = $Sprite2D.frame
 

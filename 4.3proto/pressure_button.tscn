@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cswaure8ckm57"]
+[gd_scene load_steps=10 format=3 uid="uid://cswaure8ckm57"]
 
 [ext_resource type="Script" path="res://pressure_button.gd" id="1_802hh"]
 [ext_resource type="Texture2D" uid="uid://42fe6vk5pciy" path="res://pressure_plate.png" id="2_7ticn"]
+[ext_resource type="AudioStream" uid="uid://bsrfald0c036h" path="res://SFX/pressure plate open.wav" id="3_4y27v"]
+[ext_resource type="AudioStream" uid="uid://cycknyjpe1dto" path="res://SFX/pressure plate close.wav" id="4_faqyd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s7hy"]
 size = Vector2(76, 6)
@@ -79,6 +81,12 @@ shape = SubResource("RectangleShape2D_5s7hy")
 libraries = {
 "": SubResource("AnimationLibrary_fog2o")
 }
+
+[node name="activate" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4y27v")
+
+[node name="deactivate" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_faqyd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

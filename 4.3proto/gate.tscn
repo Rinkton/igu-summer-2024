@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bj7uyjqpmm6ux"]
+[gd_scene load_steps=11 format=3 uid="uid://bj7uyjqpmm6ux"]
 
 [ext_resource type="Script" path="res://gate.gd" id="1_u3nt2"]
 [ext_resource type="Texture2D" uid="uid://5ynufqjk4uc1" path="res://Gate - Bottom part.png" id="2_pg2ya"]
 [ext_resource type="Texture2D" uid="uid://biuyuspfxqdnm" path="res://Gate - Top part.png" id="3_g3pht"]
+[ext_resource type="AudioStream" uid="uid://7i53cb5uh3c6" path="res://SFX/gate open.wav" id="4_ylak6"]
+[ext_resource type="AudioStream" uid="uid://o5nio6nbqov4" path="res://SFX/gate close.wav" id="5_fwh11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofhxp"]
 size = Vector2(30, 128)
@@ -191,3 +193,11 @@ autoplay = "idle"
 position = Vector2(2, -120)
 scale = Vector2(0.19338, 0.307229)
 texture = ExtResource("3_g3pht")
+
+[node name="activate" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ylak6")
+volume_db = 10.0
+
+[node name="deactivate" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fwh11")
+volume_db = 10.0

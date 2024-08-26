@@ -107,7 +107,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_rinh3")]
-position = Vector2(54, 148)
+position = Vector2(7502, 167)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_l3eor")]
 
@@ -476,7 +476,7 @@ node_path = NodePath("../solidifier3")
 position = Vector2(8814, 197)
 
 [node name="lever" parent="above" instance=ExtResource("20_s2uky")]
-position = Vector2(8266, 46)
+position = Vector2(8268, 47)
 node_path = NodePath("../gate6")
 
 [node name="6x6 Diagonal Autumn Platform2" parent="above" instance=ExtResource("10_7k3xx")]

@@ -12,9 +12,12 @@ func _process(_delta):
 		if body.name == "character" and Input.is_action_just_pressed("act"):
 			if above_node.activated:
 				above_node.deactivate()
+				$click.play()
 				$Sprite2D.frame = 0
+				
 			else:
 				above_node.activate()
+				$click.play()
 				$Sprite2D.frame = 1
 	get_node("symmetry_link").obj.get_node("Sprite2D").frame = $Sprite2D.frame
 

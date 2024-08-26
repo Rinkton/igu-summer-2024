@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dto02t2vsmfq0"]
+[gd_scene load_steps=5 format=3 uid="uid://dto02t2vsmfq0"]
 
 [ext_resource type="Script" path="res://checkpoint.gd" id="1_pjg7n"]
 [ext_resource type="Texture2D" uid="uid://hh1fmg23eu2q" path="res://checkpoint.png" id="2_4y535"]
+[ext_resource type="AudioStream" uid="uid://nn62q22vnjpk" path="res://SFX/Checkpoint SFX - More tame.wav" id="3_kwfpb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wjx8"]
 size = Vector2(64, 64)
@@ -19,5 +20,8 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5wjx8")
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kwfpb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
