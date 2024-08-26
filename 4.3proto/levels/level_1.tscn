@@ -242,7 +242,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_iupp7")]
-position = Vector2(6020, 87)
+position = Vector2(6066, 91)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_v0oom")]
 
@@ -379,13 +379,13 @@ position = Vector2(504, 66)
 position = Vector2(364, 66)
 
 [node name="checkpoint" parent="above" instance=ExtResource("7_3ea7n")]
-position = Vector2(922, 188)
+position = Vector2(922, 198)
 
 [node name="checkpoint2" parent="above" instance=ExtResource("7_3ea7n")]
-position = Vector2(1899, 182)
+position = Vector2(1899, 188)
 
 [node name="checkpoint3" parent="above" instance=ExtResource("7_3ea7n")]
-position = Vector2(3370, 215)
+position = Vector2(3386, 218)
 
 [node name="scroll_trigger" type="Marker2D" parent="above"]
 position = Vector2(2172, -49)
@@ -626,10 +626,7 @@ position = Vector2(3729, -504)
 position = Vector2(3838, 228)
 
 [node name="checkpoint4" parent="above" instance=ExtResource("7_3ea7n")]
-position = Vector2(3978, 120)
-
-[node name="checkpoint5" parent="above" instance=ExtResource("7_3ea7n")]
-position = Vector2(3978, 120)
+position = Vector2(4005, 123)
 
 [node name="6x2 Summer Platform91" parent="above" instance=ExtResource("6_xvj4o")]
 position = Vector2(5366, 146)
@@ -659,7 +656,7 @@ position = Vector2(5897, 20)
 position = Vector2(6039, 21)
 
 [node name="checkpoint6" parent="above" instance=ExtResource("7_3ea7n")]
-position = Vector2(5363, 92)
+position = Vector2(5363, 94)
 
 [node name="2x30 Autumn Platform" parent="above" instance=ExtResource("20_qktwl")]
 position = Vector2(-38, -132)

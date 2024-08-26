@@ -17,9 +17,9 @@ func _physics_process(_delta):
 		target_pos_x = int(lerp(self.global_position.x, target.position.x, LERP_SPEED))
 		if target_pos_x > 500:
 			global_position = Vector2(target_pos_x, 250)
+			if target_pos_x < get_tree().current_scene.get_node("mirror").global_position.x - 500+30:
+				global_position = Vector2(target_pos_x, 250)
+			else:
+				global_position = Vector2(get_tree().current_scene.get_node("mirror").global_position.x - 500+30, 250)
 		else:
 			global_position.x = 500
-		if target_pos_x < get_tree().current_scene.get_node("mirror").global_position.x - 500+30:
-			global_position = Vector2(target_pos_x, 250)
-		else:
-			global_position = Vector2(get_tree().current_scene.get_node("mirror").global_position.x - 500+30, 250)

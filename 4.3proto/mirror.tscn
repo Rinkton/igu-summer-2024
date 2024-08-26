@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckn3nmwesedis"]
+[gd_scene load_steps=8 format=3 uid="uid://ckn3nmwesedis"]
 
 [ext_resource type="Texture2D" uid="uid://yjsh87ssrqoa" path="res://Ending Mirror.png" id="1_tg7to"]
 [ext_resource type="Script" path="res://mirror.gd" id="1_tqh2r"]
 [ext_resource type="AudioStream" uid="uid://bdjg38d4aabdh" path="res://SFX/Level finished SFX.wav" id="3_12y18"]
+[ext_resource type="AudioStream" uid="uid://pm3ipq601f6i" path="res://SFX/Portal Sound.mp3" id="4_cfaac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axybu"]
 size = Vector2(80.0001, 505)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybtue"]
+size = Vector2(585, 25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sx8w3"]
+radius = 750.0
 
 [node name="mirror" type="Area2D"]
 scale = Vector2(0.2, 0.2)
@@ -22,5 +29,22 @@ shape = SubResource("RectangleShape2D_axybu")
 
 [node name="level_finished_audiostream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_12y18")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-172.5, -2.5)
+shape = SubResource("RectangleShape2D_ybtue")
+
+[node name="PortalNoiseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalNoiseArea"]
+shape = SubResource("CircleShape2D_sx8w3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_cfaac")
+volume_db = 5.0
+autoplay = true
+max_distance = 600.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

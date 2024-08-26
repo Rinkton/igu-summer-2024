@@ -357,6 +357,9 @@ position = Vector2(1900, 117)
 [node name="checkpoint2" parent="above" instance=ExtResource("7_60dj8")]
 position = Vector2(4059, 119)
 
+[node name="gate2" parent="above" instance=ExtResource("10_kpr1e")]
+position = Vector2(6698, 201)
+
 [node name="2x30 Autumn Platform" parent="above" instance=ExtResource("8_fl5ti")]
 position = Vector2(-38, -132)
 
@@ -418,7 +421,7 @@ position = Vector2(5257, 533)
 rotation = -0.785398
 
 [node name="6x30 Winter Platform6" parent="above" instance=ExtResource("9_ddw5d")]
-position = Vector2(6697, 595)
+position = Vector2(6697, 581)
 
 [node name="6x30 Winter Platform7" parent="above" instance=ExtResource("9_ddw5d")]
 position = Vector2(6695, -306)
@@ -457,19 +460,19 @@ metadata/_edit_lock_ = true
 position = Vector2(7570, -234)
 
 [node name="gate" parent="above" instance=ExtResource("10_kpr1e")]
-position = Vector2(2870, 191)
+position = Vector2(2870, 201)
 
 [node name="ladder" parent="above" instance=ExtResource("18_beay8")]
 position = Vector2(6507, 166)
 
 [node name="ladder3" parent="above" instance=ExtResource("18_beay8")]
-position = Vector2(6506, 80)
+position = Vector2(6507, 80)
 
 [node name="ladder2" parent="above" instance=ExtResource("18_beay8")]
 position = Vector2(5996, 31)
 
 [node name="ladder4" parent="above" instance=ExtResource("18_beay8")]
-position = Vector2(5995, -55)
+position = Vector2(5996, -55)
 
 [node name="6x2 Winter Platform24" parent="above" instance=ExtResource("5_4w0rf")]
 position = Vector2(6090, -74)
@@ -490,7 +493,7 @@ position = Vector2(5983, -206)
 position = Vector2(6503, -99)
 
 [node name="ladder6" parent="above" instance=ExtResource("18_beay8")]
-position = Vector2(6502, -185)
+position = Vector2(6503, -185)
 
 [node name="lever" parent="above" instance=ExtResource("17_53ck2")]
 position = Vector2(2638, 538)
@@ -501,13 +504,10 @@ position = Vector2(6115, 474)
 node_path = NodePath("../gate2")
 
 [node name="push" parent="above" instance=ExtResource("13_5kj68")]
-position = Vector2(6253, -426)
-
-[node name="gate2" parent="above" instance=ExtResource("10_kpr1e")]
-position = Vector2(6698, 201)
+position = Vector2(6253, -445)
 
 [node name="gate3" parent="above" instance=ExtResource("10_kpr1e")]
-position = Vector2(6187, -393)
+position = Vector2(6187, -402)
 rotation = 1.5708
 
 [node name="2x2 Winter Platform" parent="above" instance=ExtResource("15_yadab")]
@@ -608,7 +608,7 @@ position = Vector2(5957, -327)
 node_path = NodePath("../gate3")
 
 [node name="2x30 Winter Platform" parent="above" instance=ExtResource("16_arthw")]
-position = Vector2(6163, -757)
+position = Vector2(6174, -757)
 
 [node name="2x30 Winter Platform2" parent="above" instance=ExtResource("16_arthw")]
 position = Vector2(6335, -756)
@@ -651,7 +651,7 @@ metadata/_edit_lock_ = true
 position = Vector2(8007, 73)
 
 [node name="gate4" parent="above" instance=ExtResource("10_kpr1e")]
-position = Vector2(8088, 98)
+position = Vector2(8088, 101)
 
 [node name="lever3" parent="above" instance=ExtResource("17_53ck2")]
 position = Vector2(7948, 57)
@@ -663,12 +663,11 @@ rotation = 3.14159
 node_path = NodePath("../gate5")
 
 [node name="gate5" parent="above" instance=ExtResource("10_kpr1e")]
-position = Vector2(9185, 174)
+position = Vector2(9185, 166)
 rotation = 3.14159
-scale = Vector2(0.6, 1)
 
 [node name="pressure_button3" parent="above" instance=ExtResource("14_hqehr")]
-position = Vector2(8006, 95)
+position = Vector2(8006, 97)
 node_path = NodePath("../solidifier")
 
 [node name="solidifier" parent="above" instance=ExtResource("18_4oimr")]

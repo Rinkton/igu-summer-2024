@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c0sljw8fmhtc0"]
+[gd_scene load_steps=51 format=3 uid="uid://c0sljw8fmhtc0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xpst8"]
 [ext_resource type="AudioStream" uid="uid://c7j8bk6ce873b" path="res://Soundtrack/spring.mp3" id="2_rwtj8"]
@@ -31,6 +31,10 @@
 [ext_resource type="PackedScene" uid="uid://v2x33ict60vu" path="res://ladder.tscn" id="19_3i22g"]
 [ext_resource type="Script" path="res://levels/reset_rotation.gd" id="30_m4nbl"]
 [ext_resource type="PackedScene" uid="uid://ckn3nmwesedis" path="res://mirror.tscn" id="31_2oxlr"]
+[ext_resource type="Script" path="res://final_mirror.gd" id="32_0wcvi"]
+[ext_resource type="VideoStream" path="res://final_scene_Video.ogv" id="32_lxxqf"]
+[ext_resource type="Texture2D" uid="uid://bevrr1eqls3go" path="res://spritesheet_Idle.png" id="34_e7b1k"]
+[ext_resource type="FontFile" uid="uid://bymdcx2jpconx" path="res://Alef-Bold.ttf" id="35_qcj0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njrnl"]
 size = Vector2(51, 1020)
@@ -62,6 +66,63 @@ shader_parameter/fast_noise = SubResource("NoiseTexture2D_5ixaq")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83bs8"]
 size = Vector2(50, 960)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xohk0"]
+atlas = ExtResource("34_e7b1k")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78nrf"]
+atlas = ExtResource("34_e7b1k")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6miv"]
+atlas = ExtResource("34_e7b1k")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcqmr"]
+atlas = ExtResource("34_e7b1k")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hyx3"]
+atlas = ExtResource("34_e7b1k")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqmvk"]
+atlas = ExtResource("34_e7b1k")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfgh2"]
+atlas = ExtResource("34_e7b1k")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxhb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xohk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78nrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6miv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcqmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hyx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqmvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfgh2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_xpst8")
 
@@ -75,7 +136,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_bick0")]
-position = Vector2(4858, 127)
+position = Vector2(16190, 245)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_lgpnv")]
 
@@ -130,6 +191,9 @@ position = Vector2(7206, 96)
 [node name="6x2 Spring Platform8" parent="above" instance=ExtResource("6_sqcny")]
 position = Vector2(3852, 225)
 
+[node name="gate" parent="above" instance=ExtResource("17_4rt5j")]
+position = Vector2(5541, 192)
+
 [node name="2x30 Autumn Platform" parent="above" instance=ExtResource("7_clgxy")]
 position = Vector2(-38, -132)
 
@@ -183,7 +247,7 @@ position = Vector2(2401, 290)
 position = Vector2(2933, 309)
 
 [node name="6x6 Spring Platform12" parent="above" instance=ExtResource("10_ypto5")]
-position = Vector2(5547, -23)
+position = Vector2(5547, -6)
 
 [node name="6x6 Spring Platform13" parent="above" instance=ExtResource("10_ypto5")]
 position = Vector2(5548, -144)
@@ -250,9 +314,6 @@ what = ExtResource("15_lg035")
 [node name="click_button" parent="above" instance=ExtResource("17_g0uxt")]
 position = Vector2(5049, 136)
 node_path = NodePath("../spawner")
-
-[node name="gate" parent="above" instance=ExtResource("17_4rt5j")]
-position = Vector2(5541, 181)
 
 [node name="6x30 Spring Platform" parent="above" instance=ExtResource("18_sr4cc")]
 position = Vector2(4715, 570)
@@ -417,7 +478,7 @@ position = Vector2(13534, 501)
 position = Vector2(14075, 509)
 
 [node name="pressure_button" parent="above" instance=ExtResource("13_e53l1")]
-position = Vector2(11482, 208)
+position = Vector2(11482, 211)
 node_path = NodePath("../gate2")
 
 [node name="gate2" parent="above" instance=ExtResource("17_4rt5j")]
@@ -535,6 +596,32 @@ position = Vector2(16321, 232)
 
 [node name="2x2_summer_platform5" parent="above" instance=ExtResource("11_ukpst")]
 position = Vector2(12160, 209)
+
+[node name="Label" type="Label" parent="above"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 17036.0
+offset_top = 32.0
+offset_right = 17451.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("35_qcj0w")
+text = "Thanks for playing Reflectica!
+The game was made for IGU Summer Game Jam 2024
+By
+Nils K - Music and Art
+Marz - Code and Art
+Rinkton - Code and Level design"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="above"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 17059.0
+offset_top = 215.0
+offset_right = 17446.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(0.813258, 0.813258, 0.813258, 1)
+theme_override_fonts/font = ExtResource("35_qcj0w")
+text = "Press Esc to exit in main menu"
+horizontal_alignment = 1
 
 [node name="below" type="Node2D" parent="."]
 
@@ -703,9 +790,29 @@ shape = SubResource("RectangleShape2D_83bs8")
 
 [node name="mirror" parent="." instance=ExtResource("31_2oxlr")]
 position = Vector2(16560, 250)
+script = ExtResource("32_0wcvi")
+
+[node name="Timer" type="Timer" parent="mirror"]
+wait_time = 2.0
+one_shot = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = 16590.0
+offset_right = 17582.0
+offset_bottom = 496.0
+stream = ExtResource("32_lxxqf")
+volume_db = -80.0
+loop = true
+
+[node name="final_character" type="AnimatedSprite2D" parent="."]
+position = Vector2(16662, 160)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_rxhb4")
+speed_scale = 2.0
 
 [connection signal="input_event" from="CanvasLayer/yes" to="." method="_on_yes_input_event"]
 [connection signal="input_event" from="CanvasLayer/no" to="." method="_on_no_input_event"]
 [connection signal="body_entered" from="reset_rotation" to="reset_rotation" method="_on_body_entered"]
+[connection signal="timeout" from="mirror/Timer" to="mirror" method="_on_timer_timeout"]
 
 [editable path="above/tip"]
