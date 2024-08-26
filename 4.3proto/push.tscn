@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cgq4x6dwsey77" path="res://Square - pushable.png" id="1_osauq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_niogq"]
-friction = 0.6
+friction = 0.4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntpfh"]
 size = Vector2(30, 30)

@@ -10,6 +10,7 @@ func _process(_delta):
 
 func _on_body_entered(body):
 	if body.name == "character":
-		if $Sprite2D.frame == 0:
+		if $Sprite2D.frame == 0 and $Timer.is_stopped():
 			$sound.play()
-		Global.lst_checkpoint_pos = global_position
+		var y = global_position.y if global_position.y < 250 else (250 - global_position.y) + 250
+		Global.lst_checkpoint_pos = Vector2(global_position.x, y)
