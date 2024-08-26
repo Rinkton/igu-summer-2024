@@ -350,6 +350,7 @@ _data = {
 
 [node name="character" type="CharacterBody2D"]
 floor_snap_length = 6.0
+platform_on_leave = 2
 script = ExtResource("1_6tw1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
