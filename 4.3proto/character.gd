@@ -2,16 +2,19 @@ extends CharacterBody2D
 
 var gravity = 30
 var direction := Vector2(0,0)
+var acc = 2000
+var dec = 2000
+var cur_spd = 0
+var max_spd = 300
 var push_force = 20.0
 var ladder_spd = 250
-@export var axis = Node
 var is_above = true
 var is_on_ladder = false
-var axis_DEBUG
+var axis
 
 
 func _ready():
-	axis_DEBUG = get_tree().current_scene.get_node("axis")
+	axis = get_tree().current_scene.get_node("axis")
 
 func _physics_process(delta):
 	# after calling move_and_slide()
@@ -45,8 +48,11 @@ func _physics_process(delta):
 		$jump_buffer_timer.stop()
 		$coyote_timer.stop()
 	var horz = Input.get_axis('a','d')
-	velocity.x = 100 * horz
-	velocity.x = 300 * horz
+	if abs(horz) > 0.1:
+		cur_spd = move_toward(cur_spd, max_spd*horz, acc * delta)
+	else:
+		cur_spd = move_toward(cur_spd, 0, dec * delta)
+	velocity.x = cur_spd
 	
 	if velocity.x > 10:
 		for anim in [$idle, $run, $jump]:
@@ -60,7 +66,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func check_is_above():
-	is_above = global_position.y < axis_DEBUG.global_position.y - 10
+	is_above = global_position.y < axis.global_position.y - 10
 
 func animate():
 	if velocity == Vector2(0,0):
