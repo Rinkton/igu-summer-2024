@@ -88,9 +88,12 @@ func _physics_process(delta):
 		if scroll_vel < 0 and character.global_position.y < 0:
 			return
 		else:
+			var scroll_vel_y = scroll_vel * delta * (1 if cur_side == $above else -1)
 			for object in cur_side.get_children():
 				if not object.name.contains("tip"):
-					object.position.y += scroll_vel * delta * (1 if cur_side == $above else -1)
+					object.position.y += scroll_vel_y
+			if character.is_on_ladder:
+				character.position.y += scroll_vel_y
 	
 
 func set_symmetric():
