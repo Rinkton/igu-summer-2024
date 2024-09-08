@@ -4,21 +4,28 @@ class_name Mirror
 
 @export var unlock_level: int
 
+# as area2d catches the player it saves its nodepath to the 
+# character_which_entering so even if character exit the area 
+# the level will end anyway
+var character_which_entering
+
 
 func _physics_process(delta):
 	for overlapping_body in $Area2D.get_overlapping_bodies():
 		if overlapping_body.name == "character":
-			overlapping_body.set_physics_process(false)
-			overlapping_body.get_node("idle").visible = false
-			overlapping_body.get_node("jump").visible = false
-			overlapping_body.get_node("run").visible = true
-			overlapping_body.get_node("run").play()
-			var a = (global_position.x - overlapping_body.global_position.x) / 120
-			if a <= 1:
-				overlapping_body.get_node("run").modulate.a = a
-			else:
-				overlapping_body.get_node("run").modulate.a = 1
-			overlapping_body.global_position.x += 100 * delta
+			character_which_entering = overlapping_body
+	if is_instance_valid(character_which_entering):
+		character_which_entering.set_physics_process(false)
+		character_which_entering.get_node("idle").visible = false
+		character_which_entering.get_node("jump").visible = false
+		character_which_entering.get_node("run").visible = true
+		character_which_entering.get_node("run").play()
+		var a = (global_position.x - character_which_entering.global_position.x) / 120
+		if a <= 1:
+			character_which_entering.get_node("run").modulate.a = a
+		else:
+			character_which_entering.get_node("run").modulate.a = 1
+		character_which_entering.global_position.x += 100 * delta
 
 
 func _on_body_entered(body):

@@ -73,7 +73,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_v2aw0")]
-position = Vector2(30, 169)
+position = Vector2(4046, 50)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_46wyi")]
 
@@ -680,6 +680,9 @@ node_path = NodePath("../solidifier")
 position = Vector2(8307, 69)
 scale = Vector2(0.4, 0.4)
 
+[node name="push3" parent="above" instance=ExtResource("13_5kj68")]
+position = Vector2(4395, 224)
+
 [node name="below" type="Node2D" parent="."]
 
 [node name="camera" parent="." instance=ExtResource("7_s7vtf")]
@@ -904,9 +907,6 @@ offset_left = 5111.0
 offset_top = -159.0
 offset_right = 6115.0
 offset_bottom = 338.0
-
-[node name="push" parent="." instance=ExtResource("13_5kj68")]
-position = Vector2(4395, 224)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 

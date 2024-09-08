@@ -58,8 +58,7 @@ func _physics_process(delta):
 			object.freeze = false
 	"""
 	if Input.is_action_just_pressed("reset"):
-		Global.timestamp = $AudioStreamPlayer.get_playback_position()
-		get_tree().reload_current_scene()
+		reset_level()
 	
 	character.check_is_above()
 
@@ -131,6 +130,11 @@ func create_symmetric_object(object):
 	new_object_symmetric_link.obj = object
 	new_object.add_child(new_object_symmetric_link)
 	return new_object
+
+func reset_level():
+	Global.timestamp = $AudioStreamPlayer.get_playback_position()
+	if is_instance_valid(get_tree()): #idk but sometimes get_tree() appears to be null
+		get_tree().reload_current_scene()
 
 
 func _on_yes_input_event(_viewport, event, shape_idx):
