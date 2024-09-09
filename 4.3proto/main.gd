@@ -12,6 +12,7 @@ var scroll_max_spd
 var scroll_acc
 var scroll_dec
 var scroll_vel = 0
+var is_scrolling = false
 
 var in_menu = true
 #replace _ready with create_level(), so can be called for each level creation
@@ -90,11 +91,11 @@ func _physics_process(delta):
 		else:
 			var scroll_vel_y = scroll_vel * delta * (1 if cur_side == $above else -1)
 			for object in cur_side.get_children():
-				if not object.name.contains("tip"):
+				if not object.name.contains("tip") and (not(object is RigidBody2D) or object.position.y < 230):
 					object.position.y += scroll_vel_y
 			if character.is_on_ladder:
 				character.position.y += scroll_vel_y
-	
+		is_scrolling = scroll_vel != 0
 
 func set_symmetric():
 	##################################################################33

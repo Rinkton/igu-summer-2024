@@ -73,7 +73,7 @@ scale = Vector2(25, 1)
 metadata/_edit_lock_ = true
 
 [node name="character" parent="." instance=ExtResource("3_v2aw0")]
-position = Vector2(5940, 149)
+position = Vector2(5865, 147)
 
 [node name="PointLight2D" parent="character" instance=ExtResource("4_46wyi")]
 
@@ -682,6 +682,9 @@ scale = Vector2(0.4, 0.4)
 
 [node name="push3" parent="above" instance=ExtResource("13_5kj68")]
 position = Vector2(4395, 224)
+
+[node name="push4" parent="above" instance=ExtResource("13_5kj68")]
+position = Vector2(6053, 230)
 
 [node name="below" type="Node2D" parent="."]
 

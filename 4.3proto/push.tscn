@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://y670nsgjw3ha"]
+[gd_scene load_steps=6 format=3 uid="uid://y670nsgjw3ha"]
 
 [ext_resource type="Texture2D" uid="uid://cgq4x6dwsey77" path="res://Square - pushable.png" id="1_osauq"]
+[ext_resource type="Script" path="res://push.gd" id="1_rtkng"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_niogq"]
 friction = 0.4
@@ -16,6 +17,7 @@ collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_niogq")
 sleeping = true
 linear_damp = 2.0
+script = ExtResource("1_rtkng")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.12, 0.12)
